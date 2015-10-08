@@ -8,7 +8,7 @@ describe UsersController do
     end
   end
 
-  describe "GET #show" do
+  describe "GET#show" do
     before(:each) {
       @user = create(:user)
     }
@@ -16,6 +16,22 @@ describe UsersController do
       get :show, id: @user.id
       expect(assigns(:user).id).to be(@user.id)
     end
+  end
+
+  describe "POST #create" do
+    describe "When Successful" do
+      let(:user_params) { { user: attributes_for(:user) } }
+
+      it "Creates a user" do
+        post(:create, user_params)
+        expect(response).to redirect_to root_path
+      end
+
+      # it "Increased number of users in the database by 1" do
+      #   expect{post(:create, user_params)}.to change{User.count}.by(1)
+      # end
+    end
+
   end
 
 
