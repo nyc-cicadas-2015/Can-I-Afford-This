@@ -12,6 +12,11 @@ describe ExpensesController do
       get :index
       expect(response).to render_template :index
     end
+
+    it "assigns @expense to Expense.new" do
+      get :index
+      expect(assigns(:expense)).to be_a_new Expense
+    end
   end
 
 
