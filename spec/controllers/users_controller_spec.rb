@@ -27,9 +27,9 @@ describe UsersController do
         expect(response).to redirect_to root_path
       end
 
-      # it "Increased number of users in the database by 1" do
-      #   expect{post(:create, user_params)}.to change{User.count}.by(1)
-      # end
+      it "Increased number of users in the database by 1" do
+        expect{post(:create, user_params)}.to change{User.count}.by(1)
+      end
     end
 
   end
