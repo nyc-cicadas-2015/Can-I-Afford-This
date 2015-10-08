@@ -22,7 +22,7 @@ describe UsersController do
     describe "When Successful" do
       let(:user_params) { { user: attributes_for(:user) } }
 
-      it "Creates a user" do
+      it "successfully creates a user and redirects to the root path" do
         post(:create, user_params)
         expect(response).to redirect_to root_path
       end
@@ -38,7 +38,7 @@ describe UsersController do
         expect(response).to redirect_to login_path
       end
 
-      it "sets a flash message welcoming the user" do
+      it "sets a flash message letting user know the username or pw already exist" do
         post(:create, user: {name: nil, username: nil, password: nil })
         expect(flash[:error]).to have_content "email/password already exist"
       end
