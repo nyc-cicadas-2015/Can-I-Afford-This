@@ -19,4 +19,12 @@ describe ExpensesController do
     end
   end
 
+  context "#show" do
+    it "is successful" do
+      get :show, :id => expense.id
+      expect(response).to be_success
+    end
+  end
+
+
 end
