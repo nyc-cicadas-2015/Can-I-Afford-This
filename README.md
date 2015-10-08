@@ -1,7 +1,8 @@
 # Can-I-Afford-This
-a financial education tool for kids
+a financial education tool for kids, or anyone
 
 ####Made with <3 by: [Dian Pan](https://github.com/dianpan) and [Julianna Rusak](https://github.com/julrusak) 
+Pulling from personal experience, we are aiming to educate others on the risks of credit card dependicies and acquiring debt at a young age.  
 
 [Trello Board](https://trello.com/b/PP3LXD4i)
 
