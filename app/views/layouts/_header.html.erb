@@ -2,7 +2,7 @@
   <h1><%= link_to "Can I Afford This?", root_path %></h1>
   <ul>
     <% if logged_in? %>
-    <li><%= link_to "My Profile", new_user_path %></li>
+    <li><%= link_to "My Profile", profile_path(session[:user_id]) %></li>
     <li><%= link_to "Logout", logout_path, method: :delete, id: "logout-link" %></li>
     <% else %>
     <li><%= link_to "login", '/login' %></li>
