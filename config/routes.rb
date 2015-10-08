@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :expenses
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
