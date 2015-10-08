@@ -1,0 +1,18 @@
+<div id="header">
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+
+    <% if logged_in? %>
+    <li><%= link_to "My Profile", new_user_path %></li>
+    <li><%= link_to "Logout", logout_path, method: :delete, id: "logout-link" %></li>
+    <% else %>
+    <li><%= link_to "login", '/login'</li>
+    <li><%= link_to "sign up", new_user_path %></li>
+    <% end %>
+</div>
+
+<div>
+  <% if logged_in? %>
+  <h3>Welcome <%= current_user.name %>!</h3>
+  <% end %>
+</div>
