@@ -43,9 +43,5 @@ describe UsersController do
         expect(flash[:error]).to have_content "email/password already exist"
       end
     end
-
-
   end
-
-
 end
