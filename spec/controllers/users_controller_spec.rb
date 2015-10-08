@@ -32,6 +32,21 @@ describe UsersController do
       end
     end
 
+    describe "When Unsuccessful" do
+      it "redirects to login" do
+        post(:create, user: {name: nil, username: nil, password: nil })
+        expect(response).to redirect_to login_path
+      end
+
+      # it "sets a flash message welcoming the user" do
+      #   post(:create, user: {name: nil, username: nil, password: nil })
+      #   expect(flash[:alert]).to have_content "You already exist, please login"
+      # end
+
+    # end
+  end
+
+
   end
 
 
