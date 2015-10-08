@@ -19,5 +19,9 @@ describe ExpensesController do
     end
   end
 
+  context "#new" do
+    it ""
+  end
+
 
 end
