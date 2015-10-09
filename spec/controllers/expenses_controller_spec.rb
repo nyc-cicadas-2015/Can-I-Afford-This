@@ -39,6 +39,12 @@ describe ExpensesController do
         post(:create, new_expense)
       }.to change {Expense.count}
     end
+
+    it "does not create with invalid attributes" do
+      expect {
+        post :create, expense: {expense_type: nil, amount: nil }
+      }.to_not change {Expense.count}
+    end
   end
 
 
