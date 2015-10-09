@@ -33,6 +33,13 @@ class PurchasesController < ActionController::Base
     end
   end
 
+   def destroy
+    purchase = Purchase.find(params[:id])
+    purchase.destroy
+    redirect_to user_path(session[:user_id])
+  end
+
+
   private
 
   def find_user

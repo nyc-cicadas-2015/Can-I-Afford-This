@@ -68,4 +68,12 @@ describe PurchasesController do
     end
   end
 
+  context "#destroy" do
+    it "deletes the purchase" do
+      expect{
+        delete :destroy, :id => purchase.id
+      }.to change {Purchase.count}.by(-1)
+    end
+  end
+
 end
