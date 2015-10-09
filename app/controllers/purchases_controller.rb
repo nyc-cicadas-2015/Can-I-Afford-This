@@ -19,6 +19,10 @@ class PurchasesController < ActionController::Base
     end
   end
 
+  def edit
+    @purchase = Purchase.find(params[:id])
+  end
+
   private
 
   def find_user

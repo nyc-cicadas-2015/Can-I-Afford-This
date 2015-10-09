@@ -47,4 +47,11 @@ describe PurchasesController do
     end
   end
 
+  context "#edit" do
+    it "is successful" do
+      get :edit, :id => purchase.id
+      expect(response).to be_success
+    end
+  end
+
 end
