@@ -54,4 +54,12 @@ describe PurchasesController do
     end
   end
 
+  context "#update" do
+    it "updates with valid attributes" do
+      expect {
+        put :update, :id => purchase.id, :purchase => { :cost => 100 }
+      }.to change {purchase.reload.cost}.from(purchase.cost).to(100)
+    end
+  end
+
 end
