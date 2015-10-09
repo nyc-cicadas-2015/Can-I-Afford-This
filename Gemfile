@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'foundation-rails'
 gem 'coveralls', require: false
 
 group :development, :test do
