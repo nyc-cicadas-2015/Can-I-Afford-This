@@ -39,6 +39,12 @@ describe PurchasesController do
         post(:create, new_purchase)
       }.to change {Purchase.count}
     end
+
+    it "does not create with invalid attributes" do
+      expect {
+        post :create, purchase: {category: nil, cost: nil }
+      }.to_not change {Purchase.count}
+    end
   end
 
 end

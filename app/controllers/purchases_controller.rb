@@ -14,7 +14,8 @@ class PurchasesController < ActionController::Base
     if purchase.save
       redirect_to user_path(session[:user_id])
     else
-      render :partial => 'errors', flash: { error: "Your purchase must be greater than $0."}
+      flash[:error] = "Your purchase must be greater than $0."
+      redirect_to user_path(session[:user_id])
     end
   end
 
