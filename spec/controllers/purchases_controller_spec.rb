@@ -24,6 +24,11 @@ describe PurchasesController do
       get :show, :id => purchase.id
       expect(response).to be_success
     end
+
+    it "shows the correct purchase" do
+      get :show, :id => purchase.id
+      expect(assigns(:purchase)).to eq purchase
+    end
   end
 
 end
