@@ -19,6 +19,11 @@ describe 'the login/logout process' do
       expect(page).to have_link 'Logout'
     end
 
+    it 'logs me out' do
+      click_link 'Logout'
+      expect(page).to have_content "You've been successfully logged out"
+    end
+
 
   end
 
