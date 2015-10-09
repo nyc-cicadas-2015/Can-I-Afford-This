@@ -37,6 +37,12 @@ describe SessionsController do
         post :create, session: { email: nil, password: nil }
         expect(response).to redirect_to login_path
       end
+
+      it 'sets a flash error' do
+        post :create, session: { email: nil, password: nil }
+        expect(flash[:error]).to have_content 'Incorrect username or password. Please try again'
+      end
+
     end
   end
 
