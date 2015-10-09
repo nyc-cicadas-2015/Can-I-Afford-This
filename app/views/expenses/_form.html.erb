@@ -1,0 +1,6 @@
+<%= form_for @expense do |f| %>
+  <%= f.text_field :amount, placeholder: "$ Housing" %><br>
+  <%= f.hidden_field :expense_type, :value => "Housing" %>
+  <%= f.submit "Add Expense" %>
+<% end %>
+

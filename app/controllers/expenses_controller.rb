@@ -1,6 +1,11 @@
-class ExpensesController < ActionController::Base
+class ExpensesController < ApplicationController
 
   def index
+    @expense = Expense.new
+  end
+
+  def new
+    find_user
     @expense = Expense.new
   end
 
@@ -11,11 +16,10 @@ class ExpensesController < ActionController::Base
   def create
     find_user
     expense = @user.expenses.new(expenses_params)
-    if expense.save
-      redirect_to user_path(session[:user_id])
-    else
-      render :partial => 'errors', flash: { error: "Your expense must be greater than $0."}
+    if !expense.save
+      flash[:error] = "Your expense must be greater than $0."
     end
+      redirect_to new_expense_path
   end
 
   def edit
@@ -24,11 +28,10 @@ class ExpensesController < ActionController::Base
 
   def update
     @expense = Expense.find(params[:id])
-    if @expense.update_attributes expenses_params
-      redirect_to user_path(session[:user_id])
-    else
-      render :partial => 'errors', flash: { error: "Your expense must be greater than $0."}
+    if !@expense.update_attributes expenses_params
+      flash[:error] = "Your expense must be greater than $0."
     end
+      redirect_to user_path(session[:user_id])
   end
 
   private
