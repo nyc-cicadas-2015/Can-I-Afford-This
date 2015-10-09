@@ -31,6 +31,14 @@ describe SessionsController do
         expect{post(:create, user_params)}.to change{User.count}.by(1)
       end
     end
+
+    describe "When Unsuccessful" do
+      it "redirects to login" do
+        post(:create, user: {name: nil, username: nil, password: nil })
+        expect(response).to redirect_to login_path
+      end
+    end
+
   end
 
 
