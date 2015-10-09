@@ -14,7 +14,8 @@ class ExpensesController < ActionController::Base
     if expense.save
       redirect_to user_path(session[:user_id])
     else
-      render :partial => 'errors', flash: { error: "Your expense must be greater than $0."}
+      flash[:error] = "Your expense must be greater than $0."
+      redirect_to user_path(session[:user_id])
     end
   end
 
@@ -27,7 +28,8 @@ class ExpensesController < ActionController::Base
     if @expense.update_attributes expenses_params
       redirect_to user_path(session[:user_id])
     else
-      render :partial => 'errors', flash: { error: "Your expense must be greater than $0."}
+      flash[:error] = "Your expense must be greater than $0."
+      redirect_to user_path(session[:user_id])
     end
   end
 
