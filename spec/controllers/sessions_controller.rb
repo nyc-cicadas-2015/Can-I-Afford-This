@@ -47,8 +47,13 @@ describe SessionsController do
         post :create, session: { email: nil, password: nil }
         expect(session[:user_id]).to be_nil
       end
-
     end
+  end
+
+  describe 'GET #destroy' do
+    before(:each){
+      session[:user_id] = create(:user).id
+    }
   end
 
 
