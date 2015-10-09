@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :users
   resources :expenses
+  resources :purchases
 
   get '/profile/:id' => 'users#show', as: 'profile'
 
