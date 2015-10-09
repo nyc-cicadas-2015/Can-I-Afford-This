@@ -37,6 +37,12 @@ describe SessionsController do
         post(:create, user: {name: nil, username: nil, password: nil })
         expect(response).to redirect_to login_path
       end
+
+      it "sets a flash error" do
+        post(:create, user: {name: nil, username: nil, password: nil })
+        expect(flash[:alert]).to have_content "Unable to find password & username combination. Please try again."
+      end
+
     end
 
   end
