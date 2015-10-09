@@ -19,4 +19,11 @@ describe PurchasesController do
     end
   end
 
+  context "#show" do
+    it "is successful" do
+      get :show, :id => purchase.id
+      expect(response).to be_success
+    end
+  end
+
 end

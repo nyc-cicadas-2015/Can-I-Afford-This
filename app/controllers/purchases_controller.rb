@@ -4,4 +4,7 @@ class PurchasesController < ActionController::Base
     @purchase = Purchase.new
   end
 
+  def show
+    @purchase = Purchase.find params[:id]
+  end
 end
