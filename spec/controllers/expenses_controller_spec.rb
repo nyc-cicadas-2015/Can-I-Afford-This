@@ -57,10 +57,15 @@ describe ExpensesController do
   context "#update" do
     it "updates with valid attributes" do
       expect {
-        put :update, :id => expense.id, :expense => { :amount => 100}
+        put :update, :id => expense.id, :expense => { :amount => 100 }
       }.to change {expense.reload.amount}.from(expense.amount).to(100)
     end
-  end
 
+    it "does not update with invalid attributes" do
+      expect {
+        put :update, :id => expense.id, :expense => { :amount => nil }
+      }
+    end
+  end
 
 end
