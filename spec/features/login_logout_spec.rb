@@ -16,17 +16,20 @@ describe 'the login/logout process' do
 
   describe 'when logged in' do
     it 'has a logout link' do
-      expect(page).to have_link 'Logout'
+      expect(page).to have_link 'logout'
     end
 
     it 'logs me out' do
-      click_link 'Logout'
+      click_link 'logout'
       expect(page).to have_content "You've been successfully logged out"
     end
 
+    it 'has log in fields' do
+      click_link 'logout'
+      click_link 'login'
 
+      expect(page).to have_field 'session_email'
+      expect(page).to have_field 'session_password'
+    end
   end
-
-
-
 end
