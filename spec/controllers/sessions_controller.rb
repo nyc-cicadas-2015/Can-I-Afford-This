@@ -43,6 +43,11 @@ describe SessionsController do
         expect(flash[:error]).to have_content 'Incorrect username or password. Please try again'
       end
 
+      it 'does not set the session user id' do
+        post :create, session: { email: nil, password: nil }
+        expect(session[:user_id]).to be_nil
+      end
+
     end
   end
 
