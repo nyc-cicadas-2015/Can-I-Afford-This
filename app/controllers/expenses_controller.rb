@@ -12,7 +12,7 @@ class ExpensesController < ActionController::Base
     find_user
     expense = @user.expenses.new(expenses_params)
     if expense.save
-      redirect_to root_path
+      redirect_to user_path(session[:user_id])
     else
       render :partial => 'errors', flash: { error: "Your expense must be greater than $0."}
     end
@@ -20,6 +20,15 @@ class ExpensesController < ActionController::Base
 
   def edit
     @expense = Expense.find(params[:id])
+  end
+
+  def update
+    @expense = Expense.find(params[:id])
+    if @expense.update_attributes expenses_params
+      redirect_to user_path(session[:user_id])
+    else
+      render :partial => 'errors', flash: { error: "Your expense must be greater than $0."}
+    end
   end
 
   private
