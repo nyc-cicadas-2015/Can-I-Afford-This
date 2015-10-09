@@ -11,7 +11,7 @@ describe SessionsController do
   describe "GET #create" do
     describe 'when successful' do
       before(:each) { @user = create(:user) }
-      it "Shows a specific user page" do
+      it "assigns the correct user id" do
         get :show, id: @user.id
         expect(assigns(:user).id).to be(@user.id)
       end
