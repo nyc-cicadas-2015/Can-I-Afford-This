@@ -8,6 +8,23 @@ describe SessionsController do
     end
   end
 
+  describe "GET #create" do
+    describe "when successful" do
+      before(:each){
+        @user = create(:user)
+        post :create, session: {
+          email: user[:email],
+          password: user[:password]
+        }
+      }
+      let(:user) { attributes_for(:user)}
+
+      it 'returns http success' do
+        expect(response).to redirect_to root_path
+      end
+    end
+  end
+
   describe "POST #create" do
     describe "When Successful" do
       let(:user_params) { { user: attributes_for(:user) } }
