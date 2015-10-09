@@ -54,10 +54,10 @@ describe SessionsController do
     before(:each){
       session[:user_id] = create(:user).id
     }
+    it 'removes the session user id' do
+      delete :destroy
+      expect(session[:user_id]).to be_nil
+    end
   end
-
-
-
-
 
 end
