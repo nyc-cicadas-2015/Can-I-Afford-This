@@ -1,4 +1,4 @@
-class PurchasesController < ActionController::Base
+class PurchasesController < ApplicationController
 
   def index
     @purchase = Purchase.new

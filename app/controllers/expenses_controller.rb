@@ -1,4 +1,4 @@
-class ExpensesController < ActionController::Base
+class ExpensesController < ApplicationController
 
   def index
     @expense = Expense.new
@@ -16,12 +16,10 @@ class ExpensesController < ActionController::Base
   def create
     find_user
     expense = @user.expenses.new(expenses_params)
-    if expense.save
-      redirect_to new_expense_path
-    else
+    if !expense.save
       flash[:error] = "Your expense must be greater than $0."
-      redirect_to new_expense_path
     end
+      redirect_to new_expense_path
   end
 
   def edit
