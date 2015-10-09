@@ -4,6 +4,10 @@ class ExpensesController < ActionController::Base
     @expense = Expense.new
   end
 
+  def new
+    @expense = Expense.new
+  end
+
   def show
     @expense = Expense.find params[:id]
   end
