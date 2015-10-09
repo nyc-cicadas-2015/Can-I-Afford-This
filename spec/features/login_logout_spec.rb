@@ -10,23 +10,23 @@ describe 'the login/logout process' do
 
   describe 'when logged in' do
     it 'signs me in' do
-      expect(page).to have_content "Welcome #{user[:name]}"
+      expect(page).to have_content "Profile"
     end
   end
 
   describe 'when logged in' do
     it 'has a logout link' do
-      expect(page).to have_link 'logout'
+      expect(page).to have_link 'Logout'
     end
 
     it 'logs me out' do
-      click_link 'logout'
+      click_link 'Logout'
       expect(page).to have_content "You've been successfully logged out"
     end
 
     it 'has log in fields' do
-      click_link 'logout'
-      click_link 'login'
+      click_link 'Logout'
+      click_link 'Login'
 
       expect(page).to have_field 'session_email'
       expect(page).to have_field 'session_password'
