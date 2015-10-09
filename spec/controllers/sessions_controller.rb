@@ -30,7 +30,13 @@ describe SessionsController do
       it 'sets the session user id to the actual user id' do
         expect(session[:user_id]).to eq @user.id
       end
+    end
 
+    describe "when unsuccessful" do
+      it 'redirects to login page' do
+        post :create, session: { email: nil, password: nil }
+        expect(response).to redirect_to login_path
+      end
     end
   end
 
