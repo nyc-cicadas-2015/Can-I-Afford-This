@@ -1,0 +1,6 @@
+<%= form_for @expense do |f| %>
+  <%= f.select :expense_type, ['Housing', 'Transportation', 'Phone', 'Food', 'Misc. 1', 'Misc. 2', 'Misc. 3']%>
+  <%= f.text_field :amount, placeholder: "$ Amount" %>
+  <br>
+  <%= f.submit "Add Expense" %>
+<% end %>
