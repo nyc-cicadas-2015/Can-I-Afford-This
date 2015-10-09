@@ -1,0 +1,3 @@
+class SavingsController < ApplicationController
+
+end
