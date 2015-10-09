@@ -13,4 +13,10 @@ describe PurchasesController do
       expect(response).to be_success
     end
 
+    it "assigns @purchase to Purchase.new" do
+      get :index
+      expect(assigns(:purchase)).to be_a_new Purchase
+    end
+  end
+
 end
