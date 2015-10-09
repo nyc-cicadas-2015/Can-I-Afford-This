@@ -28,12 +28,10 @@ class ExpensesController < ApplicationController
 
   def update
     @expense = Expense.find(params[:id])
-    if @expense.update_attributes expenses_params
-      redirect_to user_path(session[:user_id])
-    else
+    if !@expense.update_attributes expenses_params
       flash[:error] = "Your expense must be greater than $0."
-      redirect_to user_path(session[:user_id])
     end
+      redirect_to user_path(session[:user_id])
   end
 
   private
