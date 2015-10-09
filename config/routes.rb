@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :users
-  resources :session, only: [:new, :create, :destroy]
   resources :expenses
 
   get '/profile/:id' => 'users#show', as: 'profile'
