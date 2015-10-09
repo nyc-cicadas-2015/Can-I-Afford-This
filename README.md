@@ -3,9 +3,10 @@ a financial education tool for kids, or anyone
 
 [![Circle CI](https://circleci.com/gh/nyc-cicadas-2015/Can-I-Afford-This.svg?style=svg)](https://circleci.com/gh/nyc-cicadas-2015/Can-I-Afford-This)
 
+[![Coverage Status](https://coveralls.io/repos/nyc-cicadas-2015/Can-I-Afford-This/badge.svg?branch=master&service=github)](https://coveralls.io/github/nyc-cicadas-2015/Can-I-Afford-This?branch=master)
 
 ####Made with <3 by: [Dian Pan](https://github.com/dianpan) and [Julianna Rusak](https://github.com/julrusak)
-Pulling from personal experience, we are aiming to educate others on the risks of credit card dependencies and acquiring debt at a young age.
+Pulling from personal experience, we aim to educate young adults on the risks of acquiring debt at a young age.
 
 [Trello Board](https://trello.com/b/PP3LXD4i)
 
