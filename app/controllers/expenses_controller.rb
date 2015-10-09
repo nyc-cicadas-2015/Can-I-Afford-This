@@ -18,6 +18,9 @@ class ExpensesController < ActionController::Base
     end
   end
 
+  def edit
+    @expense = Expense.find(params[:id])
+  end
 
   private
 
