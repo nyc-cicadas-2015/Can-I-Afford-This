@@ -7,5 +7,10 @@ describe PurchasesController do
     let!(:user) { FactoryGirl.create :user }
     let!(:purchase) { FactoryGirl.create :purchase, :user_id => user.id }
 
+  context "#index" do
+    it "displays purchases" do
+      get :index
+      expect(response).to be_success
+    end
 
 end
