@@ -60,6 +60,12 @@ describe PurchasesController do
         put :update, :id => purchase.id, :purchase => { :cost => 100 }
       }.to change {purchase.reload.cost}.from(purchase.cost).to(100)
     end
+
+    it "does not update with invalid attributes" do
+      expect {
+        put :update, :id => purchase.id, :purchase => { :cost => nil }
+      }
+    end
   end
 
 end
