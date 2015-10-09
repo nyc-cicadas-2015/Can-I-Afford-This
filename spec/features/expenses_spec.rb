@@ -11,7 +11,14 @@ describe "Expenses" do
   describe 'User can create new expense' do
     it 'by visiting the expense page' do
       visit new_expense_path
-      expect(page).to have_content("Enter a new expense")
+      expect(page).to have_content("Enter your expenses")
+    end
+
+    it 'with valid attributes' do
+      visit new_expense_path
+      fill_in "expense_amount", :with => 200
+      click_button "Add Expense"
+      expect(page).to have_content(200)
     end
   end
 end
