@@ -16,7 +16,7 @@ describe 'the login/logout process' do
 
   describe 'when logged in' do
     it 'has a logout link' do
-      expect(page).to have_link 'logout'
+      expect(page).to have_link 'Logout'
     end
 
 
