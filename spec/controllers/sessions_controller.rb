@@ -27,6 +27,10 @@ describe SessionsController do
         expect(session).to have_key(:user_id)
       end
 
+      it 'sets the session user id to the actual user id' do
+        expect(session[:user_id]).to eq @user.id
+      end
+
     end
   end
 
