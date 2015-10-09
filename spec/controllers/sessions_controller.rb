@@ -8,16 +8,6 @@ describe SessionsController do
     end
   end
 
-  describe "GET #create" do
-    describe 'when successful' do
-      before(:each) { @user = create(:user) }
-      it "assigns the correct user id" do
-        get :show, id: @user.id
-        expect(assigns(:user).id).to be(@user.id)
-      end
-    end
-  end
-
   describe "POST #create" do
     describe "When Successful" do
       let(:user_params) { { user: attributes_for(:user) } }
@@ -34,13 +24,13 @@ describe SessionsController do
 
     describe "When Unsuccessful" do
       it "redirects to login" do
-        post(:create, user: {name: nil, username: nil, password: nil })
+        post(:create, user: {name: nil, email: nil, password: nil })
         expect(response).to redirect_to login_path
       end
 
       it "sets a flash error" do
-        post(:create, user: {name: nil, username: nil, password: nil })
-        expect(flash[:alert]).to have_content "Unable to find password & username combination. Please try again."
+        post(:create, user: {name: nil, email: nil, password: nil })
+        expect(flash[:alert]).to have_content "Unable to find password & username combination"
       end
 
     end
