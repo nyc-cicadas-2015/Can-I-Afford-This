@@ -8,6 +8,16 @@ describe SessionsController do
     end
   end
 
+  describe "GET #create" do
+    describe 'when successful' do
+      before(:each) { @user = create(:user) }
+      it "Shows a specific user page" do
+        get :show, id: @user.id
+        expect(assigns(:user).id).to be(@user.id)
+      end
+    end
+  end
+
 
 
 end
