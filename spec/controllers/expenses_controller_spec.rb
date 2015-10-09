@@ -24,6 +24,11 @@ describe ExpensesController do
       get :show, :id => expense.id
       expect(response).to be_success
     end
+
+    it "shows the correct expense" do
+      get :show, :id => expense.id
+      expect(assigns(:expense)).to eq expense
+    end
   end
 
 
