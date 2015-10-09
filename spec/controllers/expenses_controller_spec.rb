@@ -35,8 +35,9 @@ describe ExpensesController do
     let(:new_expense) { { expense: attributes_for(:expense, :user_id => user.id) } }
 
     it "creates expense with valid attributes" do
-      post(:create, new_expense)
-      expect(response).to change {Expense.count}
+      expect {
+        post(:create, new_expense)
+      }.to change {Expense.count}
     end
   end
 
