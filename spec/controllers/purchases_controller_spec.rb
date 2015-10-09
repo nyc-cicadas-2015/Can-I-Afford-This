@@ -31,4 +31,14 @@ describe PurchasesController do
     end
   end
 
+  context "#create" do
+    let(:new_purchase) { { purchase: attributes_for(:purchase, :user_id => user.id) } }
+
+    it "creates purchase with valid attributes" do
+      expect {
+        post(:create, new_purchase)
+      }.to change {Purchase.count}
+    end
+  end
+
 end
