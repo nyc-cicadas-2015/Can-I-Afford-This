@@ -2,14 +2,15 @@ class LoginPageHelper
   include Capybara::DSL
 
   def visit_page
-    visit root_path
+    visit '/'
     self
   end
 
   def login user
-    within('#new_user') do
-      fill_in 'user_email', :with => user[:email]
-      fill_in 'user_password', :with => user[:password]
+    click_link 'login'
+    within("#login_form") do
+      fill_in 'session_email', :with => user[:email]
+      fill_in 'session_password', :with => user[:password]
     end
     click_button 'Login'
     self
