@@ -12,4 +12,14 @@ describe 'create a new user' do
     click_link 'sign up'
     expect(current_path).to eq new_user_path
   end
+
+  it 'should create a new user' do
+    visit new_user_path
+    fill_in 'user_name', with: user_attr[:name]
+    fill_in 'user_email', with: user_attr[:email]
+    fill_in 'user_password', with: user_attr[:password]
+    click_button 'Sign up'
+
+    expect(page).to have_content 'Success'
+  end
 end
