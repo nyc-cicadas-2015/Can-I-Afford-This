@@ -22,6 +22,11 @@ describe SessionsController do
       it 'returns http success' do
         expect(response).to redirect_to root_path
       end
+
+      it 'sets the session user id' do
+        expect(session).to have_key(:user_id)
+      end
+
     end
   end
 
