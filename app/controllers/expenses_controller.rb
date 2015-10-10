@@ -17,7 +17,6 @@ class ExpensesController < ApplicationController
   def create
     find_user
     @expense = @user.expenses.new(expenses_params)
-    find_expense_type
     if !@expense.save
       flash[:error] = "Your expense must be greater than $0."
     end
