@@ -8,6 +8,11 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.find params[:id]
   end
 
+  def new
+    find_user
+    @purchase = Purchase.new
+  end
+
   def create
     find_user
     purchase = @user.purchases.build(purchases_params)
