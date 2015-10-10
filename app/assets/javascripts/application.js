@@ -15,3 +15,5 @@
 //= require foundation
 //= require_tree .
 $(function(){ $(document).foundation(); });
+
+$('#purchase_data').data('purchase');
