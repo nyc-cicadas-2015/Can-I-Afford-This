@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :expenses
   resources :purchases
+  resources :savings, only: [:new, :create]
 
   get '/profile/:id' => 'users#show', as: 'profile'
 
