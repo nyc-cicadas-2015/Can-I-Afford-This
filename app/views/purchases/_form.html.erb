@@ -1,7 +1,7 @@
 <%= form_for @purchase do |f| %>
-  <p> <%= f.radio_button :purchase_type_id,  1 %> Small Purchase (under $1,000) </p>
-  <p> <%= f.radio_button :purchase_type_id, 2 %> Medium Purchase ($1,000 - $3,000) </p>
-  <p> <%= f.radio_button  :purchase_type_id, 3 %> Large Purchase (over $3,000) </p>
-  <p> <%= f.text_field :cost, placeholder: "$Amount" %>
-  <p> <%= f.submit 'Add Purchase' %> </p>
+   <%= f.radio_button :purchase_type_id,  1 %> Small Purchase (under $1,000)
+   <%= f.radio_button :purchase_type_id, 2 %> Medium Purchase ($1,000 - $3,000)
+   <%= f.radio_button  :purchase_type_id, 3 %> Large Purchase (over $3,000)
+   <%= f.text_field :cost, placeholder: "$Amount" %>
+   <%= f.submit 'Add Purchase' %>
 <% end %>
