@@ -1,5 +1,3 @@
-require 'json'
-
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -7,7 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @json = @user.purchases.to_json
   end
 
   def create
