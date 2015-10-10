@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :purchase do
     association :user, factory: :user
-    category { Faker::Number.between(1, 3) }
+    association :purchase, factory: :purchase
     cost { Faker::Commerce.price }
   end
 end
