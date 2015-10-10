@@ -2,6 +2,10 @@
 
 <h4>Current Savings: $<%= @user.savings.total_savings %></h4>
 <br>
+<h4>Planned Purchases: </h4>
+  <% @user.purchases.each do |purchase| %>
+    <p><%= purchase.title %> for <%= purchase.cost %></p>
+<br>
 
 <h4><%= link_to "Add savings", new_saving_path %></h4>
 <h4><%= link_to "Add a new purchase", new_purchase_path %></h4>
