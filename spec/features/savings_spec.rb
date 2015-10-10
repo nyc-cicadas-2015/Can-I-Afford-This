@@ -17,7 +17,7 @@ describe "Savings" do
     it 'with valid attributes' do
       visit profile_path(@user.id)
       click_link "Add savings"
-      fill_in "new_saving", :with => 200
+      fill_in "saving_amount", :with => 200
       click_button "Add savings"
       expect(page).to have_content(200)
     end
