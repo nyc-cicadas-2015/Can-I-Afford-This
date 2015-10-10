@@ -16,7 +16,8 @@ class ExpensesController < ApplicationController
 
   def create
     find_user
-    expense = @user.expenses.build(expenses_params)
+    params[:expense].each do |k, v|
+    expense = @user.expenses.build(expenses_params: v)
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."
     end
