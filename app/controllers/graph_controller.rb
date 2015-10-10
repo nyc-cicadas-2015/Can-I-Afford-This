@@ -1,4 +1,4 @@
-class GraphsController < ApplicationController
+class GraphController < ApplicationController
 
   def index
   end
@@ -10,4 +10,6 @@ class GraphsController < ApplicationController
       }
     end
   end
+
+
 end
