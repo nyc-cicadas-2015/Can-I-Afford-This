@@ -8,15 +8,18 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.find params[:id]
   end
 
+  def new
+    find_user
+    @purchase = Purchase.new
+  end
+
   def create
     find_user
     purchase = @user.purchases.build(purchases_params)
-    if purchase.save
-      redirect_to user_path(session[:user_id])
-    else
+    if !purchase.save
       flash[:error] = "Your purchase must be greater than $0."
-      redirect_to user_path(session[:user_id])
     end
+      redirect_to user_path(session[:user_id])
   end
 
   def edit
@@ -28,7 +31,7 @@ class PurchasesController < ApplicationController
     if @purchase.update_attributes purchases_params
       redirect_to user_path(session[:user_id])
     else
-      flash[:error] = "Your purchase must be greater than $0."
+      flash[:error] = "Your purchase must have a name and be greater than $0."
       redirect_to user_path(session[:user_id])
     end
   end
@@ -47,6 +50,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchases_params
-    params.require(:purchase).permit(:purchase_type_id, :cost)
+    params.require(:purchase).permit(:purchase_type_id, :cost, :title)
   end
 end
