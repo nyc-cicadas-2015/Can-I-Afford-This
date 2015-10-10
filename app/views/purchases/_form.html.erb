@@ -2,6 +2,6 @@
 <p> <%= radio_button_tag :purchase_type_id,  1 %> Small Purchase (under $1,000) </p>
 <p> <%= radio_button_tag :purchase_type_id, 2 %> Medium Purchase ($1,000 - $3,000) </p>
 <p> <%= radio_button_tag  :purchase_type_id, 3 %> Large Purchase (over $3,000) </p>
-<p> <%= f.text_field :name, placeholder: "$ Housing" %>
+<p> <%= text_field_tag :name, placeholder: "$Amount" %>
 <p> <%= submit_tag 'Add Purchase' %> </p>
 <% end %>
