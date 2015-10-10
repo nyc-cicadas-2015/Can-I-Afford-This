@@ -1,5 +1,6 @@
 class Purchase < ActiveRecord::Base
   validates_presence_of :cost
+  validates_presence_of :title
   validates_numericality_of :cost, :greater_than => 0
 
 
