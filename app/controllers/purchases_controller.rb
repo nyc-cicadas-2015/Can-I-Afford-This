@@ -31,7 +31,7 @@ class PurchasesController < ApplicationController
     if @purchase.update_attributes purchases_params
       redirect_to user_path(session[:user_id])
     else
-      flash[:error] = "Your purchase must be greater than $0."
+      flash[:error] = "Your purchase must have a name and be greater than $0."
       redirect_to user_path(session[:user_id])
     end
   end
