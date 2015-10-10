@@ -1,7 +1,8 @@
 <h3>What are you looking to buy?</h3>
 
+<h4> Currently, you plan on purchasing...</h4>
 <% @user.purchases.each do |purchase| %>
-   $<%= purchase..amount %>
+   <p> <%= purchase.title %> for $<%= purchase.cost %></p>
  <% end %>
 
 
