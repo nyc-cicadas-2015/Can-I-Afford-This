@@ -50,6 +50,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchases_params
-    params.require(:purchase).permit(:purchase_type_id, :cost)
+    params.require(:purchase).permit(:purchase_type_id, :cost, :title)
   end
 end
