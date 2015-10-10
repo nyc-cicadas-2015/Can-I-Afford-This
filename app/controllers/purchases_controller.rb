@@ -2,6 +2,7 @@ class PurchasesController < ApplicationController
   before_action :find_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
+    @purchase = Purchase.new
     @purchases = @user.purchases.all
   end
 
