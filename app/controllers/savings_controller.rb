@@ -4,12 +4,9 @@ class SavingsController < ApplicationController
     @saving = Saving.new
   end
 
-  def index
-  end
-
   def create
-    user = User.find(session[:user_id])
-    saving = user.savings.build(saving_params)
+    @user = User.find(session[:user_id])
+    saving = @user.savings.build(saving_params)
     if saving.save
       flash[:message] = "$#{saving.amount} added!"
     else

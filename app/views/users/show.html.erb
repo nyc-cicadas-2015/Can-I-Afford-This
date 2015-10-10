@@ -1,3 +1,8 @@
 <h1><%= @user.name %>'s Profile</h1>
 
-<h3><%= link_to "Add savings", new_saving_path %></h3>
+<h4>Current Savings: $<%= @user.savings.total_savings %></h4>
+<br>
+
+<h4><%= link_to "Add savings", new_saving_path %></h4>
+
+
