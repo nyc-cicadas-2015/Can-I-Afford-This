@@ -16,12 +16,10 @@ class PurchasesController < ApplicationController
   def create
     find_user
     purchase = @user.purchases.build(purchases_params)
-    if purchase.save
-      redirect_to user_path(session[:user_id])
-    else
+    if !purchase.save
       flash[:error] = "Your purchase must be greater than $0."
-      redirect_to user_path(session[:user_id])
     end
+      redirect_to user_path(session[:user_id])
   end
 
   def edit
