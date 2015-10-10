@@ -10,3 +10,7 @@ ExpenseType.create(name: "Phone")
 ExpenseType.create(name: "Misc. 1")
 ExpenseType.create(name: "Misc. 2")
 ExpenseType.create(name: "Misc. 3")
+
+PurchaseType.create(name:"small")
+PurchaseType.create(name:"medium")
+PurchaseType.create(name:"large")
