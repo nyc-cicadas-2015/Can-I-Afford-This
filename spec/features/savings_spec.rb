@@ -29,6 +29,5 @@ describe "Savings" do
       click_button "Add savings"
       expect(page).to have_content("Amount cannot be $0")
     end
-
   end
 end
