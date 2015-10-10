@@ -5,7 +5,8 @@ describe PurchasesController do
     session[:user_id] = user.id
   }
     let!(:user) { FactoryGirl.create :user }
-    let!(:purchase) { FactoryGirl.create :purchase, :user_id => user.id }
+    let!(:purchase_type) { FactoryGirl.create :purchase_type }
+    let!(:purchase) { FactoryGirl.create :purchase, :user_id => user.id, :purchase_type_id => purchase_type.id  }
 
   context "#index" do
     it "displays purchases" do
