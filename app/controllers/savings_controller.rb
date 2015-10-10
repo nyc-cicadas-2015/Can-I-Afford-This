@@ -7,11 +7,7 @@ class SavingsController < ApplicationController
   def create
     @user = User.find(session[:user_id])
     saving = @user.savings.build(saving_params)
-    if saving.save
-      flash[:message] = "$#{saving.amount} added!"
-    else
-      flash[:error] = "Amount cannot be $0"
-    end
+    saving.save ? flash[:message] = "$#{saving.amount} added!" : flash[:error] = "Amount cannot be $0"
     redirect_to profile_path(session[:user_id])
   end
 
