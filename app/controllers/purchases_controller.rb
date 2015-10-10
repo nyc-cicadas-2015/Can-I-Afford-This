@@ -1,7 +1,8 @@
 class PurchasesController < ApplicationController
+  before_action :find_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    @purchase = Purchase.new
+    @purchases = @user.purchases.all
   end
 
   def show
@@ -9,12 +10,10 @@ class PurchasesController < ApplicationController
   end
 
   def new
-    find_user
     @purchase = Purchase.new
   end
 
   def create
-    find_user
     purchase = @user.purchases.build(purchases_params)
     if !purchase.save
       flash[:error] = "Your purchase must be greater than $0."

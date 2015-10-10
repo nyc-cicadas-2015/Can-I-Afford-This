@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Requests</title>
+ </head>
+ <body></body>
+ <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+ <script type="text/javascript">
+     d3.json('/purchases', function(error, data) {
+        // do something with the data here
+        console.log(error);
+        console.log(data);
+     });
+ </script>
+</html>

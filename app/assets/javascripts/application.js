@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require d3
 //= require_tree .
 $(function(){ $(document).foundation(); });
 
-$('#purchase_data').data('purchase');
