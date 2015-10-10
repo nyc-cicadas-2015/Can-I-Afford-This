@@ -297,12 +297,26 @@
         null,
         null
       ],
+      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/expense_types.rb": [
+        1,
+        1,
+        10,
+        null,
+        null
+      ],
       "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/expenses.rb": [
         1,
         1,
         1,
-        10,
         1,
+        1,
+        null,
+        null
+      ],
+      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/purchase_types.rb": [
+        1,
+        1,
+        11,
         null,
         null
       ],
@@ -310,7 +324,7 @@
         1,
         1,
         1,
-        11,
+        1,
         1,
         null,
         null
@@ -886,6 +900,13 @@
         1,
         null
       ],
+      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/models/purchase_type.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/welcome_controller.rb": [
         1,
         1,
@@ -957,6 +978,6 @@
         null
       ]
     },
-    "timestamp": 1444443042
+    "timestamp": 1444444007
   }
 }

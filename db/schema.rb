@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20151010015007) do
   end
 
   create_table "expenses", force: :cascade do |t|
-    t.integer  "user_id",          null: false
-    t.integer  "amount",           null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "expense_types_id", null: false
+    t.integer  "user_id",         null: false
+    t.integer  "amount",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "expense_type_id", null: false
   end
 
   add_index "expenses", ["user_id"], name: "index_expenses_on_user_id", using: :btree
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20151010015007) do
   end
 
   create_table "purchases", force: :cascade do |t|
-    t.integer  "user_id",           null: false
-    t.integer  "cost",              null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "purchase_types_id", null: false
+    t.integer  "user_id",          null: false
+    t.integer  "cost",             null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "purchase_type_id", null: false
   end
 
   add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
