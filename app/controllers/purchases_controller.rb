@@ -10,7 +10,7 @@ class PurchasesController < ApplicationController
 
   def create
     find_user
-    purchase = @user.purchases.new(purchases_params)
+    purchase = @user.purchases.build(purchases_params)
     if purchase.save
       redirect_to user_path(session[:user_id])
     else
@@ -47,6 +47,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchases_params
-    params.require(:purchase).permit(:category, :cost)
+    params.require(:purchase).permit(:purchase_type_id, :cost)
   end
 end

@@ -5,7 +5,8 @@ describe PurchasesController do
     session[:user_id] = user.id
   }
     let!(:user) { FactoryGirl.create :user }
-    let!(:purchase) { FactoryGirl.create :purchase, :user_id => user.id }
+    let!(:purchase_type) { FactoryGirl.create :purchase_type }
+    let!(:purchase) { FactoryGirl.create :purchase, :user_id => user.id, :purchase_type_id => purchase_type.id  }
 
   context "#index" do
     it "displays purchases" do
@@ -32,7 +33,7 @@ describe PurchasesController do
   end
 
   context "#create" do
-    let(:new_purchase) { { purchase: attributes_for(:purchase, :user_id => user.id) } }
+    let(:new_purchase) { { purchase: attributes_for(:purchase, :user_id => user.id, :purchase_type_id => purchase_type.id) } }
 
     it "creates purchase with valid attributes" do
       expect {
@@ -42,7 +43,7 @@ describe PurchasesController do
 
     it "does not create with invalid attributes" do
       expect {
-        post :create, purchase: {category: nil, cost: nil }
+        post :create, purchase: {purchase_type_id: purchase_type.id, cost: nil }
       }.to_not change {Purchase.count}
     end
   end

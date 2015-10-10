@@ -11,11 +11,12 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find params[:id]
+    find_expense_type
   end
 
   def create
     find_user
-    expense = @user.expenses.new(expenses_params)
+    expense = @user.expenses.build(expenses_params)
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."
     end
@@ -40,7 +41,11 @@ class ExpensesController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def find_expense_type
+    @expense_type = ExpenseType.find(@expense.expense_type_id)
+  end
+
   def expenses_params
-    params.require(:expense).permit(:expense_type, :amount)
+    params.require(:expense).permit( :expense_type_id, :amount )
   end
 end

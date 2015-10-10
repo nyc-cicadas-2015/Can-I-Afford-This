@@ -3,7 +3,8 @@ require 'rails_helper'
 describe ExpensesController do
   before(:each) { session[:user_id] = user.id }
     let!(:user) { FactoryGirl.create :user }
-    let!(:expense) { FactoryGirl.create :expense, :user_id => user.id }
+    let!(:expense_type) { FactoryGirl.create :expense_type }
+    let!(:expense) { FactoryGirl.create :expense, :user_id => user.id, :expense_type_id => expense_type.id }
 
   context "#index" do
     it "displays expenses" do
@@ -30,7 +31,7 @@ describe ExpensesController do
   end
 
   context "#create" do
-    let(:new_expense) { { expense: attributes_for(:expense, :user_id => user.id) } }
+    let(:new_expense) { { expense: attributes_for(:expense, :user_id => user.id, :expense_type_id => expense_type.id) } }
 
     it "creates expense with valid attributes" do
       expect {
@@ -40,7 +41,7 @@ describe ExpensesController do
 
     it "does not create with invalid attributes" do
       expect {
-        post :create, expense: {expense_type: nil, amount: nil }
+        post :create, expense: {expense_type_id: expense_type.id, amount: nil }
       }.to_not change {Expense.count}
     end
   end

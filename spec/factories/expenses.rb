@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :expense do
     association :user, factory: :user
-    expense_type { Faker::Internet.email }
+    association :expense_type, factory: :expense_type
     amount { Faker::Commerce.price }
   end
 end
