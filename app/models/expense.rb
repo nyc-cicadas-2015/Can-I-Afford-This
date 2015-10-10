@@ -3,5 +3,5 @@ class Expense < ActiveRecord::Base
   validates_numericality_of :amount, :greater_than => 0
 
   belongs_to :user
-  has_one :expense_type
+  has_one :expense_type, foreign_key: "expense_type_id"
 end

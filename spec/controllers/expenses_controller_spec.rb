@@ -3,7 +3,8 @@ require 'rails_helper'
 describe ExpensesController do
   before(:each) { session[:user_id] = user.id }
     let!(:user) { FactoryGirl.create :user }
-    let!(:expense) { FactoryGirl.create :expense, :user_id => user.id }
+    let!(:expense_type) { FactoryGirl.create :expense_type }
+    let!(:expense) { FactoryGirl.create :expense, :user_id => user.id, :expense_type_id => expense_type.id }
 
   context "#index" do
     it "displays expenses" do
