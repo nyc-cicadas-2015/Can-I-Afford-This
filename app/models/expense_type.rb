@@ -18,9 +18,4 @@ class ExpenseType < ActiveRecord::Base
       nil
     end
   end
-
-  def income_to_expense_diff(income, expense)
-    income - expense
-  end
-
 end
