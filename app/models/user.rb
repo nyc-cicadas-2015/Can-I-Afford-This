@@ -9,8 +9,4 @@ class User < ActiveRecord::Base
   has_many :purchases
   has_many :savings
 
-  def has_expense(expense_id)
-    current_user
-    where (:expense_type_id)
-  end
 end

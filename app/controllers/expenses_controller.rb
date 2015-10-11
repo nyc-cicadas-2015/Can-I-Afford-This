@@ -7,10 +7,6 @@ class ExpensesController < ApplicationController
   def new
     find_user
     @expense = Expense.new
-    @expenses = []
-    8.times do
-      @expenses << @expense
-    end
   end
 
   def show
