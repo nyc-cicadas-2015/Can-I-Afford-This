@@ -11,7 +11,7 @@ describe "Savings" do
   describe 'User can add a new saving amount' do
     it 'by visiting their profile page' do
       visit profile_path(@user.id)
-      expect(page).to have_content("Savings")
+      expect(page).to have_content("Saved")
     end
 
     it 'saves with valid attributes' do
