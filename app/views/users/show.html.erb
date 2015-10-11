@@ -9,5 +9,5 @@
 <br>
 
 <h4><%= link_to "Add savings", new_saving_path %></h4>
-<h4><%= link_to "Add a new purchase", new_purchase_path %></h4>
+<%= button_to "Add a new purchase", {:controller => "purchases", :action => "new"} , :method => :get %>
 
