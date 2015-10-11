@@ -1,6 +1,11 @@
 <h1><%= @user.name %>'s Profile</h1>
 
 <h2>Summary</h2>
+<% if @user.income < @user.expenses.total_expense_amount %>
+<p><%= image_tag "piggy_bank.png" %>You are currently spending more than you make, lets</p>
+<% end %>
+
+
 <h4><%= image_tag "piggy_bank.png" %>
   <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span></h4>
 
