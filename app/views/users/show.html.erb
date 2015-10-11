@@ -39,8 +39,9 @@
 <hr>
 
 <h5><%= image_tag "piggy_bank.png" %>
-  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span>
+  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add to savings", new_saving_path %></span>
 </h5>
+
 
 <h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
   <% @user.purchases.each do |purchase| %>
@@ -48,9 +49,6 @@
   <% end %>
 
 <br>
-
-
-<%= button_to "Add savings", {:controller => "savings", :action => "new"} , :method => :get, :class => "button round" %>
 
 <% if @user.expenses != nil && @user.income != nil && @user.income > @user.expenses.total_expense_amount %>
   <%= button_to "Add a new purchase", {:controller => "purchases", :action => "new"} , :method => :get, :class => "button round" %>
