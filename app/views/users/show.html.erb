@@ -2,40 +2,45 @@
 
 <% if @user.income < @user.expenses.total_expense_amount %>
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
-
 <% end %>
 
-<h4><%= image_tag "piggy_bank.png" %>
-  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span></h4>
+<% if @user.income != nil %>
+  <h5><%= image_tag "money.png" %>$<%= @user.income %> income</h5>
+<% end %>
 
-<h4><%= image_tag "credit_card.png" %>
-  $<%= @user.expenses.total_expense_amount %> in expenses</h4>
+<h5><%= image_tag "cc_33x22.png" %>
+  $<%= @user.expenses.total_expense_amount %> in expenses</h5>
 
 <% if @user.income == nil %>
-  <h3>What is your monthly income?
+  <h3>What is your monthly income?</h3>
   <div class="row">
     <div class="small-8">
       <div class="row">
         <div class="small-3 columns">
           <label for="right-label" class="right">Income $</label>
         </div>
-       <div class="small-9 columns">
+        <div class="small-9 columns">
           <%= form_tag(user_path(@user), method: "patch") do %>
             <%= text_field_tag(:income) %>
             <%= submit_tag("submit") %>
           </div>
+        </div>
       </div>
     </div>
-  </div>
 <% end %>
-<% else %>
-  <h4>Your income is $<%= @user.income %></h4>
 <% end %>
 
-<h4>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h4>
+<hr>
+
+<h5><%= image_tag "piggy_bank.png" %>
+  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span>
+</h5>
+
+<h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
   <% @user.purchases.each do |purchase| %>
     <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %></p>
   <% end %>
+
 <br>
 
 <%= button_to "Add savings", {:controller => "savings", :action => "new"} , :method => :get, :class => "button round" %>
