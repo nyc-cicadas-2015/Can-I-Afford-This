@@ -1,8 +1,10 @@
 <h3>Enter your expenses!</h3>
 
-<% @user.expenses.each do |expense| %>
+<h4>Current expense total: <% @user.expenses.each do |expense| %>
    <p>$<%= expense.amount %></p>
  <% end %>
 
 
 <%= render "form" %>
+
+<%= button_to "I'm done!", profile_path(@user), :method => :get, :class => "button round" %>
