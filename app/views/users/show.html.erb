@@ -4,7 +4,7 @@
 <br>
 <h4>Planned Purchases: </h4>
   <% @user.purchases.each do |purchase| %>
-    <p><%= purchase.title %> for <%= purchase.cost %></p>
+    <p><%= purchase.title %> for <%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %></p>
   <% end %>
 <br>
 
