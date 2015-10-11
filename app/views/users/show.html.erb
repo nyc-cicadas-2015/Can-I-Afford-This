@@ -9,7 +9,8 @@
 <% end %>
 
 <h5><%= image_tag "cc_33x22.png" %>
-  $<%= @user.expenses.total_expense_amount %> in expenses</h5>
+  $<%= @user.expenses.total_expense_amount %> in expenses
+</h5>
 
 <% if @user.income == nil %>
   <h3>What is your monthly income?</h3>
