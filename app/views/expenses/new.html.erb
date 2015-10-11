@@ -1,10 +1,9 @@
 <h3>Enter your expenses!</h3>
 
-<% @user.expenses.each do |expense| %>
+<h4>Current expense total: <% @user.expenses.each do |expense| %>
    <p>$<%= expense.amount %></p>
  <% end %>
 
 
-<%= ExpenseType.all.each do |e| %>
-  <%= render "form", locals: { e.name: , id: e.id }%>
-<% end %>
+<%= render "form" %>
+
