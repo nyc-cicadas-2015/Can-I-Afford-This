@@ -1,0 +1,13 @@
+<div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
+  <h2 id="firstModalTitle">Login to manage your account!</h2>
+    <%= render "sessions/form" %>
+    <p><a href="#" data-reveal-id="secondModal" >Need to sign up?</a></p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="secondModal" class="reveal-modal" data-reveal aria-labelledby="secondModalTitle" aria-hidden="true" role="dialog">
+  <h2 id="secondModalTitle">Register and start saving!</h2>
+    <%= render "users/form" %>
+    <p><a href="#" data-reveal-id="firstModal">Already have an account?</a></p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
