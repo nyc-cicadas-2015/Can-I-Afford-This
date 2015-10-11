@@ -32,7 +32,7 @@
   <h4>Your income is $<%= @user.income %></h4>
 <% end %>
 
-<h4>Planned Purchases: </h4>
+<h4>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h4>
   <% @user.purchases.each do |purchase| %>
     <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %></p>
   <% end %>
