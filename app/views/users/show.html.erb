@@ -1,4 +1,13 @@
 <h1><%= @user.name %>'s Profile</h1>
+<% if @user.income == nil %>
+  <h3>What is your monthly income?
+  <%= form_tag(user_path(@user), method: "patch") do %>
+    <%= text_field_tag(:income) %>
+    <%= submit_tag("submit") %>
+  <% end %>
+<% else %>
+  Your income is $<%= user.income %>
+<% end %>
 
 <h4>Current Savings: $<%= @user.savings.total_savings %></h4>
 <br>
