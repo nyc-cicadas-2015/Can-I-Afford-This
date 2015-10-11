@@ -11,12 +11,12 @@ describe "Savings" do
   describe 'User can add a new saving amount' do
     it 'by visiting their profile page' do
       visit profile_path(@user.id)
-      expect(page).to have_content("Add savings")
+      expect(page).to have_content("Savings")
     end
 
     it 'saves with valid attributes' do
       visit profile_path(@user.id)
-      click_link "Add savings"
+      click_button "Add savings"
       fill_in "saving_amount", :with => 200
       click_button "Add savings"
       expect(page).to have_content(200)
@@ -24,7 +24,7 @@ describe "Savings" do
 
     it 'does not save with invalid attributes' do
       visit profile_path(@user.id)
-      click_link "Add savings"
+      click_button "Add savings"
       fill_in "saving_amount", :with => nil
       click_button "Add savings"
       expect(page).to have_content("Amount cannot be $0")
