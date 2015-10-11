@@ -4,4 +4,8 @@ class Expense < ActiveRecord::Base
 
   belongs_to :user
   has_one :expense_type
+
+  def self.total_expense_amount
+    pluck(:amount).reduce(:+) || 0
+  end
 end
