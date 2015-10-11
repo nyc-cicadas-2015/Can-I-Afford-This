@@ -1,5 +1,5 @@
 <%= form_for @expense do |f| %>
-  <%= f.select(:expense_type_id, options_for_select([['Housing', 1],['Transportation', 2], ['Food', 3], ['Phone', 4]])) %>
-  <%= f.text_field :amount, placeholder: "$Amount" %>
+  <%= f.text_field :amount, placeholder: @name %>
+  <%= f.hidden_field  :expense_type_id, :value => @id %>
   <%= f.submit 'Add Expense' %>
 <% end %>

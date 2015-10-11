@@ -5,4 +5,6 @@
  <% end %>
 
 
-<%= render "form" %>
+<%= ExpenseType.all.each do |e| %>
+  <%= render "form", locals: { e.name: , id: e.id }%>
+<% end %>
