@@ -19,6 +19,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if !@user.update_attributes(income: params[:income])
+      flash[:error] = "Please enter a number!"
+    end
+      redirect_to user_path(session[:user_id])
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password)

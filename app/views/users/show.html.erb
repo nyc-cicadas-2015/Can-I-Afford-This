@@ -6,7 +6,7 @@
     <%= submit_tag("submit") %>
   <% end %>
 <% else %>
-  Your income is $<%= user.income %>
+  Your income is $<%= @user.income %>
 <% end %>
 
 <h4>Current Savings: $<%= @user.savings.total_savings %></h4>
