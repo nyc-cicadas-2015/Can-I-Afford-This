@@ -1,8 +1,4 @@
 <h3>Enter your expenses!</h3>
 
-<% @user.expenses.each do |expense| %>
-   <p>$<%= expense.amount %></p>
- <% end %>
 
-
-<%= render "form" %>
+<%= render partial: "form" %>
