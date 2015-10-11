@@ -1,6 +1,7 @@
 <h1><%= @user.name %>'s Profile</h1>
 
-<% if @user.income < @user.expenses.total_expense_amount %>
+
+<% if @user.expenses != nil && @user.income != nil && @user.income < @user.expenses.total_expense_amount %>
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
 <% end %>
 
@@ -46,7 +47,7 @@
 
 <%= button_to "Add savings", {:controller => "savings", :action => "new"} , :method => :get, :class => "button round" %>
 
-<% if @user.income > @user.expenses.total_expense_amount %>
+<% if @user.expenses != nil && @user.income != nil && @user.income > @user.expenses.total_expense_amount %>
   <%= button_to "Add a new purchase", {:controller => "purchases", :action => "new"} , :method => :get, :class => "button round" %>
 <% end %>
 

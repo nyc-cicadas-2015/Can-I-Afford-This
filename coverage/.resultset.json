@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/controllers/expenses_controller_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/controllers/expenses_controller_spec.rb": [
         1,
         null,
         1,
@@ -73,7 +73,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/rails_helper.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -127,14 +127,14 @@
         1,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/environment.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/application.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/application.rb": [
         1,
         null,
         1,
@@ -171,12 +171,12 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/boot.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/environments/test.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/environments/test.rb": [
         1,
         null,
         null,
@@ -220,7 +220,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/assets.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -233,7 +233,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/backtrace_silencers.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -242,18 +242,18 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/cookies_serializer.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/filter_parameter_logging.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/inflections.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -271,18 +271,18 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/mime_types.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/session_store.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/initializers/wrap_parameters.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -298,14 +298,14 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/expense_types.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/factories/expense_types.rb": [
         1,
         1,
         10,
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/expenses.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/factories/expenses.rb": [
         1,
         1,
         1,
@@ -314,14 +314,14 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/purchase_types.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/factories/purchase_types.rb": [
         1,
         1,
         11,
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/purchases.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/factories/purchases.rb": [
         1,
         1,
         1,
@@ -331,10 +331,10 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/savings.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/factories/savings.rb": [
 
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/factories/users.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/factories/users.rb": [
         1,
         1,
         1,
@@ -349,7 +349,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/models/user.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/user.rb": [
         1,
         1,
         1,
@@ -363,7 +363,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/config/routes.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/config/routes.rb": [
         1,
         1,
         1,
@@ -439,11 +439,11 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/helpers/application_helper.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/support/page_helpers/login_page_helper.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/support/page_helpers/login_page_helper.rb": [
         1,
         1,
         null,
@@ -463,25 +463,24 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/expenses_controller.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/expenses_controller.rb": [
+        1,
         1,
         null,
         1,
-        2,
-        null,
-        null,
-        1,
-        5,
-        5,
-        null,
-        null,
-        1,
-        2,
         2,
         null,
         null,
         1,
         4,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
         4,
         4,
         2,
@@ -504,7 +503,7 @@
         1,
         null,
         1,
-        9,
+        8,
         null,
         null,
         1,
@@ -516,7 +515,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/application_controller.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -533,12 +532,12 @@
         null,
         null,
         1,
-        38,
+        37,
         null,
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/controllers/purchases_controller_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/controllers/purchases_controller_spec.rb": [
         1,
         null,
         1,
@@ -620,7 +619,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/purchases_controller.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/purchases_controller.rb": [
         1,
         1,
         null,
@@ -677,10 +676,10 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/controllers/savings_controller_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/controllers/savings_controller_spec.rb": [
 
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/controllers/users_controller_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -729,7 +728,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/users_controller.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/users_controller.rb": [
         1,
         1,
         2,
@@ -765,40 +764,22 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/features/expenses_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/features/expenses_spec.rb": [
         1,
         null,
         1,
-        4,
-        4,
         1,
-        3,
-        3,
+        1,
+        1,
+        0,
+        0,
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/features/login_logout_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/features/login_logout_spec.rb": [
         1,
         null,
         1,
@@ -835,7 +816,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/features/savings_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/features/savings_spec.rb": [
         1,
         null,
         1,
@@ -870,7 +851,40 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/spec/features/user_signup_spec.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/features/user_expense_vs_income_spec.rb": [
+        1,
+        null,
+        1,
+        4,
+        4,
+        1,
+        3,
+        3,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/dianpan/DBC/Can-I-Afford-This/spec/features/user_signup_spec.rb": [
         1,
         null,
         1,
@@ -897,48 +911,55 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/models/expense_type.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/expense_type.rb": [
         1,
         1,
         null,
         1,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/models/expense.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/expense.rb": [
         1,
         1,
         1,
         null,
         1,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null
+      ],
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/purchase_type.rb": [
+        1,
+        1,
+        null,
         1,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/models/purchase_type.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/purchase.rb": [
+        1,
+        1,
         1,
         1,
         null,
         1,
+        1,
+        null,
+        1,
+        5,
+        null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/models/purchase.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/welcome_controller.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/welcome_controller.rb": [
         1,
         1,
         24,
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/sessions_controller.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -969,7 +990,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/models/saving.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/saving.rb": [
         1,
         1,
         1,
@@ -982,7 +1003,7 @@
         null,
         null
       ],
-      "/Users/juliannrusakiewicz/dbc-final-project/Can-I-Afford-This/app/controllers/savings_controller.rb": [
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/savings_controller.rb": [
         1,
         1,
         null,
@@ -1007,6 +1028,6 @@
         null
       ]
     },
-    "timestamp": 1444593309
+    "timestamp": 1444597270
   }
 }
