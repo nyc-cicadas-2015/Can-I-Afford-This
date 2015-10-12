@@ -10,6 +10,8 @@ class Expense < ActiveRecord::Base
   end
 
   def self.expense_sheet(data)
-    byebug
+    data.map do |type, v|
+      self.new(expense_type_id: type, amount: v)
+    end
   end
 end
