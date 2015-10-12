@@ -9,7 +9,6 @@ class PurchasesController < ApplicationController
   def show
     @purchase = Purchase.find params[:id]
     @purchase_price = @user.purchases.find(params[:id]).cost
-    #payoff_time = @purchase_price/@income_to_expense_diff
     @category_payoff_time = @purchase.add_payoff_time
   end
 
