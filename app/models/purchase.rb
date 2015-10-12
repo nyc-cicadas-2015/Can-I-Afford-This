@@ -6,25 +6,18 @@ class Purchase < ActiveRecord::Base
   belongs_to :user
   has_one :purchase_type
 
+  before_save :add_purchase_type_id
+
   def self.total_purchase_amount
     pluck(:cost).reduce(:+) || 0
   end
 
-  def amount_range(price)
-    if price(0..1000)
-      PurchaseType.name = "small"
-      payoff_time = 6
-    elsif price(1001..3000)
-      PurchaseType.name = "medium"
-      payoff_time = 12
-    elsif price >= 3001
-      PurchaseType.name = "large"
-      payoff_time = 60
-    else
-      nil
-    end
+  def add_purchase_type_id
+    self.purchase_type_id = \
+      case cost.to_i
+      when [0 .. 1000] then 1
+      when [1000 .. 3000] then 2
+      else 3
+      end
   end
-
-
-
 end
