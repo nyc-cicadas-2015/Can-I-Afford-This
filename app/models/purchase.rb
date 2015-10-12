@@ -20,4 +20,45 @@ class Purchase < ActiveRecord::Base
       else 3
       end
   end
+
+  def add_payoff_time
+    payoff_time = \
+      case self.purchase_type_id
+      when 1 then 6
+      when 2 then 12
+      else 60
+      end
+  end
+
+  def find_user_income
+    # user_income = user_expenses = 0
+    if !self.user.income.nil? && !self.user.expenses.empty?
+      user_income = self.user.income
+    end
+  end
+
+  def find_user_expense
+    self.user.expenses.total_expense_amount
+  end
+
+  def user_income_to_expense_diff
+    find_user_income - find_user_expense
+  end
+
+  def purchase_cost
+    self.cost
+  end
+
+  def max_payoff_time
+    self.add_payoff_time
+  end
+
+  def months_to_payoff
+    (purchase_cost/user_income_to_expense_diff.to_f).ceil
+  end
+
+  def can_I_afford_this?
+    return true if months_to_payoff <= max_payoff_time
+  end
+
 end
