@@ -40,9 +40,9 @@ class Purchase < ActiveRecord::Base
     max_payoff_time = self.add_payoff_time
     months_to_payoff = (purchase_price / income_to_expense_diff.to_f).ceil
     if months_to_payoff <= max_payoff_time
-      "yes you can buy it!"
+      "Yes you can afford it!  By saving smart and not spending more than you earn, it will take you #{months_to_payoff} months to buy your Now start saving!"
     else
-      "no sorry"
+      "Sorry! No, you cannot afford it. Our conscenous would not be clear if we put you down this path.  It will take you #{months_to_payoff} months to save up for this purchase.  Consider lowering your existing expenses before attempting to make this purchase. Don't worry, we'll show you how."
     end
   end
 
