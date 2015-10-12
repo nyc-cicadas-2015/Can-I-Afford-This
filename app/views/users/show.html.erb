@@ -20,7 +20,7 @@
 Savings: $<%= @income_to_expense_diff %> per month
 <% end %>
 
-<% if !@user.income.nil? %>
+<% if @user.income.nil? %>
   <h3>What is your monthly income?</h3>
   <div class="row">
     <div class="small-8">
