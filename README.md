@@ -21,7 +21,6 @@ Pulling from personal experience, we aim to educate young adults on the risks of
 - user can input expense sheet (5 categories hardcoded, 3 free form miscellaneous)
 - user can input income (biweekly, weekly, monthly)
 - user can see data visualization of their expense vs income
-- user can see baseline national spend numbers against their spendings
 - user can select 3 types of planned purchase:
   - $ under 1K (ie beats headphones, iphone) /  limit payoff time: 6 months
   - $$ 1K-3K (ie macbook pro) / limit payoff time: 1 year
@@ -36,6 +35,7 @@ Pulling from personal experience, we aim to educate young adults on the risks of
     - user’s new updated data chart can fluctuate as they make edits
 
 ##Stretches
+- user can see baseline national spend numbers against their spendings
 - users can plan to open a credit card (to decode financial jargon, highlight most important terms)
 - users can plan to apply for a loan - these are the risks, average range of % of interest across loan types
 - user can read and/or give tips and tricks
