@@ -14,4 +14,8 @@ class Expense < ActiveRecord::Base
       self.new(expense_type_id: type, amount: v)
     end
   end
+
+  def self.snapshot(data)
+
+  end
 end

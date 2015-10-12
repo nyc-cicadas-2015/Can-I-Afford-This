@@ -6,7 +6,8 @@ class ExpensesheetsController < ApplicationController
   end
 
   def show
-    @expenses = @user.expenses
+    @types = ExpenseType.all
+    @expenses = Expense.snapshot(@user.expenses)
   end
 
   def create
