@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if !@user.income.nil? && !@user.expenses.empty?
       @income_to_expense_diff = (@user.income) - (@user.expenses.total_expense_amount)
-      @payoff_time = (@user.purchases.find(params[:purchase_id].cost) / @income_to_expense_diff
+      # @payoff_time = (@user.purchases.find(params[:purchase_id].cost) / @income_to_expense_diff
     end
 
       # if @payoff_time <= 12

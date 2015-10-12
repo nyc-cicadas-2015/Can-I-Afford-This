@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  before_action :find_user, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :find_user, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   def index
     @purchase = Purchase.new
