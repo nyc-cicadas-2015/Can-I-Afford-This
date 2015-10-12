@@ -8,7 +8,6 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find params[:id]
-    @can_i_afford = @purchase.can_I_afford_this
   end
 
   def new

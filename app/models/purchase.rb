@@ -30,20 +30,35 @@ class Purchase < ActiveRecord::Base
       end
   end
 
-  def can_I_afford_this
+  def find_user_income
+    # user_income = user_expenses = 0
     if !self.user.income.nil? && !self.user.expenses.empty?
       user_income = self.user.income
-      user_expenses = self.user.expenses.total_expense_amount
     end
-    income_to_expense_diff = user_income - user_expenses
-    purchase_price = self.cost
-    max_payoff_time = self.add_payoff_time
-    months_to_payoff = (purchase_price / income_to_expense_diff.to_f).ceil
-    if months_to_payoff <= max_payoff_time
-      "Yes you can afford it!  By saving smart and not spending more than you earn, it will take you #{months_to_payoff} months to buy your #{self.title}. \n Now start saving!"
-    else
-      "Sorry! No, you cannot afford it. Our conscenous would not be clear if we put you down this path.  It will take you #{months_to_payoff} months to save up for this purchase.  Consider lowering your existing expenses before attempting to make this purchase. Don't worry, we'll show you how."
-    end
+  end
+
+  def find_user_expense
+    self.user.expenses.total_expense_amount
+  end
+
+  def user_income_to_expense_diff
+    find_user_income - find_user_expense
+  end
+
+  def purchase_cost
+    self.cost
+  end
+
+  def max_payoff_time
+    self.add_payoff_time
+  end
+
+  def months_to_payoff
+    (purchase_cost/user_income_to_expense_diff.to_f).ceil
+  end
+
+  def can_I_afford_this?
+    return true if months_to_payoff <= max_payoff_time
   end
 
 end
