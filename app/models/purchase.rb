@@ -31,8 +31,9 @@ class Purchase < ActiveRecord::Base
   end
 
   def can_I_afford_this
-    income = self.user.income
-    purchase_price =
+    user_income = self.user.income
+    user_expenses = self.user.expenses.total_expense_amount
+
   end
 
 end
