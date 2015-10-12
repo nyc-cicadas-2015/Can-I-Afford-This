@@ -20,4 +20,15 @@ class Purchase < ActiveRecord::Base
       else 3
       end
   end
+
+  def add_payoff_time
+    payoff_time = \
+      case self.purchase_type_id
+      when 1 then 6
+      when 2 then 12
+      else 60
+      end
+    end
+  end
+
 end

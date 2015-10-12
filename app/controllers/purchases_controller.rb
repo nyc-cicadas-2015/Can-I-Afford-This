@@ -11,6 +11,7 @@ class PurchasesController < ApplicationController
     @purchase_price = @user.purchases.find(params[:id]).cost
     #payoff_time = @purchase_price/@income_to_expense_diff
     #find the payoff time from PurchaseType
+
   end
 
   def new
