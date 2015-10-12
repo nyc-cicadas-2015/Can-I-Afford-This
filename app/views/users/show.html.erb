@@ -48,7 +48,7 @@ Savings: $<%= @income_to_expense_diff %> per month
 
 <h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
   <% @user.purchases.each do |purchase| %>
-    <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %> | <%= link_to "can I afford this?", @purchase %></p>
+    <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %> | <%= link_to "can I afford this?", purchase_path(purchase) %></p>
   <% end %>
 
 <br>
@@ -58,7 +58,6 @@ Savings: $<%= @income_to_expense_diff %> per month
 <% end %>
 
 <% render "graph/graph" %>
-
 
 <div id="purchaseModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
   <h2 id="firstModalTitle">Enter the name and amount of your purchase!</h2>

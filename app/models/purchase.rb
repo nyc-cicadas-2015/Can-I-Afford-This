@@ -16,6 +16,6 @@ class Purchase < ActiveRecord::Base
     num_cost = cost.to_i
     return 1 if num_cost > 0 && num_cost <= 1000
     return 2 if num_cost >= 1001 && num_cost <= 3000
-    return 3 if um_cost >= 3001
+    return 3 if num_cost >= 3001
   end
 end
