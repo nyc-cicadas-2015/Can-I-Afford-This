@@ -15,7 +15,8 @@ class Expense < ActiveRecord::Base
     end
   end
 
-  def self.snapshot(data)
-
+  def self.snapshot(data, income)
+    values = data.map { |d| d.amount}
+    values.map { |v| ((v.to_f/income.to_f)* 100).floor }
   end
 end
