@@ -6,9 +6,6 @@ class UsersController < ApplicationController
   def show
     @purchase = Purchase.new
     @user = User.find(params[:id])
-    if !@user.income.nil? && !@user.expenses.empty?
-      @income_to_expense_diff = (@user.income) - (@user.expenses.total_expense_amount)
-    end
   end
 
   def create
