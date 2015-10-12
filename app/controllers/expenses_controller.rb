@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
+    byebug
     Expense.expense_sheet(params[:amount]).each do |e|
       expense = @user.expenses.create(:amount => e.amount, :expense_type_id => e.expense_type_id)
       flash[:error] = "Oops! Someting went wrong." if !expense.save
