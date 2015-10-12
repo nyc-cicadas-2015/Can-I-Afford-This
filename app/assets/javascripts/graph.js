@@ -17,11 +17,11 @@ function run(data){
   svg.selectAll("rect")
     .data(data)
     .transition()
-    .duration(1500)  // 1.5 second
-      .attr("x", 0)
-      .attr("y", function(d,i) { return i*90+50; })
-      .attr("width", function(d,i) { return d; })
-      .attr("height", 20)
+    .duration(1500)
+      .attr("x", function(d,i) { return i*90+50; })
+      .attr("y", 0)
+      .attr("width", 20)
+      .attr("height", function(d,i) { return d; })
       .style("fill", "steelblue");
 
 }
