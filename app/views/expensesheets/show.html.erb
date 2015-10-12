@@ -1,0 +1,5 @@
+
+<h4>Snapshot of your monthly expenses</h4>
+<% @user.expenses.each do |expense| %>
+  <p>$<%= expense.amount %></p>
+  <% end %>
