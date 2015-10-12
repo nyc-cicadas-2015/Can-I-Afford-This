@@ -10,6 +10,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.find params[:id]
     @purchase_price = @user.purchases.find(params[:id]).cost
     @category_payoff_time = @purchase.add_payoff_time
+    byebug
   end
 
   def new
