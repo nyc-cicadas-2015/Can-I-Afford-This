@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @income_to_expense_diff = @user.income - @user.expenses.total_expense_amount
+    if @user.income != nil && @user.expenses != nil
+      @income_to_expense_diff = @user.income - @user.expenses.total_expense_amount
+    end
     # payoff_time = @user.purchases.find(params[:purchase_id]) / income_to_expense_diff
   end
 

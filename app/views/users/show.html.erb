@@ -4,7 +4,7 @@
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
 <% end %>
 
-<% if @user.expenses == nil %>
+<% if @user.expenses.empty? %>
   <%= link_to "Add expenses", new_expense_path %>
 <% end %>
 
