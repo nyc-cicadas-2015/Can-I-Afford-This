@@ -6,7 +6,7 @@ class ExpensesheetsController < ApplicationController
   end
 
   def show
-    @expenses = @user.expenses.all
+    @expenses = @user.expenses
   end
 
   def create
