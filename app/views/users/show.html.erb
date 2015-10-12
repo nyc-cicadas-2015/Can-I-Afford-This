@@ -5,7 +5,7 @@
 <% end %>
 
 <% if @user.expenses.empty? %>
-  <%= link_to "Add expenses", new_expense_path %>
+  <%= link_to "Add expenses", new_expensesheet_path %>
 <% end %>
 
 <% if !@user.income.nil? %>

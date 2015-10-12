@@ -1,0 +1,14 @@
+<%= form_tag("/expensesheets", method: "post") do %>
+  <%= label_tag("$ Housing") %>
+  <%= text_field_tag 'expense[amount[1]]' %>
+  <%= label_tag("$ Transportation") %>
+  <%= text_field_tag 'expense[amount[2]]' %>
+  <%= label_tag("$ Food") %>
+  <%= text_field_tag 'expense[amount[3]]' %>
+  <%= label_tag("$ Phone") %>
+  <%= text_field_tag 'expense[amount[4]]' %>
+  <%= label_tag("$ Misc.") %>
+  <%= text_field_tag 'expense[amount[5]]' %>
+  <%= button_tag 'Add Expenses', html: {:class => "button round"} %>
+<% end %>
+

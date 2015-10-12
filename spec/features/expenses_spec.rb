@@ -11,7 +11,7 @@ describe "Expenses" do
   describe 'User can create new expense' do
     it 'by visiting the expense page' do
       visit new_expense_path
-      expect(page).to have_content("Enter your expenses")
+      expect(page).to have_content("Add an expense")
     end
 
     it 'with valid attributes' do

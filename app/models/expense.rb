@@ -8,4 +8,10 @@ class Expense < ActiveRecord::Base
   def self.total_expense_amount
     pluck(:amount).reduce(:+) || 0
   end
+
+  def self.expense_sheet(data)
+    data.map do |type, v|
+      self.new(expense_type_id: type, amount: v)
+    end
+  end
 end
