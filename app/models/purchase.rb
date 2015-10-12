@@ -6,16 +6,18 @@ class Purchase < ActiveRecord::Base
   belongs_to :user
   has_one :purchase_type
 
-  before_save :add_purchase_type
+  before_save :add_purchase_type_id
 
   def self.total_purchase_amount
     pluck(:cost).reduce(:+) || 0
   end
 
-  def self.add_purchase_type(cost)
-    num_cost = cost.to_i
-    return 1 if num_cost > 0 && num_cost <= 1000
-    return 2 if num_cost >= 1001 && num_cost <= 3000
-    return 3 if num_cost >= 3001
+  def add_purchase_type_id
+    self.purchase_type_id = \
+      case cost.to_i
+      when [0 .. 1000] then 1
+      when [1000 .. 3000] then 2
+      else 3
+      end
   end
 end

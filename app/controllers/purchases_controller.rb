@@ -15,14 +15,9 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    purchase_type = Purchase.add_purchase_type(params[:purchase][:cost])
-        byebug
-    purchase = @user.purchases.create(cost: params[:purchase][:cost], title: params[:purchase][:title], purchase_type_id: purchase_type)
-
-    if !purchase.save
-      flash[:error] = "Your purchase must be greater than $0."
-    end
-      redirect_to user_path(session[:user_id])
+    purchase = @user.purchases.create(purchases_params)
+    flash[:error] = "Your purchase must be greater than $0." if !purchase.create(purchase_params)
+    redirect_to user_path(session[:user_id])
   end
 
   def edit
