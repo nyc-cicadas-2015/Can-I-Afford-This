@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if !@user.income.nil? && !@user.expenses.empty?
       @income_to_expense_diff = (@user.income) - (@user.expenses.total_expense_amount)
-
+    end
       # @payoff_time = (@user.purchases.find(params[:purchase_id].cost) / @income_to_expense_diff
 
       # if @payoff_time <= 12
@@ -17,7 +17,6 @@ class UsersController < ApplicationController
       #   alert("No, you should hold off on this purchase")
       # end
 
-    end
   end
 
   def create

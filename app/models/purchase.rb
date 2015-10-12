@@ -12,16 +12,10 @@ class Purchase < ActiveRecord::Base
     pluck(:cost).reduce(:+) || 0
   end
 
-  def add_purchase_type
-    if purchase.cost(0..1000)
-      purchase.purchase_type_id = 1
-    elsif purchase.cost(1001..3000)
-      purchase.purchase_type_id = 2
-    elsif purchase.cost >= 3001
-      purchase.purchase_type_id = 3
-    else
-      nil
-    end
+  def self.add_purchase_type(cost)
+    num_cost = cost.to_i
+    return 1 if num_cost > 0 && num_cost <= 1000
+    return 2 if num_cost >= 1001 && num_cost <= 3000
+    return 3 if um_cost >= 3001
   end
-
 end

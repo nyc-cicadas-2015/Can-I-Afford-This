@@ -15,7 +15,8 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    purchase = @user.purchases.build(purchases_params)
+    purchase_type = Purchase.add_purchase_type(params[:purchase][:cost])
+    purchase = @user.purchases.build(cost: params[:cost], title: params[:title], purchase_type_id: purchase_type)
     if !purchase.save
       flash[:error] = "Your purchase must be greater than $0."
     end
