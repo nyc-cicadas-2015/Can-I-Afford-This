@@ -4,7 +4,7 @@ $.ajax({
   url: 'data',
   dataType: 'json',
   success: function (data) {
-    run(data);
+    run([10, 200]);
   },
   error: function (result) {
     console.error("You have an error");
