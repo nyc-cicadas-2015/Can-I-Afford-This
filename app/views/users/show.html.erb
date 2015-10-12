@@ -1,6 +1,6 @@
 <h1><%= @user.name %>'s Profile</h1>
 
-<% if @user.expenses != nil && @user.income != nil && @user.income < @user.expenses.total_expense_amount %>
+<% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
 <% end %>
 
@@ -8,7 +8,7 @@
   <%= link_to "Add expenses", new_expense_path %>
 <% end %>
 
-<% if @user.income != nil %>
+<% if !@user.income.nil? %>
   <h5><%= image_tag "money.png" %>$<%= @user.income %> income</h5>
 <% end %>
 
@@ -16,11 +16,11 @@
   $<%= @user.expenses.total_expense_amount %> in expenses
 </h5>
 
-<% if @user.expenses != nil && @user.income != nil && @user.income >= @user.expenses.total_expense_amount %>
+<% if !@user.income.nil? && !@user.expenses.empty? && @user.income >= @user.expenses.total_expense_amount %>
 Savings: $<%= @income_to_expense_diff %> per month
 <% end %>
 
-<% if @user.income == nil %>
+<% if !@user.income.nil? %>
   <h3>What is your monthly income?</h3>
   <div class="row">
     <div class="small-8">
@@ -53,7 +53,7 @@ Savings: $<%= @income_to_expense_diff %> per month
 
 <br>
 
-<% if @user.expenses != nil && @user.income != nil && @user.income > @user.expenses.total_expense_amount %>
+<% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
   <%= button_to "Add a new purchase", {:controller => "purchases", :action => "new"} , :method => :get, :class => "button round" %>
 <% end %>
 
