@@ -28,7 +28,6 @@ class Purchase < ActiveRecord::Base
       when 2 then 12
       else 60
       end
-    end
   end
 
 end
