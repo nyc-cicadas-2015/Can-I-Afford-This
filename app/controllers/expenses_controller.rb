@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
+    byebug
     expense = @user.expenses.build(expenses_params)
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."

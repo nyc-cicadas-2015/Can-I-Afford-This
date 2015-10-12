@@ -1,5 +1,14 @@
-<%= form_for @expense do |f| %>
-  <%= f.select(:expense_type_id, options_for_select([['Housing', 1],['Transportation', 2], ['Food', 3], ['Phone', 4]])) %>
-  <%= f.text_field :amount, placeholder: "$Amount" %>
-  <%= f.submit 'Add Expense', :class => "button round" %>
+<%= form_tag(new_expense_path) do %>
+  <%= label_tag("$ Housing") %>
+  <%= text_field_tag(:Housing_amount) %>
+  <%= label_tag("$ Transportation") %>
+  <%= text_field_tag(:Transportation_amount) %>
+  <%= label_tag("$ Food") %>
+  <%= text_field_tag(:food_amount) %>
+  <%= label_tag("$ Phone") %>
+  <%= text_field_tag(:phone_amount) %>
+  <%= label_tag("$ Misc.") %>
+  <%= text_field_tag(:misc_amount) %>
+  <%= button_tag 'Add Expenses', html: {:class => "button round"} %>
 <% end %>
+
