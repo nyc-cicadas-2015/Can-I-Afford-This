@@ -1,9 +1,5 @@
 <h3>Enter your expenses!</h3>
 
-<h4>Current expense total: <% @user.expenses.each do |expense| %>
-   <p>$<%= expense.amount %></p>
- <% end %>
-
 <div class="large-4 columns">
 <%= render "form" %>
 </div>
