@@ -45,7 +45,6 @@ Savings: $<%= @income_to_expense_diff %> per month
   <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add savings", new_saving_path %></span>
 </h5>
 
-
 <h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
   <% @user.purchases.each do |purchase| %>
     <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %> | <%= link_to "can I afford this?", purchase_path(purchase) %></p>
