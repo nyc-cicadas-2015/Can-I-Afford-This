@@ -6,6 +6,8 @@ class Purchase < ActiveRecord::Base
   belongs_to :user
   has_one :purchase_type
 
+  before_save :add_purchase_type
+
   def self.total_purchase_amount
     pluck(:cost).reduce(:+) || 0
   end
