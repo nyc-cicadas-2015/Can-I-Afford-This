@@ -9,7 +9,7 @@ class Expense < ActiveRecord::Base
     pluck(:amount).reduce(:+) || 0
   end
 
-  def expense_sheet(data)
-
+  def self.expense_sheet(data)
+    byebug
   end
 end

@@ -15,7 +15,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    expense_sheet(params)
+    Expense.expense_sheet(params)
     expense = @user.expenses.build(expenses_params)
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."

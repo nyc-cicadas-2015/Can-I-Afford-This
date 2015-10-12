@@ -1,14 +1,14 @@
 <%= form_tag("/expenses", method: "post") do %>
   <%= label_tag("$ Housing") %>
-  <%= text_field_tag(:Housing_amount) %>
+  <%= text_field_tag(:housing) %>
   <%= label_tag("$ Transportation") %>
-  <%= text_field_tag(:Transportation_amount) %>
+  <%= text_field_tag(:transportation) %>
   <%= label_tag("$ Food") %>
-  <%= text_field_tag(:food_amount) %>
+  <%= text_field_tag(:food) %>
   <%= label_tag("$ Phone") %>
-  <%= text_field_tag(:phone_amount) %>
+  <%= text_field_tag(:phone) %>
   <%= label_tag("$ Misc.") %>
-  <%= text_field_tag(:misc_amount) %>
+  <%= text_field_tag(:misc) %>
   <%= button_tag 'Add Expenses', html: {:class => "button round"} %>
 <% end %>
 
