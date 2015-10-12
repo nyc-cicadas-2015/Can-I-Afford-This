@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   has_many :purchases
   has_many :savings
 
+  # def income_to_expense_diff
+  #   user.income - user.expenses.total_expense_amount
+  # end
+
 end

@@ -8,6 +8,13 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find params[:id]
+    @purchase_price = @user.purchases.find(params[:id]).cost
+    # byebug
+      # if @payoff_time <= 12
+      #   alert("YES! It will take you #{@payoff_time} months to save.")
+      # else
+      #   alert("No, you should hold off on this purchase")
+      # end
   end
 
   def new
