@@ -1,15 +1,14 @@
 <h1><%= @user.name %>'s Profile</h1>
 
-
-<% if @user.expenses != nil && @user.income != nil && @user.income < @user.expenses.total_expense_amount %>
+<% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
 <% end %>
 
-<% if @user.expenses == nil %>
+<% if @user.expenses.empty? %>
   <%= link_to "Add expenses", new_expense_path %>
 <% end %>
 
-<% if @user.income != nil %>
+<% if !@user.income.nil? %>
   <h5><%= image_tag "money.png" %>$<%= @user.income %> income</h5>
 <% end %>
 
@@ -17,7 +16,11 @@
   $<%= @user.expenses.total_expense_amount %> in expenses
 </h5>
 
-<% if @user.income == nil %>
+<% if !@user.income.nil? && !@user.expenses.empty? && @user.income >= @user.expenses.total_expense_amount %>
+Savings: $<%= @income_to_expense_diff %> per month
+<% end %>
+
+<% if @user.income.nil? %>
   <h3>What is your monthly income?</h3>
   <div class="row">
     <div class="small-8">
@@ -39,18 +42,18 @@
 <hr>
 
 <h5><%= image_tag "piggy_bank.png" %>
-  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add to savings", new_saving_path %></span>
+  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add savings", new_saving_path %></span>
 </h5>
 
 
 <h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
   <% @user.purchases.each do |purchase| %>
-    <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %></p>
+    <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %> | <%= link_to "can I afford this?" %></p>
   <% end %>
 
 <br>
 
-<% if @user.expenses != nil && @user.income != nil && @user.income > @user.expenses.total_expense_amount %>
+<% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
   <%= button_to "Add a new purchase", {:controller => "purchases", :action => "new"} , :method => :get, :class => "button round" %>
 <% end %>
 
