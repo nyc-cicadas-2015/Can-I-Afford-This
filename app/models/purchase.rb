@@ -12,17 +12,19 @@ class Purchase < ActiveRecord::Base
 
   def amount_range(price)
     if price(0..1000)
-      ExpenseType.name = "small"
+      PurchaseType.name = "small"
       payoff_time = 6
-    elsif price(1001..2000)
-      ExpenseType.name = "medium"
+    elsif price(1001..3000)
+      PurchaseType.name = "medium"
       payoff_time = 12
     elsif price >= 3001
-      ExpenseType.name = "large"
+      PurchaseType.name = "large"
       payoff_time = 60
     else
       nil
     end
   end
+
+
 
 end
