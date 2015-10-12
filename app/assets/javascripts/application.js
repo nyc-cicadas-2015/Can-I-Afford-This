@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation/foundation
 //= require foundation
 //= require d3
 //= require_tree .
