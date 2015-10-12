@@ -5,13 +5,19 @@ class GraphController < ApplicationController
   end
 
   def data
-    purchase_obj = User.find(session[:user_id]).purchases
-    @user_purchases = purchase_obj.map { |p| p.cost }
+    find_user
+    @income = @user.income
+    @user_expenses = @user.expenses.pluck(:amount).reduce(:+)
     respond_to do |format|
       format.json{
-        render :json => @user_purchases
+        # render :json => [{income: @income}, {expenses: @user_expenses}]
+        render :json => [@income, @user_expenses]
       }
     end
+  end
+
+  def find_user
+    @user = User.find(session[:user_id])
   end
 
 
