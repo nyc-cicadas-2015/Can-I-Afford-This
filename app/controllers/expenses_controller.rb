@@ -15,13 +15,13 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    Expense.expense_sheet(params[:amount]).each do |expense|
-      @user.expenses << expense
+    Expense.expense_sheet(params[:amount]).each do |e|
+      @user.expenses.create(:amount => e.amount, :expense_type_id => e.expense_type_id)
+      # if !expense.save
+      #   flash[:error] = "Your expense must be greater than $0."
+      # end
     end
-    if !@user.expenses.save
-      flash[:error] = "Your expense must be greater than $0."
-    end
-      redirect_to new_expense_path
+      redirect_to user_path(session[:user_id])
   end
 
   def edit
