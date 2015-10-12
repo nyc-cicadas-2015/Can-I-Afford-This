@@ -14,11 +14,11 @@ class Purchase < ActiveRecord::Base
 
   def add_purchase_type
     if purchase.cost(0..1000)
-      PurchaseType.name = "small"
+      purchase.purchase_type_id = 1
     elsif purchase.cost(1001..3000)
-      PurchaseType.name = "medium"
+      purchase.purchase_type_id = 2
     elsif purchase.cost >= 3001
-      PurchaseType.name = "large"
+      purchase.purchase_type_id = 3
     else
       nil
     end
