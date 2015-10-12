@@ -4,7 +4,7 @@
     url: 'data',
     dataType: 'json',
     success: function (data) {
-      draw(data);
+      run(data);
     },
     error: function (result) {
       console.error("You have an error");
