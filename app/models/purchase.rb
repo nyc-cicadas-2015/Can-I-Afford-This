@@ -38,12 +38,10 @@ class Purchase < ActiveRecord::Base
     max_payoff_time = self.add_payoff_time
     months_to_payoff = (purchase_price / income_to_expense_diff.to_f).ceil
     if months_to_payoff <= max_payoff_time
-      alert("yes you can buy it!")
+      "yes you can buy it!"
     else
-      alert("no sorry")
+      "no sorry"
     end
-
-
   end
 
 end

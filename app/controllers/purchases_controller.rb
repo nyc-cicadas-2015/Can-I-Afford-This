@@ -8,9 +8,7 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find params[:id]
-    @purchase.can_I_afford_this
-    # @purchase_price = @user.purchases.find(params[:id]).cost
-    # @category_payoff_time = @purchase.add_payoff_time
+    @can_i_afford = @purchase.can_I_afford_this
   end
 
   def new
