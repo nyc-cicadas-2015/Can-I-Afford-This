@@ -8,4 +8,8 @@ class Expense < ActiveRecord::Base
   def self.total_expense_amount
     pluck(:amount).reduce(:+) || 0
   end
+
+  def expense_sheet(data)
+
+  end
 end
