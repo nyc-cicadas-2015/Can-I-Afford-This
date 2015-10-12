@@ -35,7 +35,13 @@ class Purchase < ActiveRecord::Base
     user_expenses = self.user.expenses.total_expense_amount
     income_to_expense_diff = user_income - user_expenses
     purchase_price = self.cost
-
+    max_payoff_time = self.add_payoff_time
+    months_to_payoff = (purchase_price / income_to_expense_diff.to_f).ceil
+    if months_to_payoff <= max_payoff_time
+      alert("yes you can buy it!")
+    else
+      alert("no sorry")
+    end
 
 
   end
