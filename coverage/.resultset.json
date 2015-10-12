@@ -639,8 +639,6 @@
         1,
         2,
         2,
-        1,
-        null,
         2,
         null,
         null,
@@ -737,7 +735,10 @@
         1,
         6,
         6,
+        6,
         0,
+        null,
+        null,
         null,
         null,
         null,
@@ -770,6 +771,7 @@
         1,
         1,
         4,
+        null,
         null,
         null
       ],
@@ -943,8 +945,17 @@
       "/Users/dianpan/DBC/Can-I-Afford-This/app/models/purchase_type.rb": [
         1,
         1,
+        1,
         null,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/dianpan/DBC/Can-I-Afford-This/app/models/purchase.rb": [
@@ -957,24 +968,17 @@
         1,
         null,
         1,
+        null,
+        1,
         5,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        13,
         null,
-        null,
-        null,
-        null,
-        null,
+        0,
+        0,
+        13,
         null,
         null,
         null
@@ -1055,6 +1059,6 @@
         null
       ]
     },
-    "timestamp": 1444620719
+    "timestamp": 1444666669
   }
 }

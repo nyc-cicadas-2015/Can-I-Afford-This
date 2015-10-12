@@ -19,7 +19,7 @@ describe "Savings" do
       click_link "Add savings"
       fill_in "saving_amount", :with => 200
       click_button "Add savings"
-      expect(page).to have_content("Nice job! $200 saved!")
+      expect(page).to have_content("Nice job! $200 added!")
     end
 
     it 'does not save with invalid attributes' do
