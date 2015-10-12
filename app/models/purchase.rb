@@ -31,13 +31,10 @@ class Purchase < ActiveRecord::Base
   end
 
   def can_I_afford_this
-    if !@user.income.nil? && !@user.expenses.empty?
-      @income_to_expense_diff = (@user.income) - (@user.expenses.total_expense_amount)
+    if !self.user.income.nil? && !self.user.expenses.empty?
+      user_income = self.user.income
+      user_expenses = self.user.expenses.total_expense_amount
     end
-
-
-    user_income = self.user.income
-    user_expenses = self.user.expenses.total_expense_amount
     income_to_expense_diff = user_income - user_expenses
     purchase_price = self.cost
     max_payoff_time = self.add_payoff_time
