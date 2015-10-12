@@ -54,7 +54,8 @@ Savings: $<%= @income_to_expense_diff %> per month
 <br>
 
 <% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
-  <%= button_to "Add a new purchase", {:controller => "purchases", :action => "new"} , :method => :get, :class => "button round" %>
+  <%= link_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "myModal" %>
+<% render "purchases/modal" %>
 <% end %>
 
 <% render "graph/graph" %>
