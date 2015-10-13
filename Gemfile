@@ -33,7 +33,7 @@ gem 'foundation-rails'
 gem 'coveralls', require: false
 gem 'highcharts-rails'
 gem 'heroku'
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
