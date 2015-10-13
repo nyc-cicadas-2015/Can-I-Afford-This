@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @purchase = Purchase.new
     @user = User.find(params[:id])
   end
 
@@ -30,6 +29,7 @@ class UsersController < ApplicationController
 
   def userpurchases
     @user = User.find(params[:id])
+    @purchase = Purchase.new
   end
 
   private
