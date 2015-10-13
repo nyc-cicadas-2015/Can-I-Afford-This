@@ -3,13 +3,13 @@ $(document).ready(function(){
         url: '/graph/_net_savings_data',
         method: "get"
     }).done(function(data){
-        makeChart(data);
+        debugger
+        percentageChart(data);
     }).fail(function(e){
         console.log("Failed:" + e);
     })
 
-
-    $(function () {
+    var percentageChart = function(data) {
         $('#spending-averages').highcharts({
             chart: {
                 type: 'bar'
@@ -68,5 +68,5 @@ $(document).ready(function(){
                 data: [35, 15, 7, 3, 30, 10]
             }]
         });
-    });
+    };
 })

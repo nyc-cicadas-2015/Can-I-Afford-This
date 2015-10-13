@@ -25,6 +25,10 @@ class GraphController < ApplicationController
     end
   end
 
+  def expense_percentages_data
+    [30, 20, 10, 5, 3]
+  end
+
   private
   def find_user
     @user = User.find(session[:user_id])
