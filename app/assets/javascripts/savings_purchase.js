@@ -9,13 +9,11 @@ $(document).ready(function(){
     })
 
     var makeChart = function (data) {
-        // First, let's make the colors transparent
         Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function (color) {
             return Highcharts.Color(color)
                 .setOpacity(0.5)
                 .get('rgba');
             });
-
         $('#chart-container').highcharts({
             chart: {
                 type: 'column'
