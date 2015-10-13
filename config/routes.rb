@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get 'graph/index'
-  get 'graph/data', :defaults => { :format =>
+  get 'graph/net_savings_data', :defaults => { :format =>
     'json' }
 
 

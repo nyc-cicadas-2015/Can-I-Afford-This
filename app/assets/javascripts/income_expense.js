@@ -1,31 +1,36 @@
 $(document).ready(function(){
-    $.ajax
-})
+    $.ajax({
+        url: '/graph/data',
+        method: "get"
+    }).done(function(data){
+        makeChart(data);
+    }).fail(function(error) {
+        console.log("You fail: " + error);
+    })
 
-
-$(function () {
-    $('#container').highcharts({
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Monthly Income vs Spending'
-        },
-        xAxis: {
-            categories: ['Income', 'Spending']
-        },
-        yAxis: {
+    var makeChart = function(data) {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
             title: {
-                text: 'US Dollars'
-            }
-        },
-        series: [{
-            name: 'Income',
-            data: [2000]
-        }, {
-            name: 'Spending',
-            data: [1000]
-        }]
-    });
-});
-
+                text: 'Monthly Income vs Spending'
+            },
+            xAxis: {
+                categories: ['Income', 'Spending']
+            },
+            yAxis: {
+                title: {
+                    text: 'US Dollars'
+                }
+            },
+            series: [{
+                name: 'Income',
+                data: [data.income]
+            }, {
+                name: 'Spending',
+                data: [data.expenses]
+            }]
+        });
+    };
+})
