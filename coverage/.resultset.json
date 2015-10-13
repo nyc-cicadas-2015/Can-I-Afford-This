@@ -1029,6 +1029,13 @@
         0,
         null,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/dianpan/DBC/Can-I-Afford-This/app/models/purchase_type.rb": [
@@ -1113,6 +1120,6 @@
         null
       ]
     },
-    "timestamp": 1444679417
+    "timestamp": 1444741624
   }
 }
