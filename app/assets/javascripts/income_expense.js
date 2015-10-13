@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url: '/graph/net_savins_data',
+        url: '/graph/net_savings_data',
         method: "get"
     }).done(function(data){
         makeChart(data);
