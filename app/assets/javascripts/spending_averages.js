@@ -20,7 +20,7 @@ $(document).ready(function(){
                 text: 'Compared to National Averages'
             },
             xAxis: {
-                categories: ['Housing', 'Transportation', 'Food', 'Phone', 'Misc', 'Savings'],
+                categories: ['Housing', 'Transportation', 'Food', 'Phone', 'Misc'],
                 title: {
                     text: 'Categories'
                 }
@@ -61,10 +61,10 @@ $(document).ready(function(){
             },
             series: [{
                 name: 'Your spending',
-                data: [data]
+                data: data.expenses
             }, {
                 name: 'Average Spending',
-                data: [35, 15, 7, 3, 30, 10]
+                data: [35, 15, 7, 3, 30]
             }]
         });
     };

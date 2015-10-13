@@ -21,4 +21,8 @@ class Expense < ActiveRecord::Base
     percentages = values.map { |v| ((v.to_f/income.to_f)* 100).floor }
     [types, percentages].transpose.to_h
   end
+
+  def self.total_percentages(data, income)
+    percentages = data.map { |d| ((d.amount.to_f/income.to_f)* 100).floor }
+  end
 end
