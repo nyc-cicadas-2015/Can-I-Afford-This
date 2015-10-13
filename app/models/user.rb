@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     savings.sum(:amount)
   end
 
+  def total_purchase_amount
+    purchases.sum(:cost)
+  end
+
 end
