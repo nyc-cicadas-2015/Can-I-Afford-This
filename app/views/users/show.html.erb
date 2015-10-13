@@ -59,8 +59,6 @@ Savings: $<%= @income_to_expense_diff %> per month
   <%= link_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal" %>
 <% end %>
 
-<% render "graph/graph" %>
-
 <div id="purchaseModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
   <h2 id="firstModalTitle">Enter the name and amount of your purchase!</h2>
     <%= render "purchases/form" %>
