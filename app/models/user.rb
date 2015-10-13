@@ -22,10 +22,15 @@ class User < ActiveRecord::Base
   end
 
   def can_make_purchase?
-    return true if !income.nil? && !expenses.empty? && income >= total_expenses
+    self.has_income? && self.income >= self.total_expenses
   end
 
   def has_income?
+    !income.nil?
+  end
+
+  def has_expenses?
+    !expenses.empty?
   end
 
 end
