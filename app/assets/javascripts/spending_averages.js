@@ -4,18 +4,18 @@ $(function () {
             type: 'bar'
         },
         title: {
-            text: 'Historic World Population by Region'
+            text: 'Your Spending Percentages'
         },
         subtitle: {
-            text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
-        },
-        yAxis: {
-            categories: ['Housing', 'Transportation', 'Food', 'Phone', 'Misc'],
-            title: {
-                text: null
-            }
+            text: 'Compared to National Averages'
         },
         xAxis: {
+            categories: ['Housing', 'Transportation', 'Food', 'Phone', 'Misc', 'Savings'],
+            title: {
+                text: 'Categories'
+            }
+        },
+        yAxis: {
             min: 0,
             title: {
                 text: 'Population (millions)',
@@ -31,7 +31,7 @@ $(function () {
         plotOptions: {
             bar: {
                 dataLabels: {
-                    enabled: true
+                    enabled: false
                 }
             }
         },
