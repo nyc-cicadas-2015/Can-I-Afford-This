@@ -31,7 +31,7 @@ $(function () {
         plotOptions: {
             bar: {
                 dataLabels: {
-                    enabled: false
+                    enabled: true
                 }
             }
         },
