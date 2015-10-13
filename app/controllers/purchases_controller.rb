@@ -26,18 +26,16 @@ class PurchasesController < ApplicationController
 
   def update
     @purchase = Purchase.find(params[:id])
-    if @purchase.update_attributes purchases_params
-      redirect_to user_path(session[:user_id])
-    else
+    if !@purchase.update_attributes purchases_params
       flash[:error] = "Your purchase must have a name and be greater than $0."
-      redirect_to user_path(session[:user_id])
     end
+    redirect_to userpurchases_path(session[:user_id])
   end
 
    def destroy
     purchase = Purchase.find(params[:id])
     purchase.destroy
-    redirect_to user_path(session[:user_id])
+    redirect_to userpurchases_path(session[:user_id])
   end
 
 
