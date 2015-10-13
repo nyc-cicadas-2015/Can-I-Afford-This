@@ -15,10 +15,10 @@ $(function () {
             }
         },
         series: [{
-            name: 'Jane',
+            name: 'You',
             data: [1, 0, 4]
         }, {
-            name: 'John',
+            name: 'Average US',
             data: [5, 7, 3]
         }]
     });
