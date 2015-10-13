@@ -19,6 +19,6 @@ class Expense < ActiveRecord::Base
     types = data.map { |d| ExpenseType.find(d.expense_type_id).name}
     values = data.map { |d| d.amount}
     percentages = values.map { |v| ((v.to_f/income.to_f)* 100).floor }
-    [types, values].transpose.to_h
+    [types, percentages].transpose.to_h
   end
 end
