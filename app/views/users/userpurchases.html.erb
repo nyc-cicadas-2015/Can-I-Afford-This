@@ -17,7 +17,7 @@
 <br>
 
 <% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
-  <%= link_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal" %>
+  <%= button_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal", :class => "button round" %>
 <% end %>
 
 <div id="purchaseModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
