@@ -1,25 +1,36 @@
-$(function () {
-    $('#container').highcharts({
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
+$(document).ready(function(){
+    $.ajax({
+        url: '/graph/data',
+        method: "get"
+    }).done(function(data){
+        makeChart(data);
+    }).fail(function(error) {
+        console.log("You fail: " + error);
+    })
+
+    var makeChart = function(data) {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
             title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'You',
-            data: [1, 0, 4]
-        }, {
-            name: 'Average US',
-            data: [5, 7, 3]
-        }]
-    });
-});
+                text: 'Monthly Income vs Spending'
+            },
+            xAxis: {
+                categories: ['Income', 'Spending']
+            },
+            yAxis: {
+                title: {
+                    text: 'US Dollars'
+                }
+            },
+            series: [{
+                name: 'Income',
+                data: [data.income]
+            }, {
+                name: 'Spending',
+                data: [data.expenses]
+            }]
+        });
+    };
+})

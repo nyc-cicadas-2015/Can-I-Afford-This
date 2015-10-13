@@ -4,14 +4,13 @@ class GraphController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  def data
+  def net_savings_data
     find_user
     @income = @user.income
     @user_expenses = @user.expenses.pluck(:amount).reduce(:+)
     respond_to do |format|
       format.json{
-        # render :json => [{income: @income}, {expenses: @user_expenses}]
-        render :json => [@income, @user_expenses]
+        render json: { income: @income, expenses: @user_expenses }
       }
     end
   end
