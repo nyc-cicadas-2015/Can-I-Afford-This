@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require scripts
+//= require_directory.
 //= require foundation/foundation
 //= require foundation
 //= require d3
