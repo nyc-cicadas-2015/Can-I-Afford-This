@@ -7,10 +7,11 @@ class GraphController < ApplicationController
   def net_savings_data
     find_user
     @income = @user.income
+    @expenses = Expense.snapshot(@user.expenses, @user.income)
     @user_expenses = @user.expenses.pluck(:amount).reduce(:+)
     respond_to do |format|
       format.json{
-        render json: { income: @income, expenses: @user_expenses }
+        render json: { income: @income, expenses: @user_expenses, percentages: @expenses }
       }
     end
   end
