@@ -8,7 +8,7 @@ class SavingsController < ApplicationController
   def create
     saving = @user.savings.build(saving_params)
     saving.save ? flash[:message] = "Nice job! $#{saving.amount} added!" : flash[:error] = "Amount cannot be $0"
-    redirect_to profile_path(session[:user_id])
+    redirect_to userpurchases_path(session[:user_id])
   end
 
 private

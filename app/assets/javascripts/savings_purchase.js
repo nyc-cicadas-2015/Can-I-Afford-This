@@ -60,7 +60,7 @@ $(document).ready(function(){
             {
                 name: 'Savings',
                 data: [data.savings],
-                pointPadding: 0.02
+                pointPadding: 0.015
             }]
         });
     };
