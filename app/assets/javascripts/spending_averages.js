@@ -51,10 +51,10 @@ $(function () {
         },
         series: [{
             name: 'Your spending',
-            data: [107, 31, 635, 203, 2]
+            data: [107, 31, 635, 203, 5]
         }, {
             name: 'Average Spending',
-            data: [133, 156, 947, 408, 6]
+            data: [35, 15, 7, 3, 30, 10]
         }]
     });
 });
