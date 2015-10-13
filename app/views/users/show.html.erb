@@ -16,7 +16,7 @@
 <% end %>
 
 <% if !@user.income.nil? && !@user.expenses.empty? && @user.income >= @user.expenses.total_expense_amount %>
-Savings: $<%= @income_to_expense_diff %> per month
+Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
 <% end %>
 
 <% if @user.income.nil? %>
