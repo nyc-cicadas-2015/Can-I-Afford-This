@@ -10,7 +10,6 @@ class GraphController < ApplicationController
     @user_expenses = @user.expenses.pluck(:amount).reduce(:+)
     respond_to do |format|
       format.json{
-        # render :json => [{income: @income}, {expenses: @user_expenses}]
         render json: { income: @income, expenses: @user_expenses }
       }
     end
