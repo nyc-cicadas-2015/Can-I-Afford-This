@@ -9,7 +9,7 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find params[:id]
-    find_expense_type
+    @expense.expense_type
   end
 
   def create
@@ -36,10 +36,6 @@ class ExpensesController < ApplicationController
 
   def find_user
     @user = User.find(session[:user_id])
-  end
-
-  def find_expense_type
-    @expense_type = ExpenseType.find(@expense.expense_type_id)
   end
 
   def expenses_params
