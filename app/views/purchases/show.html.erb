@@ -1,6 +1,6 @@
 <% if @purchase.can_I_afford_this? %>
 <h4>Yes you can afford it!</h4>
-  <p>By saving smart and not spending more than you earn, it will take you <b><%= @purchase.months_to_payoff %></b>months to buy your <%= @purchase.title %>. Now start saving!</p>
+  <p>By saving smart and not spending more than you earn, it will take you <b><%= @purchase.months_to_payoff %></b> months to buy your <%= @purchase.title %>. Now start saving!</p>
 
 <% else %>
 
