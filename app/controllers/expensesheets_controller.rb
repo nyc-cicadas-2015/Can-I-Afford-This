@@ -1,10 +1,13 @@
 class ExpensesheetsController < ApplicationController
-    before_action :find_user, only: [:new, :create]
+    before_action :find_user, only: [:new, :create, :show]
 
   def new
     @expenses = Expense.new
   end
 
+  def show
+    @expenses = Expense.snapshot(@user.expenses, @user.income)
+  end
 
   def create
     Expense.expense_sheet(params[:expense][:amount]).each do |e|
