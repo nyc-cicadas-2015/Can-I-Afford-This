@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
   has_many :savings
 
   def total_expenses
-    expenses.sum(:amount) ||= 0
+    expenses.sum(:amount)
   end
 
   def total_savings
-    savings.sum(:amount) ||= 0
+    savings.sum(:amount)
   end
 
 end
