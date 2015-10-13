@@ -4,10 +4,6 @@
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
 <% end %>
 
-<% if @user.expenses.empty? %>
-  <%= link_to "Add expenses", new_expensesheet_path %>
-<% end %>
-
 <% if !@user.income.nil? %>
   <h5><%= image_tag "money.png" %>$<%= @user.income %> income</h5>
 <% end %>
@@ -15,6 +11,9 @@
 <h5><%= image_tag "cc_33x22.png" %>
   $<%= @user.expenses.total_expense_amount %> in expenses
 </h5>
+<% if @user.expenses.empty? %>
+  <%= link_to "Add expenses", new_expensesheet_path %>
+<% end %>
 
 <% if !@user.income.nil? && !@user.expenses.empty? && @user.income >= @user.expenses.total_expense_amount %>
 Savings: $<%= @income_to_expense_diff %> per month
