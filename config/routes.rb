@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     'json' }
   get 'graph/savings_vs_purchase_data', :defaults => { :format =>
     'json' }
+  get 'graph/expense_percentages_data', :defaults => { :format =>
+    'json' }
 
 
 

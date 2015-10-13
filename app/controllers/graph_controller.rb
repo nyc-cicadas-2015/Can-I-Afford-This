@@ -26,7 +26,12 @@ class GraphController < ApplicationController
   end
 
   def expense_percentages_data
-    [30, 20, 10, 5, 3]
+    @expenses = @user.expenses.map { |e| e.amount}
+    respond_to do |format|
+      format.json{
+        render json: { expenses: @expenses }
+      }
+    end
   end
 
   private

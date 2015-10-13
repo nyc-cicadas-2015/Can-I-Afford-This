@@ -1,9 +1,8 @@
 $(document).ready(function(){
     $.ajax({
-        url: '/graph/_net_savings_data',
+        url: '/graph/expense_percentages_data',
         method: "get"
     }).done(function(data){
-        debugger
         percentageChart(data);
     }).fail(function(e){
         console.log("Failed:" + e);
@@ -62,7 +61,7 @@ $(document).ready(function(){
             },
             series: [{
                 name: 'Your spending',
-                data: [27, 31, 35, 20, 5]
+                data: [data]
             }, {
                 name: 'Average Spending',
                 data: [35, 15, 7, 3, 30, 10]
