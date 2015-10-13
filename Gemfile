@@ -34,7 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
 gem 'coveralls', require: false
 gem 'highcharts-rails'
-# gem 'heroku'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
