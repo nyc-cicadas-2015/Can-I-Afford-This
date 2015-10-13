@@ -17,7 +17,7 @@ class ExpensesController < ApplicationController
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."
     end
-      redirect_to user_path(session[:user_id])
+      redirect_to user_path(current_user)
   end
 
   def edit
