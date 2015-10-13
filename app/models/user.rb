@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
     purchases.sum(:cost)
   end
 
+  def can_make_purchase?
+    if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.total_expenses
+  end
+
 end
