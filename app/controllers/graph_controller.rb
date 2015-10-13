@@ -12,7 +12,6 @@ class GraphController < ApplicationController
     respond_to do |format|
       format.json{
         render json: { income: @income, expenses: @user_expenses, percentages: @expenses }
-        byebug
       }
     end
   end

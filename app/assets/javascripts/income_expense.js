@@ -36,6 +36,7 @@ $(document).ready(function(){
     };
 
     var pieChart = function(data) {
+        // debugger
         $('#pie-container').highcharts({
             chart: {
                 plotBackgroundColor: null,
@@ -67,19 +68,16 @@ $(document).ready(function(){
                 colorByPoint: true,
                 data: [{
                     name: "Housing",
-                    y: 56.33
+                    y: data.percentages.Housing
                 }, {
-                    name: "Transportaion",
-                    y: 24.03,
+                    name: "Transportation",
+                    y: data.percentages.Transportation
                 }, {
                     name: "Food",
-                    y: 10.38
+                    y: data.percentages.Food
                 }, {
                     name: "Phone",
-                    y: 4.77
-                }, {
-                    name: "Misc.",
-                    y: 0.91
+                    y: data.percentages.Phone
                 }]
             }]
         });
