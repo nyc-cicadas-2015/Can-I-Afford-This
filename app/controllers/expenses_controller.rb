@@ -9,11 +9,11 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = current_user.expenses.find params[:id]
-    @expense.expense_type
+    @expense_type = ExpenseType.find(@expense.expense_type_id)
   end
 
   def create
-    expense = @user.expenses.build(expenses_params)
+    expense = current_user.expenses.build(expenses_params)
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."
     end
