@@ -25,6 +25,15 @@ class GraphController < ApplicationController
     end
   end
 
+  def expense_percentages_data
+    @expenses = Expense.total_percentages(@user.expenses, @user.income)
+    respond_to do |format|
+      format.json{
+        render json: { expenses: @expenses }
+      }
+    end
+  end
+
   private
   def find_user
     @user = User.find(session[:user_id])
