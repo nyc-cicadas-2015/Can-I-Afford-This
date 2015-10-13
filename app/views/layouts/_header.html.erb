@@ -12,6 +12,7 @@
     <ul class="right">
       <% if logged_in? %>
         <li class="active"><%= link_to "My Profile", profile_path(session[:user_id]) %></li>
+        <li><%= link_to "Planned Purchases", userpurchases_path(session[:user_id]) %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Login", '/login', "data-reveal-id" => "firstModal" %></li>
@@ -20,7 +21,5 @@
     </ul>
   </section>
 </nav>
-
-
 
 <%= render "layouts/modal" %>

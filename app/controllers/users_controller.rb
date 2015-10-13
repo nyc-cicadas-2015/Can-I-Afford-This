@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @purchase = Purchase.new
     @user = User.find(params[:id])
   end
 
@@ -26,6 +25,11 @@ class UsersController < ApplicationController
       flash[:error] = "Please enter a number!"
     end
       redirect_to user_path(session[:user_id])
+  end
+
+  def userpurchases
+    @user = User.find(params[:id])
+    @purchase = Purchase.new
   end
 
   private

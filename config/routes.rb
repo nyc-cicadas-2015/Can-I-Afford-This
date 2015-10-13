@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :expensesheets, only: [:new, :create, :show]
 
   get '/profile/:id' => 'users#show', as: 'profile'
+  get '/userpurchases/:id' => 'users#userpurchases', as: 'userpurchases'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

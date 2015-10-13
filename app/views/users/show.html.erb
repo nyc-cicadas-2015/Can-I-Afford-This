@@ -1,11 +1,7 @@
-<h1><%= @user.name %>'s Profile</h1>
+<h2><%= @user.name %>'s Profile</h2>
 
 <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
-<% end %>
-
-<% if @user.expenses.empty? %>
-  <%= link_to "Add expenses", new_expensesheet_path %>
 <% end %>
 
 <% if !@user.income.nil? %>
@@ -15,9 +11,12 @@
 <h5><%= image_tag "cc_33x22.png" %>
   $<%= @user.expenses.total_expense_amount %> in expenses
 </h5>
+<% if @user.expenses.empty? %>
+  <%= link_to "Add expenses", new_expensesheet_path %>
+<% end %>
 
 <% if !@user.income.nil? && !@user.expenses.empty? && @user.income >= @user.expenses.total_expense_amount %>
-Savings: $<%= @income_to_expense_diff %> per month
+Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
 <% end %>
 
 <% if @user.income.nil? %>
@@ -40,29 +39,5 @@ Savings: $<%= @income_to_expense_diff %> per month
 <% end %>
 
 <div id="container" style="width:70%;height:300px;"></div>
-<br>
 
-<hr>
 
-<h5><%= image_tag "piggy_bank.png" %>
-  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add savings", new_saving_path %></span>
-</h5>
-
-<h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
-  <% @user.purchases.each do |purchase| %>
-    <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %> | <%= link_to "can I afford this?", purchase_path(purchase) %></p>
-  <% end %>
-
-<br>
-
-<% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
-  <%= link_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal" %>
-<% end %>
-
-<% render "graph/graph" %>
-
-<div id="purchaseModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
-  <h2 id="firstModalTitle">Enter the name and amount of your purchase!</h2>
-    <%= render "purchases/form" %>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
