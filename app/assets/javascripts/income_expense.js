@@ -36,7 +36,7 @@ $(document).ready(function(){
     };
 
     var pieChart = function(data) {
-        // debugger
+        debugger
         $('#pie-container').highcharts({
             chart: {
                 plotBackgroundColor: null,
@@ -80,7 +80,7 @@ $(document).ready(function(){
                     y: data.percentages.Phone
                 }, {
                     name: "Monthly Savings",
-                    y: (data.income - data.expenses)
+                    y: ((data.expenses/data.income) * 100)
                 }]
             }]
         });
