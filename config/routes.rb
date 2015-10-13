@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'graph/index'
   get 'graph/net_savings_data', :defaults => { :format =>
     'json' }
+  get 'graph/savings_vs_purchase_data', :defaults => { :format =>
+    'json' }
 
 
 

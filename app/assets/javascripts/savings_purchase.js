@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url: '/graph/savings_vs_purchase',
+        url: '/graph/savings_vs_purchase_data',
         method: "get"
     }).done(function(data){
         makeChart(data);
@@ -14,10 +14,10 @@ var makeChart = function (data) {
             type: 'column'
         },
         title: {
-            text: 'Stacked column chart'
+            text: 'Savings vs Purchase price'
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            categories: ['Purchase', 'Savings']
         },
         yAxis: {
             min: 0,
@@ -70,4 +70,5 @@ var makeChart = function (data) {
             data: [3, 4, 4, 2, 5]
         }]
     });
-});
+};
+})
