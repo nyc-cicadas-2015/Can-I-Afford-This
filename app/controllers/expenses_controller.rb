@@ -1,6 +1,4 @@
 class ExpensesController < ApplicationController
-    before_action :find_user, only: [:new, :create]
-
   def index
     @expense = Expense.new
   end
