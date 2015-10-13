@@ -361,6 +361,25 @@
         1,
         1,
         null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/dianpan/DBC/Can-I-Afford-This/config/routes.rb": [
@@ -470,8 +489,6 @@
       "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/expenses_controller.rb": [
         1,
         1,
-        null,
-        1,
         2,
         null,
         null,
@@ -505,15 +522,6 @@
         null,
         null,
         1,
-        null,
-        1,
-        7,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
         1,
         5,
         null,
@@ -528,15 +536,13 @@
         1,
         null,
         1,
-        0,
-        0,
-        null,
-        null,
-        null,
+        56,
         null,
         null,
         1,
-        41,
+        15,
+        15,
+        null,
         null,
         null,
         null
@@ -1126,6 +1132,6 @@
         null
       ]
     },
-    "timestamp": 1444760072
+    "timestamp": 1444768838
   }
 }

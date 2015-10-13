@@ -1,25 +1,23 @@
 class ExpensesController < ApplicationController
-    before_action :find_user, only: [:new, :create]
-
   def index
-    @expense = Expense.new
+    @expense = current_user.expenses.new
   end
 
   def new
-    @expense = Expense.new
+    @expense = current_user.expenses.new
   end
 
   def show
-    @expense = Expense.find params[:id]
-    find_expense_type
+    @expense = current_user.expenses.find params[:id]
+    @expense_type = ExpenseType.find(@expense.expense_type_id)
   end
 
   def create
-    expense = @user.expenses.build(expenses_params)
+    expense = current_user.expenses.build(expenses_params)
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."
     end
-      redirect_to user_path(session[:user_id])
+      redirect_to user_path(current_user)
   end
 
   def edit
@@ -35,15 +33,6 @@ class ExpensesController < ApplicationController
   end
 
   private
-
-  def find_user
-    @user = User.find(session[:user_id])
-  end
-
-  def find_expense_type
-    @expense_type = ExpenseType.find(@expense.expense_type_id)
-  end
-
   def expenses_params
     params.require(:expense).permit( :expense_type_id, :amount )
   end

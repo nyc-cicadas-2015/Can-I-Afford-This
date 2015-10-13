@@ -9,4 +9,23 @@ class User < ActiveRecord::Base
   has_many :purchases
   has_many :savings
 
+  def total_expenses
+    expenses.sum(:amount)
+  end
+
+  def total_savings
+    savings.sum(:amount)
+  end
+
+  def total_purchase_amount
+    purchases.sum(:cost)
+  end
+
+  def can_make_purchase?
+    return true if !income.nil? && !expenses.empty? && income >= total_expenses
+  end
+
+  def has_income?
+  end
+
 end
