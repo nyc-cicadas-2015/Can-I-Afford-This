@@ -18,7 +18,7 @@ $(function () {
         yAxis: {
             min: 0,
             title: {
-                text: 'Population (millions)',
+                text: 'Percentage',
                 align: 'high'
             },
             labels: {
@@ -51,7 +51,7 @@ $(function () {
         },
         series: [{
             name: 'Your spending',
-            data: [107, 31, 635, 203, 5]
+            data: [27, 31, 35, 20, 5]
         }, {
             name: 'Average Spending',
             data: [35, 15, 7, 3, 30, 10]
