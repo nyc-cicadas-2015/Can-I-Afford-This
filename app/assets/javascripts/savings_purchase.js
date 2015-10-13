@@ -8,64 +8,60 @@ $(document).ready(function(){
         console.log("Failed:" + e);
     })
 
-var makeChart = function (data) {
-    $('#chart-container').highcharts({
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Savings vs Purchase price'
-        },
-        xAxis: {
-            categories: ['Purchase', 'Savings']
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Total fruit consumption'
+    var makeChart = function (data) {
+        // First, let's make the colors transparent
+        Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function (color) {
+            return Highcharts.Color(color)
+                .setOpacity(0.5)
+                .get('rgba');
+            });
+
+        $('#chart-container').highcharts({
+            chart: {
+                type: 'column'
             },
-            stackLabels: {
-                enabled: true,
-                style: {
-                    fontWeight: 'bold',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+            title: {
+                text: 'Savings vs Purchase'
+            },
+            xAxis: {
+                categories: ['Savings vs Purchase']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Amount ($)'
                 }
-            }
-        },
-        legend: {
-            align: 'right',
-            x: -30,
-            verticalAlign: 'top',
-            y: 25,
-            floating: true,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-            borderColor: '#CCC',
-            borderWidth: 1,
-            shadow: false
-        },
-        tooltip: {
-            headerFormat: '<b>{point.x}</b><br/>',
-            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal',
-                dataLabels: {
-                    enabled: true,
-                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
-                    style: {
-                        textShadow: '0 0 3px black'
-                    }
+            },
+            legend: {
+                layout: 'vertical',
+                backgroundColor: '#FFFFFF',
+                align: 'left',
+                verticalAlign: 'top',
+                x: 100,
+                y: 70,
+                floating: true,
+                shadow: true
+            },
+            tooltip: {
+                shared: true,
+                valuePrefix: '$'
+            },
+            plotOptions: {
+                column: {
+                    grouping: false,
+                    shadow: false
                 }
-            }
-        },
-        series: [{
-            name: 'Savings',
-            data: [data.savings]
-        }, {
-            name: 'Purchases',
-            data: [data.purchases]
-        }]
-    });
-};
+            },
+            series: [{
+                name: 'Purchases',
+                data: [data.purchases],
+                pointPadding: 0
+            },
+            {
+                name: 'Savings',
+                data: [data.savings],
+                pointPadding: 0.02
+            }]
+        });
+    };
 })
