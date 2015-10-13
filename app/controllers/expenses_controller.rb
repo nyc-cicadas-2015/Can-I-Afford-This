@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-    before_action :find_user, only: [:new, :create]
+  #before_action :find_user, only: [:new, :create]
 
   def index
     @expense = Expense.new
@@ -11,15 +11,16 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find params[:id]
-    find_expense_type
+    find_expense_type # What is this about?  Why not just use @expense.expense_type?
   end
 
   def create
-    expense = @user.expenses.build(expenses_params)
+    expense = current_user.expenses.build(expenses_params)
     if !expense.save
       flash[:error] = "Your expense must be greater than $0."
     end
-      redirect_to user_path(session[:user_id])
+      redirect_to user_path(current_user) # Use your abstractions
+      # redirect_to user_path(session[:user_id])
   end
 
   def edit
@@ -37,9 +38,11 @@ class ExpensesController < ApplicationController
   private
 
   def find_user
+    # You might just want to use your `current_user' helper wherever you need to
     @user = User.find(session[:user_id])
   end
 
+  # This method seems unnecessary
   def find_expense_type
     @expense_type = ExpenseType.find(@expense.expense_type_id)
   end

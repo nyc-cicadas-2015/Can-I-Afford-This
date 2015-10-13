@@ -4,6 +4,7 @@ class Saving < ActiveRecord::Base
 
   belongs_to :user
 
+  ##  Needs to be an instance method!
   def self.total_savings
     pluck(:amount).reduce(:+) || 0
   end

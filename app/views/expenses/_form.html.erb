@@ -1,4 +1,7 @@
 <%= form_for @expense do |f| %>
+<!-- This might be a decent place to use a helper method which returns this array of expense type options
+     Better to have them in the helper method than hard-coded in the view.
+     -->
   <%= f.select(:expense_type_id, options_for_select([['Housing', 1],['Transportation', 2], ['Food', 3], ['Phone', 4]])) %>
   <%= f.text_field :amount, placeholder: "$Amount" %>
   <%= f.submit 'Add Expense', :class => "button round" %>

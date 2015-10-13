@@ -9,4 +9,14 @@ class User < ActiveRecord::Base
   has_many :purchases
   has_many :savings
 
+  #include User::Expenses
+
+  # # And do the same for income etc
+  # def total_expenses
+  #   expenses.sum(:amount)
+  # end
+
+  # def can_buy_shit?
+  #   !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount
+  # end
 end

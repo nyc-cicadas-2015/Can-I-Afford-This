@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.placeholder_image = "http://placehold.it/400x300&text=[img]"
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -33,7 +35,9 @@ Rails.application.configure do
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
+  #
   # Raises helpful error messages.
+
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations

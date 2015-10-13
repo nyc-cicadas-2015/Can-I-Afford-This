@@ -7,6 +7,8 @@ class GraphController < ApplicationController
   def data
     find_user
     @income = @user.income
+    # I might make a "User.total_expenses" method instead of doing this work
+    # in the controller.
     @user_expenses = @user.expenses.pluck(:amount).reduce(:+)
     respond_to do |format|
       format.json{

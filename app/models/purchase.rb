@@ -4,11 +4,13 @@ class Purchase < ActiveRecord::Base
   validates_numericality_of :cost, :greater_than => 0
 
   belongs_to :user
-  has_one :purchase_type
+  belongs_to :purchase_type
 
   before_save :add_purchase_type_id
 
+  # Move to user.  Make instance method
   def self.total_purchase_amount
+    # This will sum ALL of the purchases in your database
     pluck(:cost).reduce(:+) || 0
   end
 
