@@ -28,6 +28,10 @@ class UsersController < ApplicationController
       redirect_to user_path(session[:user_id])
   end
 
+  def userpurchases
+    @user = User.find(params[:id])
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password)
