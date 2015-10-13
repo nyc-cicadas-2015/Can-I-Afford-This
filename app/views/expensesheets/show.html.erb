@@ -7,9 +7,9 @@
   </div>
 
   <div class="large-4 columns">
-    <h4>Snapshot of your monthly expenses</h4>
+    <h4>Your monthly expenses</h4>
       <% @user.expenses.each do |expense| %>
-        <p><%= expense.amount %></p>
+        <p>$<%= expense.amount %></p>
       <% end %>
   </div>
 
