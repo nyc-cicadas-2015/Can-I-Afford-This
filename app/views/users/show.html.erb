@@ -40,33 +40,5 @@ Savings: $<%= @income_to_expense_diff %> per month
 <% end %>
 
 <div id="container" style="width:70%;height:300px;"></div>
-<br>
 
-<hr>
 
-<h5><%= image_tag "piggy_bank.png" %>
-  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add savings", new_saving_path %></span>
-</h5>
-
-<h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
-  <% @user.purchases.each do |purchase| %>
-    <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
-      <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
-        <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases"><%= image_tag "alert_red.png" %></span>
-      <% else %> |
-        <%= link_to "can I afford this?", purchase_path(purchase) %>
-      <% end %>
-    </p>
-  <% end %>
-
-<br>
-
-<% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
-  <%= link_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal" %>
-<% end %>
-
-<div id="purchaseModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
-  <h2 id="firstModalTitle">Enter the name and amount of your purchase!</h2>
-    <%= render "purchases/form" %>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
