@@ -60,14 +60,11 @@ var makeChart = function (data) {
             }
         },
         series: [{
-            name: 'John',
-            data: [5, 3, 4, 7, 2]
+            name: 'Savings',
+            data: [data.savings]
         }, {
-            name: 'Jane',
-            data: [2, 2, 3, 2, 1]
-        }, {
-            name: 'Joe',
-            data: [3, 4, 4, 2, 5]
+            name: 'Purchases',
+            data: [data.purchases]
         }]
     });
 };
