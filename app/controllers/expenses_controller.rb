@@ -1,14 +1,14 @@
 class ExpensesController < ApplicationController
   def index
-    @expense = Expense.new
+    @expense = current_user.expenses.new
   end
 
   def new
-    @expense = Expense.new
+    @expense = current_user.expenses.new
   end
 
   def show
-    @expense = Expense.find params[:id]
+    @expense = current_user.expenses.find params[:id]
     @expense.expense_type
   end
 
