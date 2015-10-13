@@ -1,6 +1,7 @@
 <h2><%= @user.name %>'s Profile</h2>
 
-<% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
+
+<% if @user.can_make_purchase? %>
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
 <% end %>
 
@@ -15,7 +16,7 @@
   <%= link_to "Add expenses", new_expensesheet_path %>
 <% end %>
 
-<% if !@user.income.nil? && !@user.expenses.empty? && @user.income >= @user.expenses.total_expense_amount %>
+<% if @user.can_make_purchase? %>
 Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
 <% end %>
 

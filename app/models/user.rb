@@ -25,4 +25,7 @@ class User < ActiveRecord::Base
     if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.total_expenses
   end
 
+  def has_income?
+  end
+
 end
