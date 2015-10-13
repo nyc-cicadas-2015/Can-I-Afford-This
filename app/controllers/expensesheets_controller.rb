@@ -6,7 +6,6 @@ class ExpensesheetsController < ApplicationController
   end
 
   def show
-    @types = ExpenseType.all
     @expenses = Expense.snapshot(@user.expenses, @user.income)
   end
 
