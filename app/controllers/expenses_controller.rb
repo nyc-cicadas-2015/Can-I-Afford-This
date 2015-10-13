@@ -33,11 +33,6 @@ class ExpensesController < ApplicationController
   end
 
   private
-
-  def find_user
-    @user = User.find(session[:user_id])
-  end
-
   def expenses_params
     params.require(:expense).permit( :expense_type_id, :amount )
   end
