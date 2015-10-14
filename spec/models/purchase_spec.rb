@@ -80,4 +80,10 @@ describe Purchase do
     purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
     expect(purchase.max_payoff_time).to eq(60)
   end
+  it 'finds a users months to payoff time' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 4000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.months_to_payoff).to eq(2)
+  end
 end
