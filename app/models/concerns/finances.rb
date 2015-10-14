@@ -9,4 +9,10 @@ module Finances
     [types, percentages].transpose.to_h
   end
 
+  def total_percentages(data, income)
+    percentages = expenses.map { |d| ((d.amount.to_f/income.to_f)* 100).floor }
+  end
+
 end
+
+Expense.total_percentages(@user.expenses, @user.income)
