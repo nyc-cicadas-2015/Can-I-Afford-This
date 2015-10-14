@@ -58,6 +58,38 @@ describe Purchase do
     purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
     expect(purchase.find_user_income).to eq(2000)
   end
-
-
+  it 'finds total user expense' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.find_user_expense).to eq(2000)
+  end
+  it 'finds a users net savings each month' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.user_income_to_expense_diff).to eq(0)
+  end
+  it 'finds a users purchase cost' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.purchase_cost).to eq(4000)
+  end
+  it 'finds a users purchase payoff time' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.max_payoff_time).to eq(60)
+  end
+  it 'finds a users months to payoff time' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 4000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.months_to_payoff).to eq(2)
+  end
+  it 'returns true if user can afford to make a purchase' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 4000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.can_I_afford_this?).to eq(true)
+  end
 end
