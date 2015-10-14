@@ -1,5 +1,4 @@
 class ExpensesheetsController < ApplicationController
-    before_action :find_user, only: [:new, :create, :show, :edit, :update]
 
   def new
     @expenses = Expense.new
