@@ -1,8 +1,7 @@
 <h2><%= @user.name %>'s Profile</h2>
 
-
-<% if !@user.can_make_purchase? %>
-<p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me" %></p>
+<% if @user.has_income? && @user.has_expenses? && @user.income < @user.total_expenses %>
+<p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", expensesheets_path %></p>
 <% end %>
 
 <% if !@user.income.nil? %>
@@ -10,7 +9,7 @@
 <% end %>
 
 <h5><%= image_tag "cc_33x22.png" %>
-  $<%= @user.expenses.total_expense_amount %> in expenses
+  $<%= @user.expenses.total_expense_amount %> in expenses | <%= link_to "edit", expensesheet_path, method: :patch %>
 </h5>
 
 <% if @user.expenses.empty? %>
@@ -21,7 +20,7 @@
 Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
 <% end %>
 
-<% if @user.income.nil? %>
+<% if !@user.has_income? %>
   <h3>What is your monthly income?</h3>
   <div class="row">
     <div class="small-8">
@@ -41,6 +40,7 @@ Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
 <% end %>
 
 <div id="container" style="width:70%;height:300px;"></div>
+
 <div id="pie-container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 

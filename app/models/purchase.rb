@@ -4,7 +4,7 @@ class Purchase < ActiveRecord::Base
   validates_numericality_of :cost, :greater_than => 0
 
   belongs_to :user
-  has_one :purchase_type
+  belongs_to :purchase_type
 
   before_save :add_purchase_type_id
 

@@ -3,7 +3,7 @@ class Expense < ActiveRecord::Base
   validates_numericality_of :amount, :greater_than => 0
 
   belongs_to :user
-  has_one :expense_type
+  belongs_to :expense_type
 
   def self.total_expense_amount
     pluck(:amount).reduce(:+) || 0

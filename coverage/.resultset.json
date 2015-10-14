@@ -374,15 +374,21 @@
         null,
         null,
         1,
-        4,
+        2,
         null,
         null,
         1,
+        6,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         null
       ],
       "/Users/dianpan/DBC/Can-I-Afford-This/config/routes.rb": [
+        1,
         1,
         1,
         1,
@@ -1132,6 +1138,6 @@
         null
       ]
     },
-    "timestamp": 1444768838
+    "timestamp": 1444780476
   }
 }
