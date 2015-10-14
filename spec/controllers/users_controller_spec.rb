@@ -21,12 +21,6 @@ describe UsersController do
   describe "POST #create" do
     describe "When Successful" do
       let(:user_params) { { user: attributes_for(:user) } }
-
-      it "successfully creates a user and redirects to the root path" do
-        post(:create, user_params)
-        expect(response).to redirect_to root_path
-      end
-
       it "Increased number of users in the database by 1" do
         expect{post(:create, user_params)}.to change{User.count}.by(1)
       end
