@@ -32,13 +32,14 @@ class Purchase < ActiveRecord::Base
 
   def find_user_income
     # user_income = user_expenses = 0
+    # debugger
     if !self.user.income.nil? && !self.user.expenses.empty?
       user_income = self.user.income
     end
   end
 
   def find_user_expense
-    self.user.expenses.total_expense_amount
+    self.user.total_expenses
   end
 
   def user_income_to_expense_diff
