@@ -25,7 +25,7 @@ class GraphController < ApplicationController
   end
 
   def expense_percentages_data
-    @expenses = Expense.total_percentages(current_user.expenses, current_user.income)
+    @expenses = current_user.total_percentages
     respond_to do |format|
       format.json{
         render json: { expenses: @expenses }
