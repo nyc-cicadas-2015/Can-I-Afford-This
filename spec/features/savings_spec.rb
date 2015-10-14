@@ -12,7 +12,7 @@ describe "Savings" do
   describe 'User can add a new saving amount' do
     it 'by visiting their planned purchases page' do
       visit userpurchases_path(@user.id)
-      expect(page).to have_content("Saved")
+      expect(page).to have_content("Planned Purchases")
     end
 
     it 'saves with valid attributes' do
