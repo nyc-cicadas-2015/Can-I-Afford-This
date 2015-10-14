@@ -65,4 +65,8 @@ class Purchase < ActiveRecord::Base
     self.user.total_savings >= purchase_cost
   end
 
+  def self.snapshot(data)
+    name = data.map{ |d| d.title }
+    cost = data.map{ |d| d.cost }
+  end
 end

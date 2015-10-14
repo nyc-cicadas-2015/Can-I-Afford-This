@@ -18,6 +18,7 @@ class GraphController < ApplicationController
   def savings_vs_purchase_data
     @savings = @user.savings.pluck(:amount).reduce(:+)
     @user_purchases = @user.purchases.pluck(:cost).reduce(:+)
+    @purchases = Purchase.snapshot(@user.purchase_title, @user.purchase_price)
     respond_to do |format|
       format.json{
         render json: { savings: @savings, purchases: @user_purchases }
