@@ -10,9 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require expense_modal
-//= require income_expense
-
 //= require jquery
 //= require jquery_ujs
 //= require foundation/foundation
@@ -24,8 +21,5 @@
 
 $(document).ready(function(){
   $(document).foundation();
-  $("#expensesModal").foundation('reveal', 'open');
-  $("#incomeModal").foundation('reveal', 'open');
-
 });
 
