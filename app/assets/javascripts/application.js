@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require expense_modal
+//= require income_expense
+
 //= require jquery
 //= require jquery_ujs
 //= require foundation/foundation
@@ -17,8 +20,6 @@
 //= require d3
 //= require highcharts
 //= require highcharts/highcharts-more
-//= require expense_modal
-//= require income_expense
 //= require_tree .
 
 $(document).ready(function(){ $(document).foundation(); });
