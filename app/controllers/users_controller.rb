@@ -4,15 +4,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(expenses: [:expense_type]).find(params[:id])
+    # @user = User.includes(expenses: [:expense_type]).find(params[:id])
+    current_user || @user = User.find(params[:id])
   end
 
   def create
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      flash[:message] = "Success!"
-      redirect_to root_path
+      flash[:message] = "Welcome #{user.name}!"
+      redirect_to profile_path current_user
     else
       flash[:error] = "email/password already exist, please login"
       redirect_to '/login'
