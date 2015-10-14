@@ -5,7 +5,7 @@ class ExpensesheetsController < ApplicationController
   end
 
   def show
-    @expenses = Expense.snapshot(current_user.expenses, current_user.income)
+    @expenses = current_user.total_expenses
   end
 
   def create
