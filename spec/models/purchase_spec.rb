@@ -42,6 +42,11 @@ describe Purchase do
     purchase = user.purchases.create(title: "test", cost: 200, purchase_type_id: 1)
     expect(purchase.add_payoff_time).to eq(6)
   end
+  it "adds the correct payoff time for a medium purchase" do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 2000, purchase_type_id: 2)
+    expect(purchase.add_payoff_time).to eq(12)
+  end
 
 
 end
