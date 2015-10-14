@@ -22,4 +22,42 @@ describe Purchase do
     purchase = Purchase.new(purchase_type_id: nil)
     expect(purchase.valid?).to eq(false)
   end
+  it 'adds the correct purchase type id for a small purchase' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 100)
+    expect(purchase.purchase_type_id).to eq(1)
+  end
+  it 'adds the correct purchase type id for a medium purchase' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 2000)
+    expect(purchase.purchase_type_id).to eq(2)
+  end
+  it 'adds the correct purchase type id for a large purchase' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 5000)
+    expect(purchase.purchase_type_id).to eq(3)
+  end
+  it "adds the correct payoff time for a small purchase" do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 200, purchase_type_id: 1)
+    expect(purchase.add_payoff_time).to eq(6)
+  end
+  it "adds the correct payoff time for a medium purchase" do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 2000, purchase_type_id: 2)
+    expect(purchase.add_payoff_time).to eq(12)
+  end
+  it "adds the correct payoff time for a large purchase" do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.add_payoff_time).to eq(60)
+  end
+  it 'finds a users income' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.find_user_income).to eq(2000)
+  end
+
+
 end

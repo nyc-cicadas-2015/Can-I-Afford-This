@@ -1,2 +1,0 @@
-      invoke  active_record
-      create    db/migrate/20151013154004_add_savings_amount_default_value.rb
