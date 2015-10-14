@@ -19,7 +19,7 @@ class GraphController < ApplicationController
     @savings = current_user.total_savings
     @purchases_cost = current_user.purchases_cost
     @purchases_name = current_user.purchases_name
-    byebug
+    # byebug
     respond_to do |format|
       format.json{
         render json: { savings: @savings, p_cost: @purchases_cost, p_name: @purchases_name }
