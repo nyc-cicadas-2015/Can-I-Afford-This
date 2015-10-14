@@ -4,7 +4,7 @@
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", expensesheets_path %></p>
 <% end %>
 
-<% if !current_user.has_income? %>
+<% if current_user.has_income? %>
   <h5><%= image_tag "money.png" %>$<%= current_user.income %> income</h5>
 <% end %>
 
@@ -29,10 +29,7 @@ Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %
           <label for="right-label" class="right">Income $</label>
         </div>
         <div class="small-9 columns">
-          <%= form_tag(user_path(current_user), method: "patch") do %>
-            <%= text_field_tag(:income) %>
-            <%= submit_tag("submit") %>
-          <% end %>
+          <%= render partial: "income_form" %>
         </div>
       </div>
     </div>
