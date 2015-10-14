@@ -14,6 +14,9 @@ $(document).ready(function(){
             chart: {
                 type: 'column'
             },
+            credits: {
+                enabled: false
+            },
             title: {
                 text: 'Monthly Income vs Spending'
             },
@@ -45,6 +48,9 @@ $(document).ready(function(){
             },
             title: {
                 text: 'Breakdown of your monthly expenses'
+            },
+            credits: {
+                enabled: false
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
