@@ -36,7 +36,7 @@ $(document).ready(function(){
                 }
             },
             tooltip: {
-                valueSuffix: ' millions'
+                valueSuffix: ' percent'
             },
             plotOptions: {
                 bar: {
