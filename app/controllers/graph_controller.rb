@@ -1,13 +1,11 @@
 class GraphController < ApplicationController
-  before_action :find_user
-
   def index
   end
 
   def net_savings_data
-    @income = @user.income
+    @income = current_user.income
     @expenses = current_user.expensesheet_snapshot
-    @user_expenses = @user.expenses.pluck(:amount).reduce(:+)
+    @user_expenses = current_user.total_expenses
     respond_to do |format|
       format.json{
         render json: { income: @income, expenses: @user_expenses, percentages: @expenses }
@@ -19,7 +17,6 @@ class GraphController < ApplicationController
     @savings = current_user.total_savings
     @purchases_cost = current_user.purchases_cost
     @purchases_name = current_user.purchases_name
-    # byebug
     respond_to do |format|
       format.json{
         render json: { savings: @savings, p_cost: @purchases_cost, p_name: @purchases_name }
@@ -28,17 +25,11 @@ class GraphController < ApplicationController
   end
 
   def expense_percentages_data
-    @expenses = Expense.total_percentages(@user.expenses, @user.income)
+    @expenses = Expense.total_percentages(current_user.expenses, current_user.income)
     respond_to do |format|
       format.json{
         render json: { expenses: @expenses }
       }
     end
   end
-
-  private
-  def find_user
-    @user = User.find(session[:user_id])
-  end
-
 end

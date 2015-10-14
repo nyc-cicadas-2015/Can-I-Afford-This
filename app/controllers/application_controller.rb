@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if logged_in?
-      @user ||= User.find(session[:user_id])
+      @user ||= User.includes(expenses: [ :expense_type ]).includes(purchases: [ :purchase_type ]).includes(:savings).find(session[:user_id])
     end
   end
 

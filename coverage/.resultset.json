@@ -1151,6 +1151,19 @@
         null,
         null
       ],
+      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/saving.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        8,
+        null,
+        null,
+        null
+      ],
       "/Users/dianpan/DBC/Can-I-Afford-This/app/models/purchase_type.rb": [
         1,
         1,
@@ -1195,19 +1208,6 @@
         null,
         null
       ],
-      "/Users/dianpan/DBC/Can-I-Afford-This/app/models/saving.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        8,
-        null,
-        null,
-        null
-      ],
       "/Users/dianpan/DBC/Can-I-Afford-This/app/controllers/savings_controller.rb": [
         1,
         1,
@@ -1233,6 +1233,6 @@
         null
       ]
     },
-    "timestamp": 1444849113
+    "timestamp": 1444850258
   }
 }
