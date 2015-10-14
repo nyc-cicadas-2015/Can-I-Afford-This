@@ -1,7 +1,7 @@
 class ExpensesheetsController < ApplicationController
 
   def new
-    @expenses = Expense.new
+    @expenses = Expense.new(user:current_user)
   end
 
   def show
