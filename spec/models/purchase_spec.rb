@@ -58,6 +58,18 @@ describe Purchase do
     purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
     expect(purchase.find_user_income).to eq(2000)
   end
+  it 'finds total user expense' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.find_user_expense).to eq(2000)
+  end
+  it 'finds a users net savings each month' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.user_income_to_expense_diff).to eq(0)
+  end
 
 
 end
