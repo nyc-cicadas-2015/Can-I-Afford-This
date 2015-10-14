@@ -38,7 +38,7 @@ class Purchase < ActiveRecord::Base
   end
 
   def find_user_expense
-    self.user.expenses.total_expense_amount
+    self.user.total_expenses
   end
 
   def user_income_to_expense_diff
@@ -59,6 +59,10 @@ class Purchase < ActiveRecord::Base
 
   def can_I_afford_this?
     return true if months_to_payoff <= max_payoff_time
+  end
+
+  def can_I_buy?
+    self.user.total_savings >= purchase_cost
   end
 
 end

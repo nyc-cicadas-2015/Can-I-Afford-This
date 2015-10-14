@@ -29,12 +29,12 @@ class UsersController < ApplicationController
 
   def userpurchases
     @user = User.find(params[:id])
-    @purchase = Purchase.new
+    @purchase = Purchase.new(user: current_user)
+    @saving = Saving.new(user: current_user)
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
-
 end

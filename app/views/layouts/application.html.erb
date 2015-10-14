@@ -14,10 +14,7 @@
 
   <body>
     <%= render partial: "layouts/header" %>
-    <% flash.each do |name, msg| %>
-      <%= msg %>
-    <% end %>
-
+    <%= render partial: "layouts/messages" %>
     <%= yield %>
   </body>
 </html>
