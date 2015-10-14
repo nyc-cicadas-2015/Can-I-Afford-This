@@ -1,26 +1,26 @@
-<h2><%= @user.name %>'s Profile</h2>
+<h2><%= current_user.name %>'s Profile</h2>
 
-<% if @user.has_income? && @user.has_expenses? && @user.income < @user.total_expenses %>
+<% if current_user.has_income? && current_user.has_expenses? && current_user.income < current_user.total_expenses %>
 <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", expensesheets_path %></p>
 <% end %>
 
-<% if !@user.income.nil? %>
-  <h5><%= image_tag "money.png" %>$<%= @user.income %> income</h5>
+<% if !current_user.has_income? %>
+  <h5><%= image_tag "money.png" %>$<%= current_user.income %> income</h5>
 <% end %>
 
 <h5><%= image_tag "cc_33x22.png" %>
-  $<%= @user.expenses.total_expense_amount %> in expenses | <%= link_to "edit", edit_expensesheet_path(current_user) %>
+  $<%= current_user.expenses.total_expense_amount %> in expenses | <%= link_to "edit", edit_expensesheet_path(current_user) %>
 </h5>
 
-<% if @user.expenses.empty? %>
+<% if current_user.expenses.empty? %>
   <%= link_to "Add expenses", new_expensesheet_path %>
 <% end %>
 
-<% if @user.can_make_purchase? %>
-Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
+<% if current_user.can_make_purchase? %>
+Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %> per month
 <% end %>
 
-<% if !@user.has_income? %>
+<% if !current_user.has_income? %>
   <h3>What is your monthly income?</h3>
   <div class="row">
     <div class="small-8">
@@ -29,7 +29,7 @@ Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
           <label for="right-label" class="right">Income $</label>
         </div>
         <div class="small-9 columns">
-          <%= form_tag(user_path(@user), method: "patch") do %>
+          <%= form_tag(user_path(current_user), method: "patch") do %>
             <%= text_field_tag(:income) %>
             <%= submit_tag("submit") %>
           <% end %>
@@ -39,8 +39,9 @@ Savings: $<%= @user.income - @user.expenses.total_expense_amount %> per month
   </div>
 <% end %>
 
-<div id="container" style="width:70%;height:300px;"></div>
-
-<div id="pie-container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+<% if current_user.has_income? && current_user.has_expenses? %>
+  <div id="container" style="width:70%;height:300px;"></div>
+  <div id="pie-container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  <% end %>
 
 

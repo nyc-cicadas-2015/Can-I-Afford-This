@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(expenses: [:expense_type]).find(params[:id])
+    # @user = User.includes(expenses: [:expense_type]).find(params[:id])
+    current_user
   end
 
   def create
