@@ -61,4 +61,8 @@ class Purchase < ActiveRecord::Base
     return true if months_to_payoff <= max_payoff_time
   end
 
+  def can_I_buy?
+    self.user.total_savings >= purchase_cost
+  end
+
 end

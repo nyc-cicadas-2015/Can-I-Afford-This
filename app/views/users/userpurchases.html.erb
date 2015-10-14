@@ -1,24 +1,33 @@
 <h2>Planned Purchases</h2>
-<h5><%= image_tag "piggy_bank.png" %>
-  <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add savings", new_saving_path %></span>
-</h5>
 
-<h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
-  <% @user.purchases.each do |purchase| %>
-    <p><%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
-      <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
-        <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases"><%= image_tag "alert_red.png" %></span>
-      <% else %> |
-        <%= link_to "can I afford this?", purchase_path(purchase) %>
-      <% end %>
-    </p>
-  <% end %>
+<div>
+  <h5><%= image_tag "piggy_bank.png" %>
+    <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span> | <span style = "font-size:15px"><%= link_to "Add savings", new_saving_path %></span>
+  </h5>
+</div>
 
-<br>
+<div class="panel">
+  <h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
+    <% @user.purchases.each do |purchase| %>
+      <ul class="disc">
+        <li><%= purchase.title %></span> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
+        <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
+          <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases"><%= image_tag "alert_red.png" %></span>
+        <% else %> |
+          <%= link_to "can I afford this?", purchase_path(purchase) %>
+        <% end %>
+        <% if purchase.can_I_buy? %>
+        | <span class="success label">Success! You have enough to buy this!</span>
+        <% end %>
+      </li>
+    </ul>
+    <% end %>
 
-<% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
-  <%= button_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal", :class => "button round" %>
-<% end %>
+    <% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
+      <%= button_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal", :class => "button round" %>
+    <% end %>
+  </div>
+
 
 <div id="purchaseModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
   <h2 id="firstModalTitle">Enter the name and amount of your purchase!</h2>
