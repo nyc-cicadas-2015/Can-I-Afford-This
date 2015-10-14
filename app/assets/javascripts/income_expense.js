@@ -3,7 +3,6 @@ $(document).ready(function(){
         url: '/graph/net_savings_data',
         method: "get"
     }).done(function(data){
-        debugger
         makeChart(data);
         pieChart(data)
     }).fail(function(error) {
