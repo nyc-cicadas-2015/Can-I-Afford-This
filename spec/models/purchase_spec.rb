@@ -70,6 +70,11 @@ describe Purchase do
     purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
     expect(purchase.user_income_to_expense_diff).to eq(0)
   end
+  it 'finds a users purchase cost' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.purchase_cost).to eq(4000)
+  end
 
 
 end
