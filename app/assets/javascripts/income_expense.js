@@ -3,6 +3,7 @@ $(document).ready(function(){
         url: '/graph/net_savings_data',
         method: "get"
     }).done(function(data){
+        debugger
         makeChart(data);
         pieChart(data)
     }).fail(function(error) {
@@ -88,7 +89,7 @@ $(document).ready(function(){
                     y: data.percentages.Misc
                 }, {
                     name: "Surplus",
-                    y: ((data.expenses/data.income) * 100)gi
+                    y: (((data.income - data.expenses)/data.income) * 100)
                 }]
             }]
         });
