@@ -15,6 +15,9 @@ class Expense < ActiveRecord::Base
     end
   end
 
+  def self.update_expense(data)
+  end
+
   def self.snapshot(data, income)
     types = data.map { |d| ExpenseType.find(d.expense_type_id).name}
     values = data.map { |d| d.amount}

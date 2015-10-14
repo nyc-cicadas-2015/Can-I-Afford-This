@@ -22,9 +22,11 @@ class ExpensesheetsController < ApplicationController
   end
 
   def update
-    Expense.expense_sheet(params[:amount]).each do |e|
-      @user.expenses << e
-      flash[:error] = "Oops! Someting went wrong." unless e.save
+    current_user.expenses.each do |e|
+      params[:expense].select do |k, v|
+        e.expense_type.name == k
+        byebug
+      end
     end
     redirect_to user_path(session[:user_id])
   end
