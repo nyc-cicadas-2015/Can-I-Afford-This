@@ -84,8 +84,11 @@ $(document).ready(function(){
                     name: "Phone",
                     y: data.percentages.Phone
                 }, {
-                    name: "Monthly Savings",
-                    y: ((data.expenses/data.income) * 100)
+                    name: "Misc",
+                    y: data.percentages.Misc
+                }, {
+                    name: "Surplus",
+                    y: ((data.expenses/data.income) * 100)gi
                 }]
             }]
         });
