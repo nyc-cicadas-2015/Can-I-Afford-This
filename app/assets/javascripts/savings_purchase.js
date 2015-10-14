@@ -55,7 +55,7 @@ $(document).ready(function(){
             },
             series: [{
                 name: 'Purchases',
-                data: [data.purchases],
+                data: [data.purchases.cost],
                 pointPadding: 0
             },
             {

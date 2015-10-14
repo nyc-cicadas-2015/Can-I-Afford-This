@@ -68,5 +68,6 @@ class Purchase < ActiveRecord::Base
   def self.snapshot(data)
     name = data.map{ |d| d.title }
     cost = data.map{ |d| d.cost }
+    [name, cost].transpose.to_h
   end
 end
