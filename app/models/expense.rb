@@ -14,8 +14,4 @@ class Expense < ActiveRecord::Base
       self.new(expense_type_id: type, amount: v)
     end
   end
-
-  def self.total_percentages(data, income)
-    percentages = data.map { |d| ((d.amount.to_f/income.to_f)* 100).floor }
-  end
 end
