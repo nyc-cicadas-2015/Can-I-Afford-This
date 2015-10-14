@@ -24,17 +24,24 @@ describe Purchase do
   end
   it 'adds the correct purchase type id for a small purchase' do
     user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
-    purchase = user.purchases.create(title: "small", cost: 100)
+    purchase = user.purchases.create(title: "test", cost: 100)
     expect(purchase.purchase_type_id).to eq(1)
   end
   it 'adds the correct purchase type id for a medium purchase' do
     user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
-    purchase = user.purchases.create(title: "small", cost: 2000)
+    purchase = user.purchases.create(title: "test", cost: 2000)
     expect(purchase.purchase_type_id).to eq(2)
   end
   it 'adds the correct purchase type id for a large purchase' do
     user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
-    purchase = user.purchases.create(title: "small", cost: 5000)
+    purchase = user.purchases.create(title: "test", cost: 5000)
     expect(purchase.purchase_type_id).to eq(3)
   end
+  it "adds the correct payoff time for a small purchase" do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "test", cost: 200, purchase_type_id: 1)
+    expect(purchase.add_payoff_time).to eq(6)
+  end
+
+
 end
