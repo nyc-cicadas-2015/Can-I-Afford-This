@@ -86,4 +86,10 @@ describe Purchase do
     purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
     expect(purchase.months_to_payoff).to eq(2)
   end
+  it 'returns true if user can afford to make a purchase' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 4000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.can_I_afford_this?).to eq(true)
+  end
 end
