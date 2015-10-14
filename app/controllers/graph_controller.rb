@@ -16,11 +16,13 @@ class GraphController < ApplicationController
   end
 
   def savings_vs_purchase_data
-    @savings = @user.savings.pluck(:amount).reduce(:+)
-    @user_purchases = @user.purchases.pluck(:cost).reduce(:+)
+    @savings = current_user.total_savings
+    @purchases_cost = current_user.purchases_cost
+    @purchases_name = current_user.purchases_name
+    # byebug
     respond_to do |format|
       format.json{
-        render json: { savings: @savings, purchases: @user_purchases }
+        render json: { savings: @savings, p_cost: @purchases_cost, p_name: @purchases_name }
       }
     end
   end

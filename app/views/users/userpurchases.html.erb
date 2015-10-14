@@ -1,47 +1,64 @@
 <h2>Planned Purchases</h2>
-<div>
-  <h5><%= image_tag "piggy_bank.png" %>
-    <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span><br>
-    <%= link_to "Add savings", new_saving_path, "data-reveal-id" => "savingsModal" %>
-  </h5>
-</div>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <div class="row">
+      <div class="medium-6 columns">
+        <div class="box">
+          <div class="box-icon">
+            <span><%= image_tag "piggy_bank.png" %></span>
+          </div>
+          <div class="info">
+            <h4 class="text-center">Your Savings: <span style="color: #0ac775">$<%= @user.savings.total_savings %></span></h4>
+            <p></p>
+            <%= link_to "Add savings", new_saving_path, "data-reveal-id" => "savingsModal", :class => "button round"  %>
+              <div id="savingsModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
+              <h2 id="firstModalTitle">Enter the amount you saved:</h2>
+                <%= render "savings/form" %>
+              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
 
-<div id="savingsModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
-  <h2 id="firstModalTitle">Enter the amount you saved:</h2>
-    <%= render "savings/form" %>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
+          </div>
+        </div>
+      </div>
 
+      <div class="medium-6 columns">
+        <div class="box">
+          <div class="box-icon">
+              <span class="fi-mail"></span>
+          </div>
+          <div class="info">
+            <h4 class="text-center">Your Planned Purchases</h4>
+            <p><% @user.purchases.each do |purchase| %>
+              <ul class="disc">
+              <%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
+              <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.total_expenses %>
+              <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases"><%= image_tag "alert_red.png" %></span>
+              <% else %> |
+              <%= link_to "Can I Afford This?", purchase_path(purchase)%>
+              <% end %>
+            <br>
+            <% if purchase.can_I_buy? %>
+              <span class="success label">Success! You have enough to buy this!</span>
+            <% end %>
+          </ul>
+          <% end %>
+          </p>
 
-<div class="panel">
-  <h4>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
-    <% @user.purchases.each do |purchase| %>
-      <ul class="disc">
-        <h5><%= purchase.title %></h5> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
-        <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.total_expenses %>
-          <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases"><%= image_tag "alert_red.png" %></span>
-        <% else %> |
-          <%= link_to "Can I Afford This?", purchase_path(purchase)%>
-        <% end %>
-      <br>
-        <% if purchase.can_I_buy? %>
-        <span class="success label">Success! You have enough to buy this!</span>
-        <% end %>
-    </ul>
-    <% end %>
-
-
-    <% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
-      <%= button_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal", :class => "button round" %>
-    <% end %>
-  </div>
+          <% if !@user.income.nil? && !@user.expenses.empty? && @user.income > @user.expenses.total_expense_amount %>
+            <%= button_to "Add a new purchase", new_purchase_path , "data-reveal-id" => "purchaseModal", :class => "button round" %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <div id="purchaseModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
   <h2 id="firstModalTitle">Enter the name and amount of your purchase!</h2>
     <%= render partial: "purchases/form", locals: { purchase: @purchase } %>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
+
 <hr>
+
 <div id="chart-container" style="width:70%;height:300px;"></div>
 
 <br><br>

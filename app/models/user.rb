@@ -35,4 +35,12 @@ class User < ActiveRecord::Base
     !expenses.empty?
   end
 
+  def purchases_cost
+    purchases.map { |p| p.cost }
+  end
+
+  def purchases_name
+    purchases.map { |p| p.title }
+  end
+
 end
