@@ -3,16 +3,15 @@
     <li class="name">
       <h1><%= link_to "Can I Afford This?", root_path %></h1>
     </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
 
   <section class="top-bar-section">
-    <!-- Right Nav Section -->
     <ul class="right">
       <% if logged_in? %>
         <li class="active"><%= link_to "My Profile", profile_path(session[:user_id]) %></li>
         <li><%= link_to "Planned Purchases", userpurchases_path(session[:user_id]) %></li>
+        <li><%= link_to "Comparison", expensesheet_path(session[:user_id]) %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Login", '/login', "data-reveal-id" => "firstModal" %></li>
