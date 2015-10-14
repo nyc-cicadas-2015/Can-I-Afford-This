@@ -231,6 +231,8 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ],
       "/Users/dianpan/DBC/Can-I-Afford-This/config/initializers/backtrace_silencers.rb": [
@@ -1229,6 +1231,6 @@
         null
       ]
     },
-    "timestamp": 1444856190
+    "timestamp": 1444862658
   }
 }
