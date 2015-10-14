@@ -9,7 +9,7 @@
 <% end %>
 
 <h5><%= image_tag "cc_33x22.png" %>
-  $<%= @user.expenses.total_expense_amount %> in expenses | <%= link_to "edit", expensesheet_path, method: :patch %>
+  $<%= @user.expenses.total_expense_amount %> in expenses | <%= link_to "edit", edit_expensesheet_path(current_user) %>
 </h5>
 
 <% if @user.expenses.empty? %>

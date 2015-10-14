@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :purchases
   has_many :savings
 
+  include Finances
+
   def total_expenses
     expenses.sum(:amount)
   end

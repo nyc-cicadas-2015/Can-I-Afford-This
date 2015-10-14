@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   resources :expenses
   resources :purchases
   resources :savings, only: [:new, :create]
-  resources :expensesheets, only: [:new, :create, :show, :edit]
-  get '/expensesheets/edit' => 'expensesheets#edit', as: 'expensesheets/edit'
+  resources :expensesheets, only: [:new, :create, :show, :edit, :update]
 
   get '/profile/:id' => 'users#show', as: 'profile'
   get '/userpurchases/:id' => 'users#userpurchases', as: 'userpurchases'
