@@ -5,19 +5,19 @@ class ExpensesheetsController < ApplicationController
   end
 
   def show
-    @expenses = Expense.snapshot(@user.expenses, @user.income)
+    @expenses = Expense.snapshot(current_user.expenses, current_user.income)
   end
 
   def create
     Expense.expense_sheet(params[:expense][:amount]).each do |e|
-      @user.expenses << e
+      current_user.expenses << e
       flash[:error] = "Oops! Someting went wrong." unless e.save
     end
       redirect_to user_path(session[:user_id])
   end
 
   def edit
-    @expenses = @user.expenses.includes(:expense_type).each_with_object({}) { |e, obj| obj[e.expense_type.name] = e }
+    @expenses = current_user.expenses.includes(:expense_type).each_with_object({}) { |e, obj| obj[e.expense_type.name] = e }
   end
 
   def update
