@@ -52,6 +52,12 @@ describe Purchase do
     purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
     expect(purchase.add_payoff_time).to eq(60)
   end
+  it 'finds a users income' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123", income: 2000)
+    user.expenses.create(expense_type_id: 2, amount:2000)
+    purchase = user.purchases.create(title: "test", cost: 4000, purchase_type_id: 3)
+    expect(purchase.find_user_income).to eq(2000)
+  end
 
 
 end
