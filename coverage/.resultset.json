@@ -31,6 +31,11 @@
         1,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/dianpan/DBC/Can-I-Afford-This/spec/rails_helper.rb": [
@@ -470,10 +475,10 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         1,
-        0,
+        1,
         0,
         null,
         null,
@@ -521,6 +526,6 @@
         null
       ]
     },
-    "timestamp": 1444790232
+    "timestamp": 1444790296
   }
 }

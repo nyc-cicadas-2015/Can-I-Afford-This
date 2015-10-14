@@ -22,9 +22,14 @@ describe Purchase do
     purchase = Purchase.new(purchase_type_id: nil)
     expect(purchase.valid?).to eq(false)
   end
-  it 'adds a purchase type id' do
+  it 'adds the correct purchase type id for a small purchase' do
     user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
     purchase = user.purchases.create(title: "small", cost: 100)
     expect(purchase.purchase_type_id).to eq(1)
+  end
+  it 'adds the correct purchase type id for a medium purchase' do
+    user = User.create(name:"Dian", email: "dian@test.com", password: "abc123")
+    purchase = user.purchases.create(title: "small", cost: 2000)
+    expect(purchase.purchase_type_id).to eq(2)
   end
 end
