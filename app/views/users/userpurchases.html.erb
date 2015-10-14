@@ -10,16 +10,16 @@
   <h5>Planned Purchases: $<%= @user.purchases.total_purchase_amount%></h5>
     <% @user.purchases.each do |purchase| %>
       <ul class="disc">
-        <li><%= purchase.title %></span> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
+        <%= purchase.title %></span> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
         <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.expenses.total_expense_amount %>
           <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases"><%= image_tag "alert_red.png" %></span>
         <% else %> |
           <%= link_to "can I afford this?", purchase_path(purchase) %>
-        <% end %>
+        <% end %><br>
         <% if purchase.can_I_buy? %>
-        | <span class="success label">Success! You have enough to buy this!</span>
+        <span class="success label">Success! You have enough to buy this!</span>
         <% end %>
-      </li>
+
     </ul>
     <% end %>
 
