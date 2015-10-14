@@ -64,10 +64,4 @@ class Purchase < ActiveRecord::Base
   def can_I_buy?
     self.user.total_savings >= purchase_cost
   end
-
-  def self.snapshot(data)
-    name = data.map{ |d| d.title }
-    cost = data.map{ |d| d.cost }
-    [name, cost].transpose.to_h
-  end
 end

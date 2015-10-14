@@ -25,7 +25,7 @@ $(document).ready(function(){
                 text: 'Savings vs Purchase'
             },
             xAxis: {
-                categories: ['Savings vs Purchase']
+                categories: data.p_name
             },
             yAxis: {
                 min: 0,
@@ -55,7 +55,7 @@ $(document).ready(function(){
             },
             series: [{
                 name: 'Purchases',
-                data: [data.purchases.cost],
+                data: data.p_cost,
                 pointPadding: 0
             },
             {
