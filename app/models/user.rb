@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :expenses
-  has_many :expense_types, through: :expenses
   has_many :purchases
   has_many :savings
 
