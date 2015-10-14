@@ -21,19 +21,14 @@ Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %
 <% end %>
 
 <% if !current_user.has_income? %>
-  <h3>What is your monthly income?</h3>
-  <div class="row">
-    <div class="small-8">
-      <div class="row">
-        <div class="small-3 columns">
-          <label for="right-label" class="right">Income $</label>
-        </div>
-        <div class="small-9 columns">
-          <%= render partial: "income_form" %>
-        </div>
-      </div>
-    </div>
+  <div id="incomeModal" class="reveal-modal" data-reveal >
+    <h3>What is your monthly income?</h3>
+    <%= form_tag(user_path(current_user), method: "patch") do %>
+      <%= text_field_tag :income %>
+      <%= submit_tag "submit", :class => "button round" %>
+    <% end %>
   </div>
+
 <% end %>
 
 <% if current_user.has_income? && current_user.has_expenses? %>
