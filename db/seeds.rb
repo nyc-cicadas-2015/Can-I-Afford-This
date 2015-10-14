@@ -7,9 +7,8 @@ ExpenseType.create(name: "Housing")
 ExpenseType.create(name: "Transportation")
 ExpenseType.create(name: "Food")
 ExpenseType.create(name: "Phone")
-ExpenseType.create(name: "Misc. 1")
-ExpenseType.create(name: "Misc. 2")
-ExpenseType.create(name: "Misc. 3")
+ExpenseType.create(name: "Misc")
+
 
 PurchaseType.create(name:"small")
 PurchaseType.create(name:"medium")
