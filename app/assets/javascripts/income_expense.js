@@ -87,7 +87,7 @@ $(document).ready(function(){
                     name: "Misc",
                     y: data.percentages.Misc
                 }, {
-                    name: "Surplus",
+                    name: "Savings",
                     y: (((data.income - data.expenses)/data.income) * 100)
                 }]
             }]
