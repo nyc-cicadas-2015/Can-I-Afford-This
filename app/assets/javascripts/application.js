@@ -17,6 +17,8 @@
 //= require d3
 //= require highcharts
 //= require highcharts/highcharts-more
+//= require expense_modal
+//= require income_expense
 //= require_tree .
 
 $(document).ready(function(){ $(document).foundation(); });
