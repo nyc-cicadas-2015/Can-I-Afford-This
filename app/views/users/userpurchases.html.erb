@@ -2,7 +2,7 @@
 <div>
   <h5><%= image_tag "piggy_bank.png" %>
     <span style="color: #0ac775">$<%= @user.savings.total_savings %> Saved</span><br>
-    <%= button_to "Add savings", new_saving_path, "data-reveal-id" => "savingsModal", :class => "button round" %>
+    <%= link_to "Add savings", new_saving_path, "data-reveal-id" => "savingsModal" %>
   </h5>
 </div>
 

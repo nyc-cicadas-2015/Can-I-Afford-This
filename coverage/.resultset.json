@@ -362,7 +362,7 @@
         1,
         null,
         1,
-        0,
+        4,
         null,
         null,
         1,
@@ -544,12 +544,12 @@
         1,
         null,
         1,
-        56,
+        72,
         null,
         null,
         1,
-        15,
-        15,
+        31,
+        31,
         null,
         null,
         null,
@@ -775,12 +775,12 @@
         1,
         8,
         8,
+        8,
         null,
         null,
         1,
         1,
         4,
-        null,
         null,
         null
       ],
@@ -1093,6 +1093,10 @@
         1,
         null,
         null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/dianpan/DBC/Can-I-Afford-This/app/models/expense_type.rb": [
@@ -1111,7 +1115,7 @@
         1,
         null,
         1,
-        6,
+        2,
         null,
         null,
         1,
@@ -1214,6 +1218,6 @@
         null
       ]
     },
-    "timestamp": 1444793022
+    "timestamp": 1444838538
   }
 }

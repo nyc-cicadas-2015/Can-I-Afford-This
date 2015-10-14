@@ -17,7 +17,7 @@ describe "Savings" do
 
     it 'saves with valid attributes' do
       visit userpurchases_path(@user.id)
-      click_link "Add savings"
+      first(:link, "Add savings").click
       fill_in "saving_amount", :with => 200
       click_button "Add savings"
       expect(page).to have_content("Nice job! $200 added!")
@@ -25,7 +25,7 @@ describe "Savings" do
 
     it 'does not save with invalid attributes' do
       visit userpurchases_path(@user.id)
-      click_link "Add savings"
+      first(:link, "Add savings").click
       fill_in "saving_amount", :with => nil
       click_button "Add savings"
       expect(page).to have_content("Amount cannot be $0")
