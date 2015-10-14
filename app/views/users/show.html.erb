@@ -30,6 +30,14 @@ Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %
   </div>
 <% end %>
 
+<% if current_user.has_income? && !current_user.has_expenses? %>
+  <div id="expensesModal" class="reveal-modal" data-reveal aria-labelledby="expensesModalTitle" aria-hidden="true" role="dialog" >
+    <h4>Enter your expenses:</h4>
+    <%= render partial: "/expensesheets/form" %>
+  </div>
+<% end %>
+
+
 <% if current_user.has_income? && current_user.has_expenses? %>
   <div id="container" style="width:70%;height:300px;"></div>
   <div id="pie-container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
