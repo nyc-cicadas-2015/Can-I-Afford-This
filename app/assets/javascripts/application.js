@@ -22,5 +22,10 @@
 //= require highcharts/highcharts-more
 //= require_tree .
 
-$(document).ready(function(){ $(document).foundation(); });
+$(document).ready(function(){
+  $(document).foundation();
+  $("#expensesModal").foundation('reveal', 'open');
+  $("#incomeModal").foundation('reveal', 'open');
+
+});
 
