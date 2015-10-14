@@ -15,8 +15,8 @@ class Purchase < ActiveRecord::Base
   def add_purchase_type_id
     self.purchase_type_id = \
       case cost.to_i
-      when [0 .. 1000] then 1
-      when [1000 .. 3000] then 2
+      when 0..1000 then 1
+      when 1000..3000 then 2
       else 3
       end
   end
