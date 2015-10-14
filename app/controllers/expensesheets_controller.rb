@@ -30,10 +30,4 @@ class ExpensesheetsController < ApplicationController
     end
     redirect_to user_path(session[:user_id])
   end
-
-  private
-  def find_user
-    @user = User.find(session[:user_id])
-  end
-
 end
