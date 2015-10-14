@@ -21,14 +21,13 @@ Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %
 <% end %>
 
 <% if !current_user.has_income? %>
-  <div id="incomeModal" class="reveal-modal" data-reveal >
+  <div id="incomeModal" class="reveal-modal" data-reveal aria-labelledby="incomeModalTitle" aria-hidden="true" role="dialog" >
     <h3>What is your monthly income?</h3>
     <%= form_tag(user_path(current_user), method: "patch") do %>
       <%= text_field_tag :income %>
       <%= submit_tag "submit", :class => "button round" %>
     <% end %>
   </div>
-
 <% end %>
 
 <% if current_user.has_income? && current_user.has_expenses? %>
