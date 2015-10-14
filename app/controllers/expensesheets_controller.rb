@@ -23,9 +23,10 @@ class ExpensesheetsController < ApplicationController
 
   def update
     current_user.expenses.each do |e|
-      params[:expense].select do |k, v|
-        e.expense_type.name == k
-        byebug
+      params[:expense].each do |k, v|
+        if e.expense_type.name == k
+          e.update_attribute(:amount, v)
+        end
       end
     end
     redirect_to user_path(session[:user_id])
