@@ -16,7 +16,6 @@
                 <%= render "savings/form" %>
               <a class="close-reveal-modal" aria-label="Close">&#215;</a>
             </div>
-
           </div>
         </div>
       </div>
@@ -30,11 +29,12 @@
             <h4 class="text-center">Your Planned Purchases</h4>
             <p><% @user.purchases.each do |purchase| %>
               <ul class="disc">
-              <%= purchase.title %> for $<%= purchase.cost %> <%= link_to "delete", purchase_path(purchase), method: :delete %>
+              <%= purchase.title %> for $<%= purchase.cost %><%= link_to "delete", purchase_path(purchase), method: :delete %>
               <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.total_expenses %>
               <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases. <%= link_to "See How", expensesheet_path %>"><%= image_tag "alert_red.png" %></span>
               <% else %> |
               <%= link_to "Can I Afford This?", purchase_path(purchase), id: "canipurchase" %>
+              <div id="caniafford-results"></div>
               <% end %>
             <br>
             <% if purchase.can_I_buy? %>

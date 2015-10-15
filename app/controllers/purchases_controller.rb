@@ -8,6 +8,9 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find params[:id]
+    respond_to do |format|
+      format.html { render partial: "purchases/result", locals: {purchase: @purchase}, :layout => false }
+    end
   end
 
   def new
