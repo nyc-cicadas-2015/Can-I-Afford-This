@@ -57,9 +57,14 @@
     <%= render partial: "purchases/form", locals: {purchase: @purchase} %>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
+<br><br>
 
-  <% if !current_user.total_purchase_amount.nil? %>
-    <div id="chart-container" style="width:70%, height:300px"></div>
-  <% end %>
+<hr>
+
+<br><br>
+
+<% if !current_user.total_purchase_amount.nil? %>
+  <div id="chart-container" style="width:70%, height:300px"></div>
+<% end %>
 
 <br><br>
