@@ -18,6 +18,7 @@ class ExpensesheetsController < ApplicationController
 
   def edit
     @expenses = current_user.expenses.includes(:expense_type).each_with_object({}) { |e, obj| obj[e.expense_type.name] = e }
+    @income = current_user.income
   end
 
   def update

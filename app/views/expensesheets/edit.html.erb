@@ -1,7 +1,7 @@
-<h3>Update your expenses!</h3>
 <div class="row">
-  <div class="large-4 columns end">
+  <div class="large-4 columns">
     <div id="edit-expenses">
+      <h3>Update your expenses!</h3>
 
       <%= form_tag(expensesheet_path(current_user), method: "PATCH") do %>
         <span data-tooltip aria-haspopup="true" class="has-tip" title="ie: rent, money to grandma for putting a roof over your head">Housing</span>
@@ -17,5 +17,12 @@
         <%= button_tag 'Update Expenses', html: {:class => "button round"} %>
       <% end %>
     </div>
+  </div>
+  <div class="large-6 columns">
+    <h3>Edit your monthly income?</h3>
+      <%= form_tag(user_path(current_user), method: "patch") do %>
+        <%= text_field_tag :income, @income %>
+        <%= submit_tag "submit", :class => "button round" %>
+      <% end %>
   </div>
 </div>
