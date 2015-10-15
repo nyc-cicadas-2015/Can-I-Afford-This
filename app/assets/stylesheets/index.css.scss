@@ -11,13 +11,28 @@
 }
 
 #homepage-hero h1 {
-    color: #FFFFFF;
-    font-size: 4em;
+    color: #fff;
+    font-size: 4rem;
+    margin: 0 0 1rem;
     font-weight: 500;
     line-height: 100%;
     margin-bottom: 0;
 }
 
 #homepage-hero h3 {
-  color:#fff;
+  color:#8d9093;
+}
+
+.headshot {
+  height: 150px;
+  width:150px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#nav_bar {
+  font-size: 4rem;
 }
