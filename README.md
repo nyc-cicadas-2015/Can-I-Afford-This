@@ -1,5 +1,5 @@
 # Can-I-Afford-This
-a financial education tool for kids, or anyone
+a beginner friendly financial education tool for anyone
 
 [![Circle CI](https://circleci.com/gh/nyc-cicadas-2015/Can-I-Afford-This.svg?style=svg)](https://circleci.com/gh/nyc-cicadas-2015/Can-I-Afford-This)
 
@@ -12,31 +12,33 @@ Pulling from personal experience, we aim to educate young adults on the risks of
 
 ##User Stories
 - I want to buy an iPhone, can I afford it with the amount of money I currently make and spend
-- I want to buy a Macbook pro, can I do so with the amount of money I currently make and spend
-- I want to buy a car, can I do so with the amount of money I currently make and spend
+- I want to buy a Macbook pro, can I afford it with the amount of money I currently make and spend
+- I want to buy a car, can I afford it with the amount of money I currently make and spend
 
 ##MVP
 - user can register
-- user login
-- user can input expense sheet (5 categories hardcoded, 3 free form miscellaneous)
-- user can input income (biweekly, weekly, monthly)
+- user can login
+- user is prompted to input monthly income
+- user is prompted to input monthly expense sheet
 - user can see data visualization of their expense vs income
-- user can select 3 types of planned purchase:
+- user can see what % of expenses go to which category
+- user can select 3 types of planned purchases:
   - $ under 1K (ie beats headphones, iphone) /  limit payoff time: 6 months
   - $$ 1K-3K (ie macbook pro) / limit payoff time: 1 year
   - $$$ 3K+ (ie car) / limit payoff time: 5 years
-- user can, input exact price of item seeking to purchase
+- user can, input price of item seeking to purchase
+- user can see data visualization of all of their planned purchases
 - user can see, based on existing expense vs. income level if they can afford to make purchase
   - yes you can afford it, you have $X left over each month, save it and it will take you #X of months
-    - save to profile page this planned purchase
-  - no you can’t afford it, based on national spend average, try to cut back on xyz category
+  - no you cannot afford it, based on national spend average, try to cut back on xyz category
     - user can edit original expense sheet
     - user can compare expense sheet against national average
     - user’s new updated data chart can fluctuate as they make edits
 
 ##Stretches
+- user can input a URL of the item they are seeking to purchases 
 - user can see baseline national spend numbers against their spendings
 - users can plan to open a credit card (to decode financial jargon, highlight most important terms)
 - users can plan to apply for a loan - these are the risks, average range of % of interest across loan types
 - user can read and/or give tips and tricks
-- Use a 3rd party API to pull in current spend data
+- Use an API to pull in current spend data
