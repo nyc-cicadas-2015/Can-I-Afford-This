@@ -2,7 +2,19 @@
   margin-bottom: 25px;
 }
 
+#title-box.box {
+  text-align: center;
+}
+
 #container-box.box {
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 20px, 20px, 0px, 0px;
+  display: block;
+  margin-bottom: 60px;
+  }
+
+#chart-box.box {
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 20px, 20px, 0px, 0px;
@@ -25,6 +37,9 @@
   }
   p{
   text-align: right;
+  }
+  #alert{
+  text-align: center;
   }
 }
 

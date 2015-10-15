@@ -42,5 +42,4 @@ class User < ActiveRecord::Base
   def purchases_name
     purchases.map { |p| p.title }
   end
-
 end
