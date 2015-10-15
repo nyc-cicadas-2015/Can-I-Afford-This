@@ -1,5 +1,5 @@
 <%= form_for @saving, html: {id: "savings_form"} do |f| %>
-  $<%= f.text_field :amount, placeholder: "$ Enter Amount" %>
+  <%= f.text_field :amount, placeholder: "$ Enter Amount" %>
   <%= f.submit "Add savings", :class => "button round" %>
 <% end %>
 

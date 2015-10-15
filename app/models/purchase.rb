@@ -54,7 +54,8 @@ class Purchase < ActiveRecord::Base
   end
 
   def months_to_payoff
-    (purchase_cost/user_income_to_expense_diff.to_f).ceil
+    # byebug
+    (purchase_cost / user_income_to_expense_diff.to_f).ceil
   end
 
   def can_I_afford_this?
