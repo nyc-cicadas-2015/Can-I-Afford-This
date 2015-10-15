@@ -38,7 +38,7 @@ $(document).ready(function(){
         });
     };
 
-    var pieChart = function(data) {
+    pieChart = function(data) {
         $('#pie-container').highcharts({
             chart: {
                 plotBackgroundColor: null,
