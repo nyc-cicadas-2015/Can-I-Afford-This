@@ -1,20 +1,21 @@
 <h3>Update your expenses!</h3>
+<div class="row">
+  <div class="large-4 columns end">
+    <div id="edit-expenses">
 
-<div class="large-4 columns end">
-
-<%= form_tag(expensesheet_path(current_user), method: "PATCH") do %>
-  <span data-tooltip aria-haspopup="true" class="has-tip" title="ie: rent, money to grandma for putting a roof over your head">Housing</span>
-  <%= text_field_tag 'expense[Housing]', @expenses['Housing'].amount %>
-  <span data-tooltip aria-haspopup="true" class="has-tip" title="How you get around town. ie: gas money, bus fare">Transportation</span>
-  <%= text_field_tag 'expense[Transportation]', @expenses['Transportation'].amount %>
-  <span data-tooltip aria-haspopup="true" class="has-tip" title="please also include money spent on drinks">Food</span>
-  <%= text_field_tag 'expense[Food]', @expenses['Food'].amount %>
-  <span data-tooltip aria-haspopup="true" class="has-tip" title="Data plan and phone bill">Phone</span>
-  <%= text_field_tag 'expense[Phone]', @expenses['Phone'].amount %>
-  <span data-tooltip aria-haspopup="true" class="has-tip" title="Other types of things you spend your money on each month (ie: student loans)">Misc.</span>
-  <%= text_field_tag 'expense[Misc]', @expenses['Misc'].amount %>
-  <%= button_tag 'Update Expenses', html: {:class => "button round"} %>
-<% end %>
-
-
+      <%= form_tag(expensesheet_path(current_user), method: "PATCH") do %>
+        <span data-tooltip aria-haspopup="true" class="has-tip" title="ie: rent, money to grandma for putting a roof over your head">Housing</span>
+        <%= text_field_tag 'expense[Housing]', @expenses['Housing'].amount %>
+        <span data-tooltip aria-haspopup="true" class="has-tip" title="How you get around town. ie: gas money, bus fare">Transportation</span>
+        <%= text_field_tag 'expense[Transportation]', @expenses['Transportation'].amount %>
+        <span data-tooltip aria-haspopup="true" class="has-tip" title="please also include money spent on drinks">Food</span>
+        <%= text_field_tag 'expense[Food]', @expenses['Food'].amount %>
+        <span data-tooltip aria-haspopup="true" class="has-tip" title="Data plan and phone bill">Phone</span>
+        <%= text_field_tag 'expense[Phone]', @expenses['Phone'].amount %>
+        <span data-tooltip aria-haspopup="true" class="has-tip" title="Other types of things you spend your money on each month (ie: student loans)">Misc.</span>
+        <%= text_field_tag 'expense[Misc]', @expenses['Misc'].amount %>
+        <%= button_tag 'Update Expenses', html: {:class => "button round"} %>
+      <% end %>
+    </div>
+  </div>
 </div>
