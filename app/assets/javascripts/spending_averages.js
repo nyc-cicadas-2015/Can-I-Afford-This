@@ -50,7 +50,7 @@ $(document).ready(function(){
                 align: 'right',
                 verticalAlign: 'top',
                 x: -40,
-                y: 80,
+                y: 120,
                 floating: true,
                 borderWidth: 1,
                 backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),

@@ -43,4 +43,12 @@ class User < ActiveRecord::Base
     purchases.map { |p| p.title }
   end
 
+  def arr_of_expense_names
+    expenses.map { |e| e.expense_type.name }
+  end
+
+  def arr_of_expense_amounts
+    expenses.map { |e| e.amount }
+  end
+
 end
