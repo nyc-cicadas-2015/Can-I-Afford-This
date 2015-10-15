@@ -8,17 +8,23 @@ Dian.expenses.create(expense_type_id: 3, amount: 500)
 Dian.expenses.create(expense_type_id: 4, amount: 100)
 Dian.expenses.create(expense_type_id: 5, amount: 700)
 
+Dian.savings.create(amount: 1400)
+
 Julianna.expenses.create(expense_type_id: 1, amount: 750)
 Julianna.expenses.create(expense_type_id: 2, amount: 225)
 Julianna.expenses.create(expense_type_id: 3, amount: 500)
 Julianna.expenses.create(expense_type_id: 4, amount: 75)
 Julianna.expenses.create(expense_type_id: 5, amount: 1000)
 
+Julianna.savings.create(amount: 1400)
+
 Jenny.expenses.create(expense_type_id: 1, amount: 800)
 Jenny.expenses.create(expense_type_id: 2, amount: 130)
 Jenny.expenses.create(expense_type_id: 3, amount: 300)
 Jenny.expenses.create(expense_type_id: 4, amount: 50)
 Jenny.expenses.create(expense_type_id: 5, amount: 250)
+
+Jenny.savings.create(amount: 1400)
 
 ExpenseType.create(name: "Housing")
 ExpenseType.create(name: "Transportation")
