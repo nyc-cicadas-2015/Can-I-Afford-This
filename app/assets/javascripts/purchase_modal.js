@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $("#incomeModal").foundation('reveal', 'open');
+    $("#purchaseModal").foundation('reveal', 'open');
 });
