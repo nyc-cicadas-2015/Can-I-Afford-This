@@ -1,4 +1,5 @@
-<% if @purchase.can_I_afford_this? %>
+<div id="result-copy">
+  <% if @purchase.can_I_afford_this? %>
 <h4>Yes you can afford it!</h4>
   <p>By saving smart and not spending more than you earn, it will take you <b><%= @purchase.months_to_payoff %></b> months to buy your <%= @purchase.title %>. Now start saving!</p>
 
@@ -8,3 +9,4 @@
 <p>Our conscience won't let us put you down this path.  It will take you <b><%= @purchase.months_to_payoff %></b> months to save up for this purchase, which seems a little long doesn't it?  Consider lowering your existing expenses before attempting to make this purchase. Don't worry, we'll show you how.</p>
 <% end %>
 
+</div>

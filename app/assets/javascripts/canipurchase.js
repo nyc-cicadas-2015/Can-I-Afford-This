@@ -1,14 +1,16 @@
-// $(document).ready(function(){
-//     $('#canipurchase').on('click', function(e){
-//         e.preventDefault();
-//         $.ajax({
-//             url: '',
-//             method: 'GET'
-//         }).done(function(data){
-//             $('').html(data);
-//             $('').show();
-//         }).fail(function(){
-//             console.error("Error, something went wrong.");
-//         });
-//     });
-// });
+$(document).ready(function(){
+    $('.canipurchase').on('click', function(e){
+        e.preventDefault();
+        //remove global variable in refactor
+        this_div_id = $(this).attr("href").substring(11)
+        var url = $(e.target).attr('href')
+        $.ajax({
+            url: url,
+            method: 'GET'
+        }).done(function(data){
+            $('#caniafford-results-' + this_div_id).append(data);
+        }).fail(function(){
+            console.error("Error, something went wrong.");
+        });
+    });
+});
