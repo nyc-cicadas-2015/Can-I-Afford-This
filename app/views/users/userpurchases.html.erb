@@ -10,7 +10,8 @@
           <div class="info">
             <h4 class="text-center">Your Savings: <span style="color: #0ac775">$<%= @user.savings.total_savings %></span></h4>
             <p></p>
-            <%= link_to "Add savings", new_saving_path, :class => "button round"  %>
+            <%= link_to "Add savings", new_saving_path, "data-reveal-id" => "savingsModal", :class => "button round"  %>
+
               <div id="savingsModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
               <h2 id="firstModalTitle">Enter the amount you saved:</h2>
                 <%= render "savings/form" %>
