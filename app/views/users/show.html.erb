@@ -10,18 +10,16 @@
         <h5><%= image_tag "money.png" %>$<%= current_user.income %> income</h5>
       <% end %>
 
-      <h5><%= image_tag "cc_33x22.png" %>
-        $<%= current_user.expenses.total_expense_amount %>
-      </h5>
+      <h5><%= image_tag "cc_33x22.png" %>$<%= current_user.expenses.total_expense_amount %> expenses</h5>
       <div id="text-line">
-      <h5 id="align-left">
-      <% if current_user.expenses.empty? %>
-        <%= link_to "Add expenses", new_expensesheet_path %>
-      <% end %>
-      <% if current_user.can_make_purchase? %>
-      Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %> per month
-      </h5>
-      <% end %>
+        <h5 id="align-left">
+          <% if current_user.expenses.empty? %>
+            <%= link_to "Add expenses", new_expensesheet_path %>
+          <% end %>
+          <% if current_user.can_make_purchase? %>
+          Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %> per month
+        </h5>
+          <% end %>
        <p id="align-right"><%= link_to "Edit your expenses", edit_expensesheet_path(current_user) %></p>
      </div>
     </div>
