@@ -1,0 +1,23 @@
+#homepage-hero {
+    background: url(asset-path('white_pig.jpg'));
+    height: 500px;
+    padding: 100px 20px 0;
+    position: relative;
+    text-align: left;
+
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#homepage-hero h1 {
+    color: #FFFFFF;
+    font-size: 4em;
+    font-weight: 500;
+    line-height: 100%;
+    margin-bottom: 0;
+}
+
+#homepage-hero h3 {
+  color:#fff;
+}
