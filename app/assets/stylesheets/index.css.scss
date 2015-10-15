@@ -1,3 +1,15 @@
+p {
+  &.slogan {
+    color: #8d9093;
+    font-size: 1.8rem;
+    margin: 0 0 1rem
+  }
+  &.copywrite {
+    color: #8f9296;
+    font-size: 0.875rem;
+    margin: 0;
+}}
+
 #homepage-hero {
     background: url(asset-path('white_pig.jpg'));
     height: 500px;
@@ -11,15 +23,16 @@
 }
 
 #homepage-hero h1 {
-    color: #FFFFFF;
-    font-size: 4em;
+    color: #fff;
+    font-size: 4rem;
+    margin: 0 0 1rem;
     font-weight: 500;
     line-height: 100%;
     margin-bottom: 0;
 }
 
 #homepage-hero h3 {
-  color:#fff;
+  color:#8d9093;
 }
 
 .headshot {
@@ -28,5 +41,5 @@
   border-radius: 50%;
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
