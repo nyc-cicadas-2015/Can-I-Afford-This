@@ -15,9 +15,30 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 20px, 20px, 20px, 0px;
   display: block;
+  background-color:rgba(240, 243, 246, 0.4);
+  margin-bottom: 10px;
+  font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 
   h2 {
   text-align: right;
-  font-family: serif;
+  font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+  }
+  h5 {
+  font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+  }
+  p{
+  text-align: right;
+  }
+}
+
+#text-line{
+  clear: both;
+  padding-bottom: 20px;
+
+  #align-left{
+    float: left;
+  }
+  #align-right{
+    float: right;
   }
 }
