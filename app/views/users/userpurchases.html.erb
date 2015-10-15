@@ -58,15 +58,8 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
-
-
-    <div class="large-1 columns">
-      <div class="box">
-        <% if !current_user.total_purchase_amount.nil? %>
-          <div id="chart-container" style="width:70%, height:300px"></div>
-        <% end %>
-      </div>
-    </div>
-
+  <% if !current_user.total_purchase_amount.nil? %>
+    <div id="chart-container" style="width:70%, height:300px"></div>
+  <% end %>
 
 <br><br>

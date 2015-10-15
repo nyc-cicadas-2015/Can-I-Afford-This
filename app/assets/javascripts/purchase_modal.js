@@ -1,3 +1,3 @@
-$(document).ready(function(){
-    $("#purchaseModal").foundation('reveal', 'open');
-});
+// $(document).ready(function(){
+//     $("#purchaseModal").foundation('reveal', 'open');
+// });
