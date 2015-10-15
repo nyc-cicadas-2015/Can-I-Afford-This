@@ -65,4 +65,53 @@ $(document).ready(function(){
             }]
         });
     };
+
+    // var makeChart = function (data) {
+    //     $('#chart-container').highcharts({
+    //         chart: {
+    //             type: 'column'
+    //         },
+    //         title: {
+    //             text: 'Savings to Purchase Form'
+    //         },
+    //         credits: {
+    //             enabled: false
+    //         },
+    //         xAxis: {
+    //             categories: data.p_name
+    //         },
+    //         yAxis: [{
+    //             min: 0,
+    //             title: {
+    //                 text: 'Amount ($)'
+    //             }
+    //         }],
+    //         legend: {
+    //             shadow: false
+    //         },
+    //         tooltip: {
+    //             shared: true
+    //         },
+    //         plotOptions: {
+    //             column: {
+    //                 grouping: false,
+    //                 shadow: false,
+    //                 borderWidth: 0
+    //             }
+    //         },
+    //         series: [{
+    //             name: 'Purchases',
+    //             color: 'rgba(165,170,217,1)',
+    //             data: data.p_cost,
+    //             pointPadding: 0.3,
+    //             pointPlacement: -0.2
+    //         }, {
+    //             name: 'Savings',
+    //             color: 'rgba(126,86,134,.9)',
+    //             data: [data.savings],
+    //             pointPadding: 0.4,
+    //             pointPlacement: -0.2
+    //         }]
+    //     });
+    // }
 })
