@@ -3,7 +3,7 @@
       <div class="box" id="profile-header">
         <h2><%= current_user.name %>'s Monthly Snapshot</h2>
       <% if current_user.has_income? && current_user.has_expenses? && current_user.income < current_user.total_expenses %>
-        <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", expensesheets_path %></p>
+        <p id="alert"><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", "/expensesheets/#{current_user.id}" %></p>
       <% end %>
 
       <% if current_user.has_income? %>
