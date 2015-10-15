@@ -5,6 +5,6 @@
 <% else %>
 
 <h4>No, you cannot afford it.</h4>
-<p>Our conscience won't let us put you down this path.  It will take you <b><%= @purchase.months_to_payoff %></b> months to save up for this purchase, which seems a little long doesn't it?  Consider lowering your existing expenses before attempting to make this purchase. Don't worry, we'll show you how.</p>
+<p>Our conscience won't let us put you down this path.  It will take you <b><%= @purchase.months_to_payoff %></b> months to save up for this purchase, which seems a little long doesn't it?  Consider lowering your existing expenses before attempting to make this purchase. Don't worry,<%= link_to "we'll show you how", "/expensesheets/#{current_user.id}" %>.</p>
 <% end %>
 </div>
