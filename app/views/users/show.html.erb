@@ -1,6 +1,6 @@
 <div class="row">
     <div class="medium-6 columns">
-        <h4 class="text-center"><i><%= current_user.name %>'s Monthly Snapshot</i></h4>
+        <h4><i><%= current_user.name %>'s Monthly Snapshot</i></h4>
 
       <div class="box">
       <% if current_user.has_income? && current_user.has_expenses? && current_user.income < current_user.total_expenses %>
