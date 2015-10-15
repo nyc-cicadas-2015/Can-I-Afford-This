@@ -1,7 +1,7 @@
 <div class="row">
-    <div class="large-8 columns">
+    <div class="large-12 columns">
       <div class="box">
-        <h4><i><%= current_user.name %>'s Monthly Snapshot</i></h4>
+        <h4 class="align-right"><i><%= current_user.name %>'s Monthly Snapshot</i></h4>
       <% if current_user.has_income? && current_user.has_expenses? && current_user.income < current_user.total_expenses %>
         <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", expensesheets_path %></p>
       <% end %>
