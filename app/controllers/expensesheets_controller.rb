@@ -5,7 +5,7 @@ class ExpensesheetsController < ApplicationController
   end
 
   def show
-    @expenses = current_user.expensesheet_snapshot
+    @expenses = current_user.expenses
   end
 
   def create
