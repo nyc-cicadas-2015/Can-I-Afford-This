@@ -8,7 +8,6 @@ $(document).ready(function(){
             url: url,
             method: 'GET'
         }).done(function(data){
-          // debugger
             $('#caniafford-results-' + this_div_id).append(data);
         }).fail(function(){
             console.error("Error, something went wrong.");
