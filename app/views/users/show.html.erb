@@ -1,46 +1,62 @@
-<h2><%= current_user.name %>'s Profile</h2>
+<div class="row">
+    <div class="medium-6 columns">
+      <div class="box">
+        <h2><%= current_user.name %>'s Monthly Snapshot</h2>
 
-<% if current_user.has_income? && current_user.has_expenses? && current_user.income < current_user.total_expenses %>
-<p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", expensesheets_path %></p>
-<% end %>
+      <% if current_user.has_income? && current_user.has_expenses? && current_user.income < current_user.total_expenses %>
+        <p><%= image_tag "alert_red.png" %>You are currently spending more than you make, lets figure out some ways you can cut back. <%= link_to "Show me", expensesheets_path %></p>
+      <% end %>
 
-<% if current_user.has_income? %>
-  <h5><%= image_tag "money.png" %>$<%= current_user.income %> income</h5>
-<% end %>
+      <% if current_user.has_income? %>
+        <h5><%= image_tag "money.png" %>$<%= current_user.income %> income</h5>
+      <% end %>
 
-<h5><%= image_tag "cc_33x22.png" %>
-  $<%= current_user.expenses.total_expense_amount %> in expenses | <%= link_to "edit", edit_expensesheet_path(current_user) %>
-</h5>
+      <h5><%= image_tag "cc_33x22.png" %>
+        $<%= current_user.expenses.total_expense_amount %> in expenses | <%= link_to "edit", edit_expensesheet_path(current_user) %>
+      </h5>
 
-<% if current_user.expenses.empty? %>
-  <%= link_to "Add expenses", new_expensesheet_path %>
-<% end %>
+      <% if current_user.expenses.empty? %>
+        <%= link_to "Add expenses", new_expensesheet_path %>
+      <% end %>
 
-<% if current_user.can_make_purchase? %>
-Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %> per month
-<% end %>
-
-<% if !current_user.has_income? %>
-  <div id="incomeModal" class="reveal-modal" data-reveal aria-labelledby="incomeModalTitle" aria-hidden="true" role="dialog" >
-    <h3>What is your monthly income?</h3>
-    <%= form_tag(user_path(current_user), method: "patch") do %>
-      <%= text_field_tag :income %>
-      <%= submit_tag "submit", :class => "button round" %>
-    <% end %>
+      <% if current_user.can_make_purchase? %>
+      Savings: $<%= current_user.income - current_user.expenses.total_expense_amount %> per month
+      <% end %>
+    </div>
   </div>
-<% end %>
 
-<% if current_user.has_income? && !current_user.has_expenses? %>
-  <div id="expensesModal" class="reveal-modal" data-reveal aria-labelledby="expensesModalTitle" aria-hidden="true" role="dialog" >
-    <h4>Enter your expenses:</h4>
-    <%= render partial: "/expensesheets/form" %>
+
+  <% if !current_user.has_income? %>
+    <div id="incomeModal" class="reveal-modal" data-reveal aria-labelledby="incomeModalTitle" aria-hidden="true" role="dialog" >
+      <h3>What is your monthly income?</h3>
+      <%= form_tag(user_path(current_user), method: "patch") do %>
+        <%= text_field_tag :income %>
+        <%= submit_tag "submit", :class => "button round" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if current_user.has_income? && !current_user.has_expenses? %>
+    <div id="expensesModal" class="reveal-modal" data-reveal aria-labelledby="expensesModalTitle" aria-hidden="true" role="dialog" >
+      <h4>Enter your expenses:</h4>
+      <%= render partial: "/expensesheets/form" %>
+    </div>
+  <% end %>
+
+
+  <% if current_user.has_income? && current_user.has_expenses? %>
+  <div class="medium-6 columns">
+    <div class="box">
+      <div id="pie-container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+    </div>
   </div>
-<% end %>
+</div>
 
-
-<% if current_user.has_income? && current_user.has_expenses? %>
-  <div id="container" style="width:70%;height:300px;"></div>
-  <div id="pie-container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  <div class="row">
+    <div class="box">
+      <div id="container" style="width:70%;height:300px;"></div>
+    </div>
+  </div>
   <% end %>
 
 
