@@ -1,6 +1,41 @@
-$primary: #446CB3;
-$secondary: #ADB2BD;
-$info: #89c4f4;
-$alert: #F22613;
-$success: #87D37C;
-$warning: #F89406;
+#container {
+  margin-bottom: 25px;
+}
+
+#container-box.box {
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 20px, 20px, 0px, 0px;
+  display: block;
+  margin-bottom: 60px;
+  }
+
+#profile-header.box {
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 20px, 20px, 20px, 0px;
+  display: block;
+  background-color:rgba(240, 243, 246, 0.4);
+  margin-bottom: 10px;
+
+  h2 {
+  text-align: right;
+  }
+  h5 {
+  }
+  p{
+  text-align: right;
+  }
+}
+
+#text-line{
+  clear: both;
+  padding-bottom: 20px;
+
+  #align-left{
+    float: left;
+  }
+  #align-right{
+    float: right;
+  }
+}

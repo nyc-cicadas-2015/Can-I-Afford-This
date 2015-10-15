@@ -47,7 +47,7 @@ $(document).ready(function(){
                 type: 'pie'
             },
             title: {
-                text: 'Breakdown of your monthly expenses'
+                text: false
             },
             credits: {
                 enabled: false
