@@ -59,6 +59,8 @@
 
 <hr>
 
-<div id="chart-container" style="width:70%;height:300px;"></div>
+<% if !current_user.total_purchase_amount.nil? %>
+  <div id="chart-container" style="width:70%;height:300px;"></div>
+<% end %>
 
 <br><br>
