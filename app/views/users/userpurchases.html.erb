@@ -30,10 +30,10 @@
             <h4 class="text-center">Your Planned Purchases</h4>
             <p id ="user-purchases"><% @user.purchases.each do |purchase| %>
               <ul class="disc">
-              <%= purchase.title %> for $<%= purchase.cost %><%= link_to "delete", purchase_path(purchase), method: :delete %>
+              <%= link_to (image_tag('x_19x20.png')), purchase_path(purchase), method: :delete %> <%= purchase.title %> for $<%= purchase.cost %>&nbsp;
               <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.total_expenses %>
               <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases. <%= link_to "See How", expensesheet_path %>"><%= image_tag "alert_red.png" %></span>
-              <% else %> |
+              <% else %>
               <%= link_to "Can I Afford This?", purchase_path(purchase), class: "canipurchase" %>
               <div id="caniafford-results-<%= purchase.id %>"></div>
               <% end %>
