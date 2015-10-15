@@ -64,7 +64,7 @@
 
 <br><br>
 
-<% if !current_user.total_purchase_amount.nil? %>
+<% if current_user.total_purchase_amount != 0 %>
   <div id="chart-container" style="width:70%, height:300px"></div>
 <% end %>
 
