@@ -40,7 +40,7 @@
               <% if !@user.income.nil? && !@user.expenses.empty? && @user.income < @user.total_expenses %>
               <span data-tooltip aria-haspopup="true" class="has-tip" title="You are currently spending more money than you make, let's fix that first before you make any purchases. <%= link_to "See How", expensesheet_path %>"><%= image_tag "alert_red.png" %></span>
               <% else %> |
-              <%= link_to "Can I Afford This?", purchase_path(purchase) %>
+              <%= link_to "Can I Afford This?", purchase_path(purchase), id: "canipurchase" %>
               <% end %>
             <br>
             <% if purchase.can_I_buy? %>
