@@ -11,7 +11,7 @@
 }
 
 #homepage-hero h1 {
-    color: #fff;
+    color: #ffffff;
     font-size: 4rem;
     margin: 0 0 1rem;
     font-weight: 500;
@@ -20,7 +20,7 @@
 }
 
 #homepage-hero h3 {
-  color:#8d9093;
+  color:#717477;
 }
 
 .headshot {
@@ -32,7 +32,14 @@
   margin-right: auto;
 }
 
+#title{
+  font-size: 1.5rem;
+}
 
-#nav_bar {
-  font-size: 4rem;
+.top-bar{
+  height: 3rem;
+}
+
+.top-bar-section li a:not(.button):hover {
+    background:#008CBA !important;
 }
