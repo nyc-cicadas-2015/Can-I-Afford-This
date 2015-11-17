@@ -10,6 +10,10 @@ Pulling from personal experience, we aim to educate young adults on the risks of
 
 [Trello Board](https://trello.com/b/PP3LXD4i)
 
+##Database Schema
+![schema]()
+
+
 ##User Stories
 - I want to buy an iPhone, can I afford it with the amount of money I currently make and spend
 - I want to buy a Macbook pro, can I afford it with the amount of money I currently make and spend
@@ -36,7 +40,7 @@ Pulling from personal experience, we aim to educate young adults on the risks of
     - user’s new updated data chart can fluctuate as they make edits
 
 ##Stretches
-- user can input a URL of the item they are seeking to purchases 
+- user can input a URL of the item they are seeking to purchases
 - user can see baseline national spend numbers against their spendings
 - users can plan to open a credit card (to decode financial jargon, highlight most important terms)
 - users can plan to apply for a loan - these are the risks, average range of % of interest across loan types
