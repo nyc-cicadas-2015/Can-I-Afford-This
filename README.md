@@ -11,7 +11,7 @@ Pulling from personal experience, we aim to educate young adults on the risks of
 [Trello Board](https://trello.com/b/PP3LXD4i)
 
 ##Database Schema
-![schema](https://github.com/dianpan/Can-I-Afford-This/blob/add-schema/app/assets/images/db_schema.JPG?raw=true)
+![schema](https://github.com/dianpan/Can-I-Afford-This/blob/update-schema/app/assets/images/schema_design.png?raw=true)
 
 ##User Stories
 - I want to buy an iPhone, can I afford it with the amount of money I currently make and spend
